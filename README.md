@@ -7,6 +7,7 @@ A personal project with synthetic data, built in November 2026. **Work in progre
 ## Status
 
 - [x] Synthetic test data with planted problems (`make_data.py`)
+- [x] Report theme and a static mockup of the report (`styles/`)
 - [ ] Core compare (`compare.py`)
 - [ ] Format-only vs real changes
 - [ ] The same comparison in SQL, as a cross-check
@@ -33,3 +34,9 @@ Planted problems (default settings): 15 rows missing from the target (12 of them
 All data is synthetic. Student IDs look like `S00001` and do not follow any real university's ID format. Names are drawn at random from two short lists.
 
 Requires Python 3.9 or later, standard library only.
+
+## Design
+
+The HTML report and the web page share one stylesheet, `styles/theme.css`: Montserrat (falling back to Helvetica, then Arial) and a violet palette taken from NYU's public brand colors, since the sample data models a university. Body text is `#404040`, and every text and background pairing in the theme has a contrast ratio of 5:1 or better. `styles/preview.html` is a static mockup of the report, filled with values from the seed-42 data.
+
+A personal project, not affiliated with or endorsed by NYU. It uses no NYU logo, seal or wordmark.

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>data-compare report (preview)</title>
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+  <!--
+    Static mockup of the report that compare.py will write in step 6.
+    Every value below is real: taken from data/ generated with seed 42.
+    Step 6 fills this same layout from the compare results and inlines
+    theme.css so the report is one self-contained file.
+  -->
+  <header class="app-bar">
+    <h1>data-compare</h1>
+    <p>source.csv vs target.csv, key column <span class="val">student_id</span></p>
+  </header>
+
+  <main class="page">
+    <section class="summary" aria-label="Summary">
+      <p>Compared 1,000 source rows with 992 target rows on <code>student_id</code>. 15 records are missing from the target and 4 are in the target only. 2 keys appear twice in the target, and 1 row has no key.</p>
+      <p>37 matched records differ: 25 only in formatting (spaces, letter case, number and date format) and 12 in real values (<code>credits</code> 8, <code>status</code> 4).</p>
+      <p><strong>Likely cause:</strong> 12 of the 15 missing records have <code>school</code> = 'Stern', but only 20% of source rows do. Check the load's filter or join for <code>school</code>.</p>
+    </section>
+
+    <div class="stats">
+      <div class="stat"><span class="value">1,000</span><span class="label">source rows</span></div>
+      <div class="stat"><span class="value">992</span><span class="label">target rows</span></div>
+      <div class="stat alert"><span class="value">15</span><span class="label">missing from target</span></div>
+      <div class="stat"><span class="value">4</span><span class="label">only in target</span></div>
+      <div class="stat"><span class="value">2</span><span class="label">duplicate keys</span></div>
+      <div class="stat"><span class="value">1</span><span class="label">blank keys</span></div>
+      <div class="stat alert"><span class="value">12</span><span class="label">real changes</span></div>
+      <div class="stat"><span class="value">25</span><span class="label">format only</span></div>
+    </div>
+
+    <section class="card">
+      <h2>Missing from the target</h2>
+      <p class="muted">Showing 6 of 15. Values from the source.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>student_id</th><th>school</th><th></th></tr></thead>
+        <tbody>
+          <tr><td><span class="val">S00010</span></td><td>Stern</td><td><span class="badge missing">missing</span></td></tr>
+          <tr><td><span class="val">S00017</span></td><td>CAS</td><td><span class="badge missing">missing</span></td></tr>
+          <tr><td><span class="val">S00059</span></td><td>Stern</td><td><span class="badge missing">missing</span></td></tr>
+          <tr><td><span class="val">S00108</span></td><td>Stern</td><td><span class="badge missing">missing</span></td></tr>
+          <tr><td><span class="val">S00225</span></td><td>Stern</td><td><span class="badge missing">missing</span></td></tr>
+          <tr><td><span class="val">S00238</span></td><td>Stern</td><td><span class="badge missing">missing</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="card">
+      <h2>Changed values</h2>
+      <p class="muted">Showing 9 of 37. Dashed boxes mark where each raw value starts and ends, so a trailing space shows.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>student_id</th><th>column</th><th>source</th><th>target</th><th>type</th></tr></thead>
+        <tbody>
+          <tr><td><span class="val">S00033</span></td><td>status</td><td><span class="val">enrolled</span></td><td><span class="val">withdrawn</span></td><td><span class="badge real">real change</span></td></tr>
+          <tr><td><span class="val">S00060</span></td><td>credits</td><td><span class="val">9</span></td><td><span class="val">16</span></td><td><span class="badge real">real change</span></td></tr>
+          <tr><td><span class="val">S00076</span></td><td>credits</td><td><span class="val">16</span></td><td><span class="val">11</span></td><td><span class="badge real">real change</span></td></tr>
+          <tr><td><span class="val">S00235</span></td><td>status</td><td><span class="val">enrolled</span></td><td><span class="val">withdrawn</span></td><td><span class="badge real">real change</span></td></tr>
+          <tr><td><span class="val">S00009</span></td><td>last_name</td><td><span class="val">Cohen</span></td><td><span class="val">COHEN</span></td><td><span class="badge format">format only</span></td></tr>
+          <tr><td><span class="val">S00115</span></td><td>enrolled_on</td><td><span class="val">2026-09-11</span></td><td><span class="val">09/11/2026</span></td><td><span class="badge format">format only</span></td></tr>
+          <tr><td><span class="val">S00140</span></td><td>school</td><td><span class="val">Tandon</span></td><td><span class="val">Tandon </span></td><td><span class="badge format">format only</span></td></tr>
+          <tr><td><span class="val">S00151</span></td><td>status</td><td><span class="val">enrolled</span></td><td><span class="val">Enrolled</span></td><td><span class="badge format">format only</span></td></tr>
+          <tr><td><span class="val">S00395</span></td><td>credits</td><td><span class="val">17</span></td><td><span class="val">17.0</span></td><td><span class="badge format">format only</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="card">
+      <h2>Key problems in the target</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>student_id</th><th>problem</th></tr></thead>
+        <tbody>
+          <tr><td><span class="val">S01001</span> <span class="val">S01002</span> <span class="val">S01003</span> <span class="val">S01004</span></td><td><span class="badge extra">only in target</span></td></tr>
+          <tr><td><span class="val">S00274</span> <span class="val">S00594</span></td><td><span class="badge key">appears twice</span></td></tr>
+          <tr><td><span class="val"></span></td><td><span class="badge key">blank key</span> 1 row</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <footer>Synthetic data. A personal project, not affiliated with or endorsed by NYU.</footer>
+  </main>
+</body>
+</html>
