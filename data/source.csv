@@ -1,0 +1,1001 @@
+student_id,first_name,last_name,school,program,term,credits,status,enrolled_on
+S00001,Aarav,Silva,Courant,MS Computer Science,Fall 2026,10,enrolled,2026-08-27
+S00002,Liam,Reyes,Steinhardt,MM Music Technology,Fall 2026,4,enrolled,2026-08-30
+S00003,Diego,Iyer,Tandon,MS Computer Engineering,Fall 2026,9,enrolled,2026-09-10
+S00004,Zara,Brooks,CAS,BA Psychology,Fall 2026,3,enrolled,2026-08-29
+S00005,Kenji,Silva,CAS,BA Economics,Fall 2026,9,withdrawn,2026-09-03
+S00006,Liam,Mehta,Courant,MS Computer Science,Fall 2026,14,enrolled,2026-09-12
+S00007,Maya,Brooks,Stern,MBA,Fall 2026,15,enrolled,2026-09-02
+S00008,Elena,Reyes,Steinhardt,MA Teaching,Fall 2026,5,enrolled,2026-08-31
+S00009,Liam,Cohen,Stern,MBA,Fall 2026,15,enrolled,2026-09-13
+S00010,Priya,Larsen,Stern,MS Business Analytics,Fall 2026,9,enrolled,2026-09-13
+S00011,Leila,Nguyen,Courant,MS Computer Science,Fall 2026,8,enrolled,2026-09-01
+S00012,Zara,Haddad,Steinhardt,MA Teaching,Fall 2026,10,enrolled,2026-09-03
+S00013,Lucas,Kim,CAS,BA Economics,Fall 2026,13,enrolled,2026-09-08
+S00014,Ravi,Rossi,CAS,BA Psychology,Fall 2026,7,enrolled,2026-09-10
+S00015,Lucas,Reyes,Steinhardt,MM Music Technology,Fall 2026,15,enrolled,2026-08-28
+S00016,Hana,Kim,Steinhardt,MA Teaching,Fall 2026,6,enrolled,2026-08-29
+S00017,Leila,Kim,CAS,BA Psychology,Fall 2026,15,enrolled,2026-09-07
+S00018,Lucas,Schmidt,Steinhardt,MA Teaching,Fall 2026,6,enrolled,2026-09-10
+S00019,Kenji,Okafor,Stern,MS Business Analytics,Fall 2026,16,enrolled,2026-08-24
+S00020,Diego,Nguyen,Stern,MBA,Fall 2026,12,enrolled,2026-09-09
+S00021,Ethan,Rossi,Steinhardt,MM Music Technology,Fall 2026,8,enrolled,2026-09-09
+S00022,Leila,Haddad,Courant,MS Mathematics,Fall 2026,3,enrolled,2026-09-04
+S00023,Zara,Garcia,Stern,MBA,Fall 2026,5,enrolled,2026-09-08
+S00024,Nora,Rossi,Courant,MS Computer Science,Fall 2026,18,withdrawn,2026-08-29
+S00025,Diego,Iyer,Stern,MS Business Analytics,Fall 2026,9,withdrawn,2026-08-30
+S00026,Omar,Larsen,Stern,MS Business Analytics,Fall 2026,17,enrolled,2026-08-31
+S00027,Kenji,Shah,Courant,MS Computer Science,Fall 2026,10,enrolled,2026-09-13
+S00028,Zara,Kim,Courant,MS Computer Science,Fall 2026,13,enrolled,2026-08-31
+S00029,Hana,Patel,Stern,MBA,Fall 2026,18,enrolled,2026-09-08
+S00030,Ethan,Okafor,CAS,BA Economics,Fall 2026,16,enrolled,2026-09-06
+S00031,Maya,Okafor,CAS,BA Economics,Fall 2026,15,enrolled,2026-08-27
+S00032,Ethan,Patel,Tandon,MS Cybersecurity,Fall 2026,7,enrolled,2026-09-01
+S00033,Zara,Kim,CAS,BA Psychology,Fall 2026,6,enrolled,2026-09-10
+S00034,Liam,Cohen,Courant,MS Computer Science,Fall 2026,16,enrolled,2026-08-30
+S00035,Maya,Nguyen,CAS,BA Psychology,Fall 2026,3,withdrawn,2026-09-01
+S00036,Amara,Tanaka,CAS,BA Psychology,Fall 2026,7,enrolled,2026-08-30
+S00037,Felix,Schmidt,Courant,MS Computer Science,Fall 2026,13,enrolled,2026-09-11
+S00038,Diego,Ali,CAS,BA Economics,Fall 2026,4,withdrawn,2026-08-26
+S00039,Liam,Iyer,Tandon,MS Computer Engineering,Fall 2026,10,enrolled,2026-09-11
+S00040,Felix,Iyer,Tandon,MS Computer Engineering,Fall 2026,5,enrolled,2026-09-11
+S00041,Diego,Haddad,Steinhardt,MM Music Technology,Fall 2026,9,enrolled,2026-09-03
+S00042,Lucas,Mehta,Tandon,MS Computer Engineering,Fall 2026,12,enrolled,2026-08-26
+S00043,Ravi,Iyer,Courant,MS Computer Science,Fall 2026,5,enrolled,2026-09-09
+S00044,Noah,Larsen,Stern,MBA,Fall 2026,10,enrolled,2026-08-29
+S00045,Nora,Novak,CAS,BA Economics,Fall 2026,12,withdrawn,2026-08-27
+S00046,Lucas,Okafor,Tandon,MS Computer Engineering,Fall 2026,7,enrolled,2026-09-12
+S00047,Kenji,Patel,Tandon,MS Cybersecurity,Fall 2026,18,enrolled,2026-08-25
+S00048,Chloe,Silva,Courant,MS Computer Science,Fall 2026,3,enrolled,2026-08-28
+S00049,Priya,Brooks,Stern,MS Business Analytics,Fall 2026,3,enrolled,2026-08-28
+S00050,Maya,Larsen,Steinhardt,MA Teaching,Fall 2026,16,enrolled,2026-09-02
+S00051,Maya,Larsen,Stern,MBA,Fall 2026,10,enrolled,2026-09-04
+S00052,Chloe,Iyer,Steinhardt,MA Teaching,Fall 2026,10,enrolled,2026-08-29
+S00053,Aarav,Nguyen,CAS,BA Psychology,Fall 2026,16,enrolled,2026-08-31
+S00054,Priya,Okafor,Stern,MS Business Analytics,Fall 2026,4,enrolled,2026-08-31
+S00055,Ravi,Larsen,Tandon,MS Cybersecurity,Fall 2026,10,enrolled,2026-08-30
+S00056,Kenji,Silva,CAS,BA Economics,Fall 2026,11,enrolled,2026-09-09
+S00057,Nora,Haddad,CAS,BA Economics,Fall 2026,6,enrolled,2026-09-01
+S00058,Felix,Silva,Tandon,MS Computer Engineering,Fall 2026,6,enrolled,2026-09-04
+S00059,Chloe,Iyer,Stern,MBA,Fall 2026,15,enrolled,2026-08-30
+S00060,Maya,Tanaka,Stern,MBA,Fall 2026,9,enrolled,2026-08-26
+S00061,Leila,Haddad,Stern,MBA,Fall 2026,12,enrolled,2026-09-06
+S00062,Omar,Novak,Stern,MBA,Fall 2026,9,enrolled,2026-09-05
+S00063,Leila,Reyes,Tandon,MS Cybersecurity,Fall 2026,15,enrolled,2026-08-24
+S00064,Amara,Patel,Stern,MS Business Analytics,Fall 2026,13,enrolled,2026-09-07
+S00065,Diego,Moreau,Tandon,MS Computer Engineering,Fall 2026,5,enrolled,2026-09-13
+S00066,Kenji,Kim,Steinhardt,MA Teaching,Fall 2026,12,enrolled,2026-08-30
+S00067,Aarav,Garcia,Tandon,MS Computer Engineering,Fall 2026,18,enrolled,2026-08-26
+S00068,Chloe,Reyes,CAS,BA Economics,Fall 2026,15,enrolled,2026-08-31
+S00069,Aarav,Okafor,Tandon,MS Cybersecurity,Fall 2026,10,enrolled,2026-09-09
+S00070,Maya,Schmidt,CAS,BA Economics,Fall 2026,6,enrolled,2026-09-07
+S00071,Nora,Iyer,Steinhardt,MM Music Technology,Fall 2026,17,enrolled,2026-09-09
+S00072,Nora,Brooks,CAS,BA Economics,Fall 2026,18,enrolled,2026-08-31
+S00073,Diego,Moreau,Stern,MBA,Fall 2026,11,enrolled,2026-09-02
+S00074,Lucas,Haddad,Tandon,MS Cybersecurity,Fall 2026,5,enrolled,2026-08-31
+S00075,Noah,Patel,CAS,BA Economics,Fall 2026,16,enrolled,2026-09-10
+S00076,Chloe,Garcia,CAS,BA Economics,Fall 2026,16,enrolled,2026-09-11
+S00077,Felix,Mehta,Courant,MS Mathematics,Fall 2026,3,withdrawn,2026-09-02
+S00078,Chloe,Schmidt,CAS,BA Economics,Fall 2026,18,enrolled,2026-09-06
+S00079,Aarav,Mehta,CAS,BA Psychology,Fall 2026,15,enrolled,2026-09-07
+S00080,Leila,Schmidt,Tandon,MS Computer Engineering,Fall 2026,15,enrolled,2026-08-24
+S00081,Chloe,Rossi,Courant,MS Mathematics,Fall 2026,8,enrolled,2026-09-05
+S00082,Ethan,Brooks,Stern,MS Business Analytics,Fall 2026,13,enrolled,2026-09-05
+S00083,Chloe,Silva,Stern,MBA,Fall 2026,18,enrolled,2026-09-10
+S00084,Elena,Cohen,Courant,MS Computer Science,Fall 2026,4,enrolled,2026-08-31
+S00085,Aarav,Iyer,Tandon,MS Computer Engineering,Fall 2026,10,enrolled,2026-08-27
+S00086,Ethan,Brooks,Steinhardt,MM Music Technology,Fall 2026,14,enrolled,2026-09-12
+S00087,Priya,Novak,Courant,MS Computer Science,Fall 2026,3,withdrawn,2026-09-11
+S00088,Omar,Patel,CAS,BA Economics,Fall 2026,10,enrolled,2026-09-02
+S00089,Sofia,Reyes,Steinhardt,MA Teaching,Fall 2026,14,enrolled,2026-09-04
+S00090,Diego,Haddad,Courant,MS Computer Science,Fall 2026,16,enrolled,2026-08-27
+S00091,Elena,Brooks,CAS,BA Economics,Fall 2026,16,enrolled,2026-09-09
+S00092,Leila,Schmidt,Stern,MS Business Analytics,Fall 2026,17,enrolled,2026-09-11
+S00093,Kenji,Cohen,Stern,MBA,Fall 2026,11,enrolled,2026-08-31
+S00094,Felix,Iyer,CAS,BA Psychology,Fall 2026,13,enrolled,2026-09-03
+S00095,Hana,Patel,Tandon,MS Cybersecurity,Fall 2026,11,enrolled,2026-09-12
+S00096,Nora,Shah,Stern,MBA,Fall 2026,5,enrolled,2026-09-06
+S00097,Nora,Cohen,CAS,BA Psychology,Fall 2026,18,enrolled,2026-08-24
+S00098,Amara,Cohen,Courant,MS Mathematics,Fall 2026,10,enrolled,2026-09-11
+S00099,Hana,Schmidt,Stern,MS Business Analytics,Fall 2026,16,withdrawn,2026-09-10
+S00100,Elena,Brooks,Stern,MS Business Analytics,Fall 2026,12,enrolled,2026-08-27
+S00101,Kenji,Okafor,Tandon,MS Computer Engineering,Fall 2026,9,enrolled,2026-09-08
+S00102,Felix,Ali,Stern,MS Business Analytics,Fall 2026,6,enrolled,2026-09-02
+S00103,Elena,Nguyen,Tandon,MS Cybersecurity,Fall 2026,3,enrolled,2026-08-28
+S00104,Maya,Garcia,Stern,MS Business Analytics,Fall 2026,7,enrolled,2026-09-08
+S00105,Aarav,Reyes,Courant,MS Mathematics,Fall 2026,18,enrolled,2026-09-03
+S00106,Maya,Silva,Tandon,MS Cybersecurity,Fall 2026,6,enrolled,2026-09-05
+S00107,Liam,Reyes,CAS,BA Economics,Fall 2026,7,enrolled,2026-09-11
+S00108,Liam,Cohen,Stern,MBA,Fall 2026,16,enrolled,2026-09-12
+S00109,Diego,Mehta,Tandon,MS Cybersecurity,Fall 2026,17,enrolled,2026-09-11
+S00110,Amara,Reyes,CAS,BA Economics,Fall 2026,6,withdrawn,2026-08-30
+S00111,Lucas,Kim,Tandon,MS Computer Engineering,Fall 2026,10,enrolled,2026-08-26
+S00112,Aarav,Tanaka,Tandon,MS Cybersecurity,Fall 2026,18,enrolled,2026-08-31
+S00113,Amara,Brooks,Stern,MBA,Fall 2026,10,withdrawn,2026-09-13
+S00114,Ethan,Tanaka,Steinhardt,MA Teaching,Fall 2026,10,enrolled,2026-09-01
+S00115,Liam,Garcia,Tandon,MS Computer Engineering,Fall 2026,12,enrolled,2026-09-11
+S00116,Ravi,Okafor,Stern,MS Business Analytics,Fall 2026,12,enrolled,2026-09-01
+S00117,Nora,Moreau,Steinhardt,MM Music Technology,Fall 2026,5,enrolled,2026-09-06
+S00118,Leila,Silva,Stern,MBA,Fall 2026,5,enrolled,2026-09-11
+S00119,Aarav,Silva,Steinhardt,MA Teaching,Fall 2026,8,enrolled,2026-09-13
+S00120,Lucas,Nguyen,CAS,BA Psychology,Fall 2026,18,withdrawn,2026-09-08
+S00121,Chloe,Haddad,Stern,MS Business Analytics,Fall 2026,6,enrolled,2026-09-03
+S00122,Hana,Novak,CAS,BA Psychology,Fall 2026,4,enrolled,2026-09-03
+S00123,Kenji,Okafor,Stern,MS Business Analytics,Fall 2026,3,enrolled,2026-09-10
+S00124,Chloe,Garcia,CAS,BA Economics,Fall 2026,14,enrolled,2026-09-08
+S00125,Maya,Patel,CAS,BA Psychology,Fall 2026,7,withdrawn,2026-09-07
+S00126,Sofia,Shah,CAS,BA Economics,Fall 2026,8,enrolled,2026-08-24
+S00127,Chloe,Kim,Steinhardt,MA Teaching,Fall 2026,6,enrolled,2026-08-27
+S00128,Hana,Novak,Tandon,MS Cybersecurity,Fall 2026,16,enrolled,2026-09-08
+S00129,Ravi,Schmidt,Tandon,MS Computer Engineering,Fall 2026,15,enrolled,2026-09-12
+S00130,Noah,Kim,Steinhardt,MM Music Technology,Fall 2026,16,enrolled,2026-09-09
+S00131,Aarav,Novak,Stern,MS Business Analytics,Fall 2026,18,enrolled,2026-09-07
+S00132,Hana,Larsen,Steinhardt,MM Music Technology,Fall 2026,15,enrolled,2026-09-03
+S00133,Zara,Reyes,Tandon,MS Cybersecurity,Fall 2026,10,enrolled,2026-09-06
+S00134,Kenji,Moreau,Courant,MS Mathematics,Fall 2026,15,withdrawn,2026-09-13
+S00135,Hana,Garcia,Tandon,MS Computer Engineering,Fall 2026,13,enrolled,2026-09-07
+S00136,Diego,Brooks,Courant,MS Computer Science,Fall 2026,7,enrolled,2026-09-13
+S00137,Liam,Moreau,Tandon,MS Cybersecurity,Fall 2026,13,enrolled,2026-09-05
+S00138,Kenji,Schmidt,Courant,MS Mathematics,Fall 2026,13,enrolled,2026-09-08
+S00139,Maya,Iyer,Steinhardt,MA Teaching,Fall 2026,10,enrolled,2026-09-02
+S00140,Liam,Tanaka,Tandon,MS Computer Engineering,Fall 2026,6,enrolled,2026-09-02
+S00141,Maya,Haddad,Courant,MS Computer Science,Fall 2026,12,enrolled,2026-09-06
+S00142,Zara,Ali,Tandon,MS Cybersecurity,Fall 2026,8,enrolled,2026-08-26
+S00143,Omar,Iyer,Steinhardt,MA Teaching,Fall 2026,18,withdrawn,2026-08-28
+S00144,Ravi,Silva,Tandon,MS Cybersecurity,Fall 2026,11,enrolled,2026-09-07
+S00145,Nora,Nguyen,Stern,MBA,Fall 2026,17,withdrawn,2026-09-11
+S00146,Chloe,Silva,Stern,MS Business Analytics,Fall 2026,12,enrolled,2026-09-05
+S00147,Sofia,Cohen,CAS,BA Psychology,Fall 2026,14,enrolled,2026-09-02
+S00148,Omar,Silva,Courant,MS Computer Science,Fall 2026,4,withdrawn,2026-09-08
+S00149,Zara,Iyer,Stern,MS Business Analytics,Fall 2026,10,enrolled,2026-09-12
+S00150,Noah,Okafor,Stern,MBA,Fall 2026,12,enrolled,2026-08-25
+S00151,Elena,Rossi,Steinhardt,MA Teaching,Fall 2026,12,enrolled,2026-09-06
+S00152,Ethan,Rossi,Tandon,MS Cybersecurity,Fall 2026,11,enrolled,2026-09-01
+S00153,Amara,Haddad,CAS,BA Economics,Fall 2026,17,withdrawn,2026-08-28
+S00154,Omar,Schmidt,Tandon,MS Cybersecurity,Fall 2026,5,enrolled,2026-08-24
+S00155,Nora,Okafor,Stern,MS Business Analytics,Fall 2026,14,enrolled,2026-09-01
+S00156,Omar,Larsen,Steinhardt,MA Teaching,Fall 2026,10,enrolled,2026-09-12
+S00157,Kenji,Iyer,Steinhardt,MA Teaching,Fall 2026,5,enrolled,2026-09-07
+S00158,Chloe,Okafor,Stern,MBA,Fall 2026,4,withdrawn,2026-09-02
+S00159,Sofia,Okafor,CAS,BA Economics,Fall 2026,7,enrolled,2026-09-04
+S00160,Chloe,Reyes,Steinhardt,MA Teaching,Fall 2026,16,enrolled,2026-09-08
+S00161,Chloe,Silva,Steinhardt,MA Teaching,Fall 2026,14,enrolled,2026-09-07
+S00162,Elena,Okafor,Tandon,MS Cybersecurity,Fall 2026,14,enrolled,2026-09-01
+S00163,Sofia,Brooks,Tandon,MS Computer Engineering,Fall 2026,9,enrolled,2026-09-12
+S00164,Maya,Haddad,Courant,MS Computer Science,Fall 2026,7,enrolled,2026-08-30
+S00165,Nora,Patel,Courant,MS Computer Science,Fall 2026,10,enrolled,2026-08-28
+S00166,Aarav,Silva,Steinhardt,MA Teaching,Fall 2026,7,enrolled,2026-08-29
+S00167,Aarav,Rossi,Courant,MS Computer Science,Fall 2026,14,enrolled,2026-08-31
+S00168,Kenji,Shah,Steinhardt,MA Teaching,Fall 2026,11,enrolled,2026-09-06
+S00169,Sofia,Kim,Steinhardt,MM Music Technology,Fall 2026,17,enrolled,2026-09-09
+S00170,Sofia,Brooks,Steinhardt,MA Teaching,Fall 2026,4,enrolled,2026-09-09
+S00171,Ravi,Shah,Stern,MBA,Fall 2026,18,enrolled,2026-09-06
+S00172,Hana,Brooks,Courant,MS Computer Science,Fall 2026,5,enrolled,2026-08-28
+S00173,Noah,Silva,Courant,MS Mathematics,Fall 2026,15,withdrawn,2026-09-09
+S00174,Ravi,Ali,Stern,MS Business Analytics,Fall 2026,6,enrolled,2026-08-27
+S00175,Ethan,Tanaka,Steinhardt,MM Music Technology,Fall 2026,10,enrolled,2026-09-07
+S00176,Chloe,Okafor,CAS,BA Psychology,Fall 2026,16,enrolled,2026-09-01
+S00177,Noah,Moreau,Stern,MBA,Fall 2026,5,enrolled,2026-08-26
+S00178,Sofia,Larsen,CAS,BA Economics,Fall 2026,4,enrolled,2026-09-10
+S00179,Kenji,Okafor,Steinhardt,MM Music Technology,Fall 2026,14,enrolled,2026-09-06
+S00180,Amara,Iyer,Courant,MS Mathematics,Fall 2026,14,enrolled,2026-09-09
+S00181,Noah,Moreau,Tandon,MS Computer Engineering,Fall 2026,6,enrolled,2026-09-10
+S00182,Sofia,Silva,Stern,MBA,Fall 2026,16,enrolled,2026-09-12
+S00183,Nora,Shah,Steinhardt,MM Music Technology,Fall 2026,3,enrolled,2026-09-02
+S00184,Elena,Shah,Stern,MBA,Fall 2026,7,enrolled,2026-09-05
+S00185,Noah,Shah,Courant,MS Computer Science,Fall 2026,9,enrolled,2026-09-07
+S00186,Priya,Larsen,Stern,MS Business Analytics,Fall 2026,13,enrolled,2026-09-11
+S00187,Liam,Garcia,Steinhardt,MA Teaching,Fall 2026,8,enrolled,2026-08-25
+S00188,Lucas,Brooks,Courant,MS Mathematics,Fall 2026,18,enrolled,2026-09-06
+S00189,Ethan,Ali,Stern,MBA,Fall 2026,14,enrolled,2026-09-02
+S00190,Hana,Ali,Steinhardt,MM Music Technology,Fall 2026,4,enrolled,2026-09-12
+S00191,Aarav,Patel,Courant,MS Mathematics,Fall 2026,9,enrolled,2026-09-01
+S00192,Kenji,Okafor,Stern,MBA,Fall 2026,18,enrolled,2026-08-29
+S00193,Omar,Schmidt,Tandon,MS Computer Engineering,Fall 2026,14,enrolled,2026-08-25
+S00194,Aarav,Brooks,CAS,BA Economics,Fall 2026,13,enrolled,2026-09-11
+S00195,Chloe,Novak,CAS,BA Economics,Fall 2026,15,enrolled,2026-09-03
+S00196,Leila,Brooks,Tandon,MS Cybersecurity,Fall 2026,5,enrolled,2026-08-27
+S00197,Chloe,Reyes,Tandon,MS Cybersecurity,Fall 2026,5,enrolled,2026-09-02
+S00198,Zara,Haddad,Stern,MBA,Fall 2026,5,enrolled,2026-08-27
+S00199,Diego,Patel,Steinhardt,MM Music Technology,Fall 2026,14,enrolled,2026-09-13
+S00200,Zara,Okafor,Tandon,MS Computer Engineering,Fall 2026,11,enrolled,2026-09-12
+S00201,Liam,Nguyen,Tandon,MS Cybersecurity,Fall 2026,17,enrolled,2026-09-11
+S00202,Felix,Iyer,CAS,BA Psychology,Fall 2026,13,enrolled,2026-08-26
+S00203,Ravi,Novak,CAS,BA Psychology,Fall 2026,4,enrolled,2026-08-26
+S00204,Ravi,Brooks,Stern,MBA,Fall 2026,4,enrolled,2026-09-02
+S00205,Liam,Iyer,Courant,MS Mathematics,Fall 2026,17,enrolled,2026-08-25
+S00206,Felix,Patel,CAS,BA Psychology,Fall 2026,18,enrolled,2026-08-25
+S00207,Sofia,Haddad,CAS,BA Economics,Fall 2026,8,enrolled,2026-09-07
+S00208,Diego,Ali,CAS,BA Economics,Fall 2026,14,enrolled,2026-09-02
+S00209,Chloe,Haddad,CAS,BA Economics,Fall 2026,13,enrolled,2026-08-27
+S00210,Omar,Novak,Steinhardt,MM Music Technology,Fall 2026,7,enrolled,2026-09-11
+S00211,Elena,Novak,Tandon,MS Cybersecurity,Fall 2026,7,enrolled,2026-08-26
+S00212,Nora,Mehta,Stern,MS Business Analytics,Fall 2026,7,enrolled,2026-09-09
+S00213,Chloe,Ali,Courant,MS Mathematics,Fall 2026,3,enrolled,2026-08-29
+S00214,Kenji,Moreau,Tandon,MS Computer Engineering,Fall 2026,10,withdrawn,2026-08-28
+S00215,Amara,Okafor,Courant,MS Computer Science,Fall 2026,13,enrolled,2026-09-12
+S00216,Leila,Mehta,Tandon,MS Computer Engineering,Fall 2026,8,enrolled,2026-09-12
+S00217,Ravi,Garcia,Tandon,MS Cybersecurity,Fall 2026,14,enrolled,2026-08-31
+S00218,Leila,Novak,CAS,BA Psychology,Fall 2026,10,enrolled,2026-09-02
+S00219,Ethan,Larsen,CAS,BA Psychology,Fall 2026,17,enrolled,2026-09-05
+S00220,Diego,Tanaka,Steinhardt,MA Teaching,Fall 2026,9,enrolled,2026-08-28
+S00221,Maya,Moreau,Stern,MS Business Analytics,Fall 2026,6,enrolled,2026-09-09
+S00222,Amara,Kim,Courant,MS Computer Science,Fall 2026,11,enrolled,2026-09-09
+S00223,Chloe,Kim,Tandon,MS Computer Engineering,Fall 2026,17,enrolled,2026-08-24
+S00224,Maya,Mehta,CAS,BA Psychology,Fall 2026,10,enrolled,2026-08-26
+S00225,Zara,Shah,Stern,MS Business Analytics,Fall 2026,6,enrolled,2026-09-13
+S00226,Noah,Rossi,Stern,MBA,Fall 2026,12,withdrawn,2026-09-08
+S00227,Hana,Brooks,Tandon,MS Computer Engineering,Fall 2026,5,enrolled,2026-08-30
+S00228,Nora,Iyer,Tandon,MS Cybersecurity,Fall 2026,6,enrolled,2026-08-31
+S00229,Sofia,Garcia,Stern,MBA,Fall 2026,16,enrolled,2026-09-12
+S00230,Liam,Okafor,CAS,BA Psychology,Fall 2026,3,enrolled,2026-09-11
+S00231,Noah,Novak,Tandon,MS Cybersecurity,Fall 2026,3,enrolled,2026-08-31
+S00232,Chloe,Nguyen,Steinhardt,MA Teaching,Fall 2026,14,enrolled,2026-09-09
+S00233,Diego,Ali,Steinhardt,MA Teaching,Fall 2026,15,enrolled,2026-08-25
+S00234,Elena,Silva,CAS,BA Economics,Fall 2026,14,enrolled,2026-09-04
+S00235,Sofia,Reyes,Tandon,MS Cybersecurity,Fall 2026,7,enrolled,2026-09-10
+S00236,Priya,Brooks,Stern,MS Business Analytics,Fall 2026,8,enrolled,2026-08-26
+S00237,Maya,Novak,CAS,BA Economics,Fall 2026,4,enrolled,2026-08-25
+S00238,Amara,Ali,Stern,MS Business Analytics,Fall 2026,18,enrolled,2026-09-13
+S00239,Amara,Larsen,Tandon,MS Computer Engineering,Fall 2026,13,enrolled,2026-09-04
+S00240,Omar,Brooks,CAS,BA Psychology,Fall 2026,13,withdrawn,2026-09-08
+S00241,Elena,Ali,CAS,BA Psychology,Fall 2026,5,enrolled,2026-08-26
+S00242,Leila,Nguyen,CAS,BA Psychology,Fall 2026,13,enrolled,2026-09-03
+S00243,Amara,Brooks,Stern,MS Business Analytics,Fall 2026,8,enrolled,2026-09-04
+S00244,Maya,Larsen,CAS,BA Psychology,Fall 2026,11,enrolled,2026-08-25
+S00245,Omar,Larsen,Courant,MS Computer Science,Fall 2026,3,enrolled,2026-09-12
+S00246,Maya,Rossi,CAS,BA Economics,Fall 2026,10,enrolled,2026-09-04
+S00247,Omar,Reyes,Stern,MBA,Fall 2026,7,enrolled,2026-09-04
+S00248,Ravi,Kim,Stern,MBA,Fall 2026,14,enrolled,2026-09-13
+S00249,Zara,Okafor,Stern,MBA,Fall 2026,8,enrolled,2026-09-05
+S00250,Sofia,Silva,Steinhardt,MM Music Technology,Fall 2026,17,enrolled,2026-09-12
+S00251,Hana,Patel,Stern,MBA,Fall 2026,7,enrolled,2026-09-07
+S00252,Ravi,Kim,Tandon,MS Cybersecurity,Fall 2026,14,enrolled,2026-09-10
+S00253,Amara,Novak,Steinhardt,MA Teaching,Fall 2026,8,enrolled,2026-09-09
+S00254,Sofia,Patel,Tandon,MS Computer Engineering,Fall 2026,10,enrolled,2026-08-24
+S00255,Nora,Reyes,Stern,MS Business Analytics,Fall 2026,17,enrolled,2026-09-10
+S00256,Leila,Kim,Tandon,MS Computer Engineering,Fall 2026,12,enrolled,2026-09-08
+S00257,Chloe,Tanaka,Steinhardt,MA Teaching,Fall 2026,7,withdrawn,2026-09-13
+S00258,Ravi,Brooks,Courant,MS Mathematics,Fall 2026,7,enrolled,2026-09-10
+S00259,Priya,Rossi,Steinhardt,MM Music Technology,Fall 2026,4,enrolled,2026-09-09
+S00260,Amara,Nguyen,Tandon,MS Computer Engineering,Fall 2026,13,withdrawn,2026-08-31
+S00261,Diego,Novak,Stern,MBA,Fall 2026,11,enrolled,2026-09-10
+S00262,Noah,Novak,Stern,MBA,Fall 2026,8,enrolled,2026-09-11
+S00263,Priya,Iyer,Tandon,MS Cybersecurity,Fall 2026,4,enrolled,2026-08-24
+S00264,Maya,Reyes,Courant,MS Mathematics,Fall 2026,9,enrolled,2026-09-06
+S00265,Aarav,Moreau,Steinhardt,MM Music Technology,Fall 2026,12,enrolled,2026-09-05
+S00266,Ravi,Kim,Stern,MBA,Fall 2026,8,enrolled,2026-09-08
+S00267,Ethan,Haddad,CAS,BA Economics,Fall 2026,13,enrolled,2026-09-03
+S00268,Omar,Rossi,Stern,MS Business Analytics,Fall 2026,6,enrolled,2026-09-07
+S00269,Lucas,Brooks,Courant,MS Computer Science,Fall 2026,7,enrolled,2026-09-02
+S00270,Leila,Tanaka,CAS,BA Economics,Fall 2026,8,enrolled,2026-09-11
+S00271,Ethan,Nguyen,Stern,MS Business Analytics,Fall 2026,17,enrolled,2026-09-02
+S00272,Aarav,Kim,CAS,BA Psychology,Fall 2026,17,withdrawn,2026-08-30
+S00273,Elena,Garcia,Steinhardt,MA Teaching,Fall 2026,12,enrolled,2026-09-13
+S00274,Amara,Schmidt,CAS,BA Economics,Fall 2026,6,enrolled,2026-09-01
+S00275,Omar,Larsen,Stern,MBA,Fall 2026,15,enrolled,2026-09-10
+S00276,Elena,Schmidt,Tandon,MS Cybersecurity,Fall 2026,5,enrolled,2026-09-07
+S00277,Lucas,Iyer,Steinhardt,MA Teaching,Fall 2026,7,withdrawn,2026-09-05
+S00278,Kenji,Schmidt,Stern,MS Business Analytics,Fall 2026,7,enrolled,2026-09-09
+S00279,Diego,Garcia,CAS,BA Economics,Fall 2026,4,enrolled,2026-09-03
+S00280,Diego,Brooks,CAS,BA Economics,Fall 2026,7,enrolled,2026-09-12
+S00281,Priya,Mehta,Stern,MS Business Analytics,Fall 2026,13,enrolled,2026-09-09
+S00282,Hana,Reyes,Steinhardt,MM Music Technology,Fall 2026,18,enrolled,2026-09-04
+S00283,Sofia,Tanaka,Stern,MS Business Analytics,Fall 2026,3,enrolled,2026-09-01
+S00284,Felix,Cohen,Steinhardt,MA Teaching,Fall 2026,18,enrolled,2026-09-13
+S00285,Omar,Rossi,Steinhardt,MA Teaching,Fall 2026,4,enrolled,2026-08-27
+S00286,Aarav,Brooks,Tandon,MS Cybersecurity,Fall 2026,16,enrolled,2026-08-30
+S00287,Diego,Iyer,CAS,BA Psychology,Fall 2026,4,enrolled,2026-09-09
+S00288,Nora,Haddad,Tandon,MS Cybersecurity,Fall 2026,15,enrolled,2026-08-29
+S00289,Nora,Haddad,CAS,BA Psychology,Fall 2026,11,enrolled,2026-08-30
+S00290,Lucas,Schmidt,Tandon,MS Cybersecurity,Fall 2026,10,withdrawn,2026-09-02
+S00291,Ethan,Moreau,Stern,MS Business Analytics,Fall 2026,18,enrolled,2026-09-01
+S00292,Sofia,Reyes,Stern,MS Business Analytics,Fall 2026,15,enrolled,2026-08-28
+S00293,Maya,Novak,Stern,MBA,Fall 2026,14,withdrawn,2026-09-13
+S00294,Hana,Patel,Stern,MBA,Fall 2026,11,withdrawn,2026-09-01
+S00295,Sofia,Iyer,Tandon,MS Computer Engineering,Fall 2026,10,enrolled,2026-09-09
+S00296,Zara,Garcia,Tandon,MS Computer Engineering,Fall 2026,16,enrolled,2026-09-08
+S00297,Noah,Shah,Courant,MS Computer Science,Fall 2026,16,enrolled,2026-09-08
+S00298,Ethan,Novak,CAS,BA Psychology,Fall 2026,12,enrolled,2026-08-26
+S00299,Zara,Schmidt,Steinhardt,MA Teaching,Fall 2026,8,enrolled,2026-08-29
+S00300,Omar,Moreau,Courant,MS Computer Science,Fall 2026,12,enrolled,2026-08-24
+S00301,Felix,Iyer,Stern,MBA,Fall 2026,13,enrolled,2026-09-13
+S00302,Diego,Moreau,Steinhardt,MA Teaching,Fall 2026,17,enrolled,2026-08-27
+S00303,Priya,Brooks,Stern,MS Business Analytics,Fall 2026,8,enrolled,2026-09-03
+S00304,Felix,Patel,Stern,MBA,Fall 2026,15,enrolled,2026-09-09
+S00305,Liam,Mehta,Stern,MBA,Fall 2026,8,withdrawn,2026-09-08
+S00306,Zara,Shah,Stern,MS Business Analytics,Fall 2026,15,enrolled,2026-09-01
+S00307,Amara,Reyes,Stern,MBA,Fall 2026,11,enrolled,2026-08-31
+S00308,Sofia,Brooks,Courant,MS Mathematics,Fall 2026,8,enrolled,2026-09-09
+S00309,Sofia,Novak,Stern,MS Business Analytics,Fall 2026,10,enrolled,2026-08-28
+S00310,Noah,Brooks,CAS,BA Psychology,Fall 2026,16,enrolled,2026-09-08
+S00311,Ethan,Cohen,Steinhardt,MA Teaching,Fall 2026,17,enrolled,2026-09-04
+S00312,Felix,Okafor,Courant,MS Computer Science,Fall 2026,9,enrolled,2026-08-28
+S00313,Kenji,Ali,Tandon,MS Cybersecurity,Fall 2026,6,enrolled,2026-09-11
+S00314,Liam,Ali,CAS,BA Psychology,Fall 2026,4,enrolled,2026-09-09
+S00315,Ravi,Reyes,CAS,BA Economics,Fall 2026,17,enrolled,2026-09-02
+S00316,Omar,Silva,Courant,MS Computer Science,Fall 2026,9,enrolled,2026-08-25
+S00317,Elena,Kim,CAS,BA Economics,Fall 2026,5,withdrawn,2026-09-08
+S00318,Amara,Tanaka,Courant,MS Computer Science,Fall 2026,7,enrolled,2026-09-13
+S00319,Elena,Mehta,CAS,BA Psychology,Fall 2026,15,enrolled,2026-09-10
+S00320,Elena,Okafor,Tandon,MS Computer Engineering,Fall 2026,15,enrolled,2026-08-31
+S00321,Aarav,Novak,Courant,MS Mathematics,Fall 2026,16,enrolled,2026-08-31
+S00322,Ravi,Larsen,Tandon,MS Computer Engineering,Fall 2026,11,enrolled,2026-08-27
+S00323,Chloe,Iyer,Courant,MS Computer Science,Fall 2026,10,enrolled,2026-08-27
+S00324,Maya,Brooks,Steinhardt,MA Teaching,Fall 2026,10,enrolled,2026-09-05
+S00325,Zara,Schmidt,CAS,BA Economics,Fall 2026,4,enrolled,2026-09-02
+S00326,Felix,Haddad,Tandon,MS Cybersecurity,Fall 2026,10,enrolled,2026-08-28
+S00327,Zara,Tanaka,Steinhardt,MM Music Technology,Fall 2026,11,enrolled,2026-09-11
+S00328,Chloe,Schmidt,Tandon,MS Cybersecurity,Fall 2026,4,withdrawn,2026-09-13
+S00329,Diego,Haddad,CAS,BA Psychology,Fall 2026,16,enrolled,2026-09-05
+S00330,Nora,Moreau,Tandon,MS Computer Engineering,Fall 2026,10,enrolled,2026-08-28
+S00331,Maya,Schmidt,CAS,BA Psychology,Fall 2026,16,enrolled,2026-08-28
+S00332,Zara,Silva,CAS,BA Economics,Fall 2026,13,enrolled,2026-09-07
+S00333,Liam,Schmidt,Stern,MBA,Fall 2026,4,enrolled,2026-09-12
+S00334,Maya,Kim,Steinhardt,MA Teaching,Fall 2026,9,enrolled,2026-09-03
+S00335,Aarav,Patel,Stern,MBA,Fall 2026,6,enrolled,2026-09-08
+S00336,Leila,Patel,Tandon,MS Cybersecurity,Fall 2026,10,enrolled,2026-09-02
+S00337,Ravi,Schmidt,CAS,BA Psychology,Fall 2026,12,enrolled,2026-09-09
+S00338,Ravi,Okafor,CAS,BA Psychology,Fall 2026,13,withdrawn,2026-09-04
+S00339,Chloe,Garcia,Stern,MBA,Fall 2026,7,enrolled,2026-09-10
+S00340,Felix,Tanaka,Steinhardt,MM Music Technology,Fall 2026,7,enrolled,2026-08-31
+S00341,Felix,Cohen,CAS,BA Psychology,Fall 2026,13,enrolled,2026-09-08
+S00342,Ravi,Nguyen,CAS,BA Psychology,Fall 2026,8,enrolled,2026-09-10
+S00343,Priya,Schmidt,CAS,BA Economics,Fall 2026,4,enrolled,2026-08-26
+S00344,Aarav,Tanaka,Courant,MS Computer Science,Fall 2026,10,enrolled,2026-08-28
+S00345,Ethan,Ali,Courant,MS Mathematics,Fall 2026,14,enrolled,2026-09-13
+S00346,Hana,Moreau,Steinhardt,MA Teaching,Fall 2026,3,enrolled,2026-09-06
+S00347,Aarav,Ali,Courant,MS Mathematics,Fall 2026,12,enrolled,2026-09-06
+S00348,Sofia,Okafor,Tandon,MS Computer Engineering,Fall 2026,10,enrolled,2026-09-09
+S00349,Elena,Silva,Stern,MS Business Analytics,Fall 2026,5,enrolled,2026-09-05
+S00350,Felix,Cohen,CAS,BA Economics,Fall 2026,12,enrolled,2026-08-26
+S00351,Liam,Mehta,Courant,MS Mathematics,Fall 2026,15,enrolled,2026-08-25
+S00352,Priya,Kim,Courant,MS Mathematics,Fall 2026,16,enrolled,2026-09-03
+S00353,Sofia,Ali,Steinhardt,MA Teaching,Fall 2026,10,enrolled,2026-09-11
+S00354,Lucas,Garcia,CAS,BA Economics,Fall 2026,11,enrolled,2026-09-11
+S00355,Priya,Haddad,Courant,MS Computer Science,Fall 2026,9,enrolled,2026-09-05
+S00356,Amara,Nguyen,Courant,MS Computer Science,Fall 2026,15,enrolled,2026-09-10
+S00357,Omar,Rossi,Stern,MBA,Fall 2026,14,enrolled,2026-09-06
+S00358,Liam,Haddad,Tandon,MS Cybersecurity,Fall 2026,13,enrolled,2026-09-01
+S00359,Hana,Cohen,CAS,BA Psychology,Fall 2026,15,enrolled,2026-09-11
+S00360,Liam,Iyer,CAS,BA Psychology,Fall 2026,10,enrolled,2026-08-26
+S00361,Noah,Mehta,Stern,MBA,Fall 2026,15,enrolled,2026-08-27
+S00362,Aarav,Novak,Courant,MS Mathematics,Fall 2026,14,enrolled,2026-08-27
+S00363,Liam,Nguyen,Tandon,MS Cybersecurity,Fall 2026,17,enrolled,2026-09-09
+S00364,Sofia,Shah,CAS,BA Economics,Fall 2026,14,enrolled,2026-09-12
+S00365,Kenji,Mehta,Steinhardt,MA Teaching,Fall 2026,12,enrolled,2026-08-26
+S00366,Zara,Reyes,Steinhardt,MA Teaching,Fall 2026,15,enrolled,2026-09-01
+S00367,Lucas,Moreau,Stern,MBA,Fall 2026,5,enrolled,2026-09-01
+S00368,Amara,Moreau,CAS,BA Economics,Fall 2026,14,enrolled,2026-08-31
+S00369,Leila,Iyer,CAS,BA Economics,Fall 2026,17,enrolled,2026-09-02
+S00370,Omar,Haddad,Courant,MS Mathematics,Fall 2026,13,enrolled,2026-09-06
+S00371,Noah,Novak,Steinhardt,MM Music Technology,Fall 2026,9,enrolled,2026-08-29
+S00372,Kenji,Novak,CAS,BA Psychology,Fall 2026,10,enrolled,2026-09-01
+S00373,Elena,Okafor,CAS,BA Economics,Fall 2026,8,enrolled,2026-09-10
+S00374,Ravi,Patel,Courant,MS Mathematics,Fall 2026,12,enrolled,2026-08-26
+S00375,Hana,Rossi,CAS,BA Psychology,Fall 2026,10,enrolled,2026-08-28
+S00376,Omar,Kim,CAS,BA Psychology,Fall 2026,18,enrolled,2026-09-10
+S00377,Chloe,Schmidt,Steinhardt,MA Teaching,Fall 2026,14,enrolled,2026-09-10
+S00378,Liam,Okafor,Steinhardt,MA Teaching,Fall 2026,14,enrolled,2026-09-12
+S00379,Felix,Mehta,Courant,MS Mathematics,Fall 2026,16,enrolled,2026-08-27
+S00380,Zara,Ali,Stern,MBA,Fall 2026,17,enrolled,2026-09-07
+S00381,Diego,Rossi,Steinhardt,MM Music Technology,Fall 2026,3,enrolled,2026-09-02
+S00382,Liam,Okafor,CAS,BA Economics,Fall 2026,14,enrolled,2026-09-07
+S00383,Diego,Moreau,Tandon,MS Cybersecurity,Fall 2026,18,enrolled,2026-09-07
+S00384,Liam,Novak,Stern,MBA,Fall 2026,6,enrolled,2026-09-03
+S00385,Priya,Cohen,Courant,MS Computer Science,Fall 2026,8,enrolled,2026-09-06
+S00386,Zara,Mehta,CAS,BA Economics,Fall 2026,8,enrolled,2026-09-06
+S00387,Aarav,Iyer,CAS,BA Economics,Fall 2026,17,enrolled,2026-09-05
+S00388,Ethan,Patel,Courant,MS Mathematics,Fall 2026,5,enrolled,2026-09-10
+S00389,Elena,Haddad,Tandon,MS Computer Engineering,Fall 2026,17,enrolled,2026-09-08
+S00390,Kenji,Iyer,Steinhardt,MM Music Technology,Fall 2026,15,enrolled,2026-09-04
+S00391,Ravi,Iyer,Stern,MBA,Fall 2026,12,withdrawn,2026-09-11
+S00392,Noah,Haddad,Courant,MS Computer Science,Fall 2026,10,enrolled,2026-08-29
+S00393,Noah,Ali,Stern,MS Business Analytics,Fall 2026,16,enrolled,2026-09-11
+S00394,Chloe,Nguyen,CAS,BA Psychology,Fall 2026,8,enrolled,2026-09-08
+S00395,Noah,Nguyen,Stern,MS Business Analytics,Fall 2026,17,enrolled,2026-09-04
+S00396,Hana,Rossi,Courant,MS Computer Science,Fall 2026,15,withdrawn,2026-09-09
+S00397,Chloe,Moreau,CAS,BA Psychology,Fall 2026,17,enrolled,2026-08-26
+S00398,Aarav,Cohen,Steinhardt,MM Music Technology,Fall 2026,4,enrolled,2026-09-10
+S00399,Priya,Brooks,Stern,MS Business Analytics,Fall 2026,6,enrolled,2026-09-01
+S00400,Elena,Schmidt,Steinhardt,MA Teaching,Fall 2026,17,enrolled,2026-09-06
+S00401,Zara,Novak,Courant,MS Computer Science,Fall 2026,17,enrolled,2026-08-26
+S00402,Sofia,Cohen,CAS,BA Economics,Fall 2026,14,enrolled,2026-09-12
+S00403,Priya,Iyer,CAS,BA Economics,Fall 2026,9,enrolled,2026-08-25
+S00404,Elena,Schmidt,Steinhardt,MM Music Technology,Fall 2026,8,enrolled,2026-09-02
+S00405,Felix,Silva,Stern,MBA,Fall 2026,7,withdrawn,2026-09-06
+S00406,Lucas,Rossi,Courant,MS Computer Science,Fall 2026,10,enrolled,2026-09-03
+S00407,Omar,Moreau,Tandon,MS Computer Engineering,Fall 2026,11,enrolled,2026-09-05
+S00408,Liam,Kim,CAS,BA Psychology,Fall 2026,11,enrolled,2026-09-04
+S00409,Hana,Haddad,CAS,BA Economics,Fall 2026,5,enrolled,2026-09-07
+S00410,Liam,Schmidt,Stern,MS Business Analytics,Fall 2026,9,withdrawn,2026-08-30
+S00411,Lucas,Haddad,CAS,BA Psychology,Fall 2026,13,enrolled,2026-08-28
+S00412,Hana,Haddad,Steinhardt,MA Teaching,Fall 2026,4,enrolled,2026-09-07
+S00413,Sofia,Nguyen,Courant,MS Mathematics,Fall 2026,17,enrolled,2026-09-06
+S00414,Noah,Novak,Tandon,MS Computer Engineering,Fall 2026,11,enrolled,2026-09-04
+S00415,Liam,Larsen,Stern,MBA,Fall 2026,4,enrolled,2026-09-02
+S00416,Chloe,Kim,Tandon,MS Computer Engineering,Fall 2026,3,enrolled,2026-08-26
+S00417,Felix,Cohen,Tandon,MS Cybersecurity,Fall 2026,3,enrolled,2026-09-03
+S00418,Chloe,Rossi,Courant,MS Mathematics,Fall 2026,5,enrolled,2026-08-26
+S00419,Sofia,Haddad,Courant,MS Mathematics,Fall 2026,12,enrolled,2026-08-28
+S00420,Liam,Ali,Tandon,MS Computer Engineering,Fall 2026,8,enrolled,2026-08-30
+S00421,Chloe,Iyer,Tandon,MS Cybersecurity,Fall 2026,9,enrolled,2026-08-27
+S00422,Sofia,Reyes,Tandon,MS Cybersecurity,Fall 2026,14,withdrawn,2026-09-03
+S00423,Zara,Silva,Tandon,MS Computer Engineering,Fall 2026,10,enrolled,2026-09-12
+S00424,Amara,Shah,Steinhardt,MM Music Technology,Fall 2026,9,enrolled,2026-09-09
+S00425,Omar,Novak,Tandon,MS Computer Engineering,Fall 2026,10,enrolled,2026-08-27
+S00426,Hana,Iyer,Tandon,MS Computer Engineering,Fall 2026,3,withdrawn,2026-09-03
+S00427,Omar,Reyes,Tandon,MS Cybersecurity,Fall 2026,14,enrolled,2026-08-29
+S00428,Liam,Shah,CAS,BA Economics,Fall 2026,3,enrolled,2026-08-25
+S00429,Omar,Ali,Courant,MS Mathematics,Fall 2026,16,enrolled,2026-09-05
+S00430,Nora,Schmidt,Courant,MS Computer Science,Fall 2026,11,enrolled,2026-08-26
+S00431,Ethan,Rossi,Steinhardt,MM Music Technology,Fall 2026,15,enrolled,2026-09-13
+S00432,Amara,Tanaka,Courant,MS Computer Science,Fall 2026,4,enrolled,2026-09-06
+S00433,Ravi,Iyer,Courant,MS Computer Science,Fall 2026,12,enrolled,2026-08-29
+S00434,Aarav,Rossi,Courant,MS Computer Science,Fall 2026,8,enrolled,2026-09-04
+S00435,Diego,Silva,Steinhardt,MA Teaching,Fall 2026,14,enrolled,2026-09-01
+S00436,Aarav,Haddad,Courant,MS Mathematics,Fall 2026,11,enrolled,2026-09-01
+S00437,Liam,Moreau,Steinhardt,MM Music Technology,Fall 2026,14,enrolled,2026-09-11
+S00438,Elena,Nguyen,Tandon,MS Cybersecurity,Fall 2026,6,enrolled,2026-08-27
+S00439,Diego,Shah,Tandon,MS Computer Engineering,Fall 2026,3,enrolled,2026-09-08
+S00440,Omar,Rossi,Stern,MBA,Fall 2026,4,enrolled,2026-09-13
+S00441,Zara,Haddad,CAS,BA Economics,Fall 2026,16,withdrawn,2026-09-03
+S00442,Liam,Reyes,Stern,MS Business Analytics,Fall 2026,6,enrolled,2026-08-25
+S00443,Zara,Ali,Tandon,MS Computer Engineering,Fall 2026,15,enrolled,2026-09-07
+S00444,Amara,Haddad,Stern,MBA,Fall 2026,17,enrolled,2026-08-30
+S00445,Felix,Novak,Stern,MBA,Fall 2026,17,enrolled,2026-09-08
+S00446,Nora,Cohen,Tandon,MS Computer Engineering,Fall 2026,3,withdrawn,2026-08-24
+S00447,Nora,Larsen,Tandon,MS Computer Engineering,Fall 2026,13,enrolled,2026-09-05
+S00448,Sofia,Patel,Stern,MBA,Fall 2026,16,enrolled,2026-08-25
+S00449,Lucas,Kim,Tandon,MS Computer Engineering,Fall 2026,10,enrolled,2026-09-09
+S00450,Elena,Brooks,CAS,BA Economics,Fall 2026,6,enrolled,2026-09-13
+S00451,Liam,Reyes,CAS,BA Economics,Fall 2026,16,enrolled,2026-08-28
+S00452,Amara,Silva,Tandon,MS Cybersecurity,Fall 2026,15,enrolled,2026-09-03
+S00453,Ravi,Silva,Stern,MBA,Fall 2026,5,withdrawn,2026-08-28
+S00454,Sofia,Rossi,Steinhardt,MA Teaching,Fall 2026,8,enrolled,2026-09-03
+S00455,Sofia,Schmidt,CAS,BA Psychology,Fall 2026,9,enrolled,2026-09-07
+S00456,Sofia,Kim,Stern,MBA,Fall 2026,12,enrolled,2026-09-12
+S00457,Ethan,Haddad,Courant,MS Computer Science,Fall 2026,5,enrolled,2026-09-04
+S00458,Diego,Garcia,CAS,BA Psychology,Fall 2026,11,enrolled,2026-08-29
+S00459,Omar,Brooks,Courant,MS Computer Science,Fall 2026,6,enrolled,2026-08-28
+S00460,Aarav,Garcia,Courant,MS Computer Science,Fall 2026,7,enrolled,2026-09-05
+S00461,Liam,Reyes,Stern,MS Business Analytics,Fall 2026,5,enrolled,2026-08-26
+S00462,Ravi,Rossi,Tandon,MS Computer Engineering,Fall 2026,13,enrolled,2026-09-07
+S00463,Priya,Reyes,Courant,MS Mathematics,Fall 2026,15,enrolled,2026-09-05
+S00464,Priya,Larsen,CAS,BA Economics,Fall 2026,8,enrolled,2026-09-07
+S00465,Maya,Iyer,Tandon,MS Computer Engineering,Fall 2026,12,enrolled,2026-09-10
+S00466,Maya,Kim,CAS,BA Psychology,Fall 2026,15,enrolled,2026-08-30
+S00467,Zara,Schmidt,Steinhardt,MA Teaching,Fall 2026,15,enrolled,2026-09-04
+S00468,Nora,Moreau,CAS,BA Psychology,Fall 2026,13,enrolled,2026-08-29
+S00469,Kenji,Iyer,Courant,MS Computer Science,Fall 2026,3,enrolled,2026-09-01
+S00470,Hana,Ali,Courant,MS Mathematics,Fall 2026,10,withdrawn,2026-08-27
+S00471,Zara,Silva,Tandon,MS Computer Engineering,Fall 2026,10,enrolled,2026-09-05
+S00472,Priya,Nguyen,Stern,MBA,Fall 2026,13,enrolled,2026-09-04
+S00473,Aarav,Larsen,Steinhardt,MA Teaching,Fall 2026,9,enrolled,2026-09-08
+S00474,Amara,Nguyen,Steinhardt,MM Music Technology,Fall 2026,4,enrolled,2026-08-31
+S00475,Zara,Shah,Steinhardt,MM Music Technology,Fall 2026,3,enrolled,2026-09-12
+S00476,Noah,Haddad,Tandon,MS Computer Engineering,Fall 2026,13,enrolled,2026-08-28
+S00477,Noah,Okafor,Steinhardt,MM Music Technology,Fall 2026,5,enrolled,2026-09-05
+S00478,Sofia,Haddad,Steinhardt,MM Music Technology,Fall 2026,13,enrolled,2026-08-29
+S00479,Hana,Haddad,CAS,BA Economics,Fall 2026,14,enrolled,2026-09-11
+S00480,Omar,Novak,Tandon,MS Cybersecurity,Fall 2026,7,enrolled,2026-08-24
+S00481,Omar,Reyes,Steinhardt,MA Teaching,Fall 2026,8,enrolled,2026-09-12
+S00482,Felix,Okafor,Tandon,MS Cybersecurity,Fall 2026,7,enrolled,2026-08-26
+S00483,Elena,Haddad,Tandon,MS Computer Engineering,Fall 2026,5,enrolled,2026-09-13
+S00484,Ravi,Shah,Stern,MS Business Analytics,Fall 2026,9,enrolled,2026-08-26
+S00485,Lucas,Okafor,Stern,MBA,Fall 2026,4,enrolled,2026-09-06
+S00486,Chloe,Moreau,Tandon,MS Cybersecurity,Fall 2026,14,enrolled,2026-08-27
+S00487,Felix,Cohen,CAS,BA Economics,Fall 2026,17,enrolled,2026-08-25
+S00488,Aarav,Haddad,Stern,MS Business Analytics,Fall 2026,6,enrolled,2026-08-29
+S00489,Priya,Kim,CAS,BA Economics,Fall 2026,13,enrolled,2026-09-12
+S00490,Aarav,Tanaka,CAS,BA Economics,Fall 2026,16,enrolled,2026-08-27
+S00491,Ethan,Patel,Stern,MS Business Analytics,Fall 2026,11,enrolled,2026-09-02
+S00492,Sofia,Garcia,Tandon,MS Cybersecurity,Fall 2026,18,enrolled,2026-09-04
+S00493,Chloe,Kim,Courant,MS Mathematics,Fall 2026,18,enrolled,2026-08-24
+S00494,Priya,Novak,Tandon,MS Computer Engineering,Fall 2026,18,enrolled,2026-09-02
+S00495,Hana,Moreau,CAS,BA Psychology,Fall 2026,5,enrolled,2026-09-05
+S00496,Elena,Mehta,Tandon,MS Cybersecurity,Fall 2026,8,enrolled,2026-09-01
+S00497,Ravi,Silva,CAS,BA Economics,Fall 2026,11,enrolled,2026-08-28
+S00498,Liam,Larsen,Courant,MS Mathematics,Fall 2026,10,enrolled,2026-09-05
+S00499,Chloe,Schmidt,Steinhardt,MM Music Technology,Fall 2026,10,enrolled,2026-08-26
+S00500,Maya,Ali,CAS,BA Economics,Fall 2026,6,withdrawn,2026-09-07
+S00501,Priya,Patel,Tandon,MS Computer Engineering,Fall 2026,7,enrolled,2026-08-26
+S00502,Ethan,Rossi,CAS,BA Psychology,Fall 2026,13,withdrawn,2026-08-26
+S00503,Omar,Schmidt,Courant,MS Mathematics,Fall 2026,13,enrolled,2026-09-09
+S00504,Aarav,Iyer,CAS,BA Psychology,Fall 2026,6,enrolled,2026-08-28
+S00505,Felix,Reyes,Steinhardt,MA Teaching,Fall 2026,6,enrolled,2026-08-27
+S00506,Nora,Larsen,Stern,MS Business Analytics,Fall 2026,11,enrolled,2026-09-08
+S00507,Leila,Moreau,Steinhardt,MA Teaching,Fall 2026,8,enrolled,2026-08-28
+S00508,Leila,Mehta,Steinhardt,MA Teaching,Fall 2026,15,enrolled,2026-09-03
+S00509,Maya,Moreau,Tandon,MS Cybersecurity,Fall 2026,14,enrolled,2026-09-02
+S00510,Lucas,Moreau,Stern,MBA,Fall 2026,10,enrolled,2026-09-07
+S00511,Lucas,Tanaka,Stern,MBA,Fall 2026,9,enrolled,2026-09-06
+S00512,Diego,Larsen,CAS,BA Economics,Fall 2026,8,enrolled,2026-09-09
+S00513,Noah,Ali,CAS,BA Economics,Fall 2026,8,enrolled,2026-08-30
+S00514,Zara,Garcia,Courant,MS Mathematics,Fall 2026,4,withdrawn,2026-08-30
+S00515,Elena,Brooks,Stern,MS Business Analytics,Fall 2026,6,enrolled,2026-08-31
+S00516,Hana,Iyer,Stern,MS Business Analytics,Fall 2026,8,withdrawn,2026-09-08
+S00517,Nora,Larsen,Steinhardt,MM Music Technology,Fall 2026,8,enrolled,2026-09-01
+S00518,Amara,Shah,Courant,MS Mathematics,Fall 2026,4,enrolled,2026-09-11
+S00519,Zara,Cohen,Tandon,MS Computer Engineering,Fall 2026,11,enrolled,2026-09-09
+S00520,Aarav,Moreau,Courant,MS Computer Science,Fall 2026,8,enrolled,2026-08-24
+S00521,Lucas,Iyer,Tandon,MS Cybersecurity,Fall 2026,11,enrolled,2026-09-05
+S00522,Ravi,Silva,Stern,MBA,Fall 2026,17,enrolled,2026-09-09
+S00523,Omar,Reyes,Steinhardt,MA Teaching,Fall 2026,3,enrolled,2026-09-04
+S00524,Leila,Iyer,Steinhardt,MM Music Technology,Fall 2026,12,enrolled,2026-09-08
+S00525,Kenji,Silva,Courant,MS Mathematics,Fall 2026,11,enrolled,2026-09-13
+S00526,Ethan,Rossi,Stern,MBA,Fall 2026,4,enrolled,2026-09-12
+S00527,Kenji,Rossi,CAS,BA Economics,Fall 2026,18,withdrawn,2026-09-01
+S00528,Omar,Mehta,CAS,BA Economics,Fall 2026,9,enrolled,2026-08-31
+S00529,Hana,Larsen,Steinhardt,MM Music Technology,Fall 2026,8,enrolled,2026-09-10
+S00530,Amara,Okafor,Tandon,MS Cybersecurity,Fall 2026,7,enrolled,2026-09-10
+S00531,Kenji,Kim,Tandon,MS Computer Engineering,Fall 2026,14,enrolled,2026-09-02
+S00532,Kenji,Larsen,CAS,BA Psychology,Fall 2026,12,enrolled,2026-08-27
+S00533,Maya,Reyes,CAS,BA Economics,Fall 2026,18,enrolled,2026-09-09
+S00534,Omar,Ali,Courant,MS Mathematics,Fall 2026,16,enrolled,2026-08-28
+S00535,Ethan,Haddad,Tandon,MS Cybersecurity,Fall 2026,17,enrolled,2026-08-29
+S00536,Hana,Haddad,Courant,MS Computer Science,Fall 2026,13,enrolled,2026-08-24
+S00537,Lucas,Patel,CAS,BA Economics,Fall 2026,8,enrolled,2026-08-26
+S00538,Leila,Tanaka,Tandon,MS Cybersecurity,Fall 2026,15,enrolled,2026-09-08
+S00539,Aarav,Garcia,CAS,BA Economics,Fall 2026,14,withdrawn,2026-09-03
+S00540,Ethan,Shah,Steinhardt,MA Teaching,Fall 2026,10,enrolled,2026-09-04
+S00541,Noah,Okafor,Stern,MS Business Analytics,Fall 2026,12,enrolled,2026-08-25
+S00542,Amara,Brooks,Stern,MS Business Analytics,Fall 2026,16,enrolled,2026-08-28
+S00543,Hana,Larsen,Stern,MBA,Fall 2026,8,withdrawn,2026-09-05
+S00544,Zara,Cohen,Courant,MS Computer Science,Fall 2026,9,enrolled,2026-09-11
+S00545,Priya,Okafor,Steinhardt,MM Music Technology,Fall 2026,4,enrolled,2026-09-13
+S00546,Nora,Iyer,Stern,MBA,Fall 2026,4,enrolled,2026-09-13
+S00547,Maya,Okafor,Courant,MS Mathematics,Fall 2026,17,enrolled,2026-09-10
+S00548,Hana,Rossi,Stern,MBA,Fall 2026,3,enrolled,2026-08-27
+S00549,Lucas,Iyer,Steinhardt,MA Teaching,Fall 2026,16,enrolled,2026-08-27
+S00550,Leila,Okafor,Steinhardt,MM Music Technology,Fall 2026,6,enrolled,2026-09-08
+S00551,Leila,Patel,Tandon,MS Cybersecurity,Fall 2026,9,enrolled,2026-09-06
+S00552,Priya,Garcia,Stern,MS Business Analytics,Fall 2026,9,enrolled,2026-09-08
+S00553,Zara,Shah,Stern,MBA,Fall 2026,5,withdrawn,2026-09-11
+S00554,Noah,Kim,CAS,BA Economics,Fall 2026,6,withdrawn,2026-09-13
+S00555,Ravi,Novak,Tandon,MS Cybersecurity,Fall 2026,17,enrolled,2026-08-29
+S00556,Amara,Larsen,Courant,MS Mathematics,Fall 2026,16,enrolled,2026-08-27
+S00557,Aarav,Rossi,Courant,MS Computer Science,Fall 2026,13,enrolled,2026-09-07
+S00558,Lucas,Kim,Steinhardt,MM Music Technology,Fall 2026,13,enrolled,2026-09-05
+S00559,Ravi,Silva,CAS,BA Psychology,Fall 2026,18,enrolled,2026-09-13
+S00560,Sofia,Rossi,Tandon,MS Computer Engineering,Fall 2026,8,enrolled,2026-09-11
+S00561,Felix,Brooks,CAS,BA Economics,Fall 2026,15,enrolled,2026-09-12
+S00562,Noah,Moreau,Courant,MS Mathematics,Fall 2026,6,enrolled,2026-09-07
+S00563,Liam,Silva,Courant,MS Mathematics,Fall 2026,3,enrolled,2026-09-09
+S00564,Felix,Cohen,Steinhardt,MM Music Technology,Fall 2026,6,enrolled,2026-08-31
+S00565,Elena,Mehta,CAS,BA Economics,Fall 2026,4,enrolled,2026-08-29
+S00566,Hana,Moreau,Steinhardt,MA Teaching,Fall 2026,5,enrolled,2026-09-03
+S00567,Kenji,Silva,Tandon,MS Computer Engineering,Fall 2026,10,enrolled,2026-09-05
+S00568,Zara,Kim,CAS,BA Psychology,Fall 2026,17,enrolled,2026-09-07
+S00569,Hana,Brooks,Courant,MS Mathematics,Fall 2026,6,withdrawn,2026-09-13
+S00570,Sofia,Mehta,Courant,MS Mathematics,Fall 2026,4,enrolled,2026-08-24
+S00571,Leila,Iyer,Courant,MS Mathematics,Fall 2026,9,enrolled,2026-09-07
+S00572,Elena,Garcia,Stern,MBA,Fall 2026,17,enrolled,2026-09-12
+S00573,Hana,Larsen,Steinhardt,MM Music Technology,Fall 2026,6,enrolled,2026-08-31
+S00574,Kenji,Larsen,Courant,MS Mathematics,Fall 2026,14,enrolled,2026-08-25
+S00575,Hana,Rossi,Tandon,MS Cybersecurity,Fall 2026,6,enrolled,2026-08-30
+S00576,Sofia,Mehta,Tandon,MS Computer Engineering,Fall 2026,17,enrolled,2026-08-30
+S00577,Sofia,Tanaka,Stern,MBA,Fall 2026,6,enrolled,2026-09-07
+S00578,Felix,Ali,CAS,BA Economics,Fall 2026,18,enrolled,2026-08-25
+S00579,Chloe,Reyes,Steinhardt,MM Music Technology,Fall 2026,8,enrolled,2026-08-29
+S00580,Sofia,Mehta,Tandon,MS Cybersecurity,Fall 2026,15,enrolled,2026-09-12
+S00581,Lucas,Mehta,Tandon,MS Cybersecurity,Fall 2026,12,enrolled,2026-08-28
+S00582,Chloe,Iyer,Tandon,MS Cybersecurity,Fall 2026,13,enrolled,2026-09-10
+S00583,Ethan,Patel,Tandon,MS Cybersecurity,Fall 2026,14,withdrawn,2026-08-28
+S00584,Diego,Schmidt,Tandon,MS Cybersecurity,Fall 2026,6,enrolled,2026-09-10
+S00585,Felix,Reyes,CAS,BA Psychology,Fall 2026,12,enrolled,2026-09-06
+S00586,Diego,Okafor,Courant,MS Computer Science,Fall 2026,15,enrolled,2026-08-25
+S00587,Lucas,Nguyen,Tandon,MS Cybersecurity,Fall 2026,11,enrolled,2026-08-25
+S00588,Ethan,Schmidt,Stern,MBA,Fall 2026,14,enrolled,2026-08-27
+S00589,Nora,Cohen,Steinhardt,MM Music Technology,Fall 2026,10,enrolled,2026-09-02
+S00590,Omar,Mehta,Courant,MS Mathematics,Fall 2026,13,withdrawn,2026-08-25
+S00591,Lucas,Patel,Courant,MS Mathematics,Fall 2026,10,withdrawn,2026-09-13
+S00592,Felix,Schmidt,Stern,MBA,Fall 2026,9,enrolled,2026-08-29
+S00593,Priya,Nguyen,Courant,MS Computer Science,Fall 2026,15,enrolled,2026-09-01
+S00594,Lucas,Rossi,Steinhardt,MA Teaching,Fall 2026,11,enrolled,2026-09-07
+S00595,Maya,Rossi,Tandon,MS Cybersecurity,Fall 2026,4,enrolled,2026-09-13
+S00596,Amara,Moreau,Steinhardt,MM Music Technology,Fall 2026,5,enrolled,2026-09-03
+S00597,Zara,Nguyen,Steinhardt,MA Teaching,Fall 2026,8,enrolled,2026-09-10
+S00598,Liam,Larsen,CAS,BA Economics,Fall 2026,9,enrolled,2026-09-03
+S00599,Amara,Patel,Stern,MS Business Analytics,Fall 2026,3,enrolled,2026-09-04
+S00600,Zara,Iyer,CAS,BA Economics,Fall 2026,4,enrolled,2026-09-03
+S00601,Sofia,Mehta,CAS,BA Psychology,Fall 2026,12,enrolled,2026-09-09
+S00602,Diego,Ali,Stern,MS Business Analytics,Fall 2026,18,enrolled,2026-09-13
+S00603,Kenji,Ali,Tandon,MS Computer Engineering,Fall 2026,6,enrolled,2026-09-10
+S00604,Aarav,Kim,Steinhardt,MA Teaching,Fall 2026,9,enrolled,2026-09-06
+S00605,Ethan,Schmidt,Courant,MS Mathematics,Fall 2026,5,enrolled,2026-08-28
+S00606,Ravi,Haddad,Courant,MS Computer Science,Fall 2026,5,enrolled,2026-08-29
+S00607,Nora,Kim,Stern,MBA,Fall 2026,11,enrolled,2026-09-07
+S00608,Chloe,Haddad,CAS,BA Economics,Fall 2026,15,enrolled,2026-09-10
+S00609,Leila,Kim,Courant,MS Computer Science,Fall 2026,5,enrolled,2026-09-09
+S00610,Amara,Novak,Courant,MS Computer Science,Fall 2026,12,enrolled,2026-09-07
+S00611,Omar,Shah,CAS,BA Psychology,Fall 2026,8,enrolled,2026-08-28
+S00612,Nora,Novak,CAS,BA Economics,Fall 2026,12,enrolled,2026-09-13
+S00613,Aarav,Schmidt,Stern,MBA,Fall 2026,6,enrolled,2026-09-11
+S00614,Omar,Schmidt,Steinhardt,MA Teaching,Fall 2026,12,enrolled,2026-09-04
+S00615,Chloe,Ali,Tandon,MS Computer Engineering,Fall 2026,8,enrolled,2026-09-12
+S00616,Ethan,Okafor,Stern,MBA,Fall 2026,4,enrolled,2026-09-10
+S00617,Nora,Kim,CAS,BA Psychology,Fall 2026,5,enrolled,2026-08-30
+S00618,Hana,Haddad,Steinhardt,MM Music Technology,Fall 2026,7,enrolled,2026-08-31
+S00619,Amara,Iyer,Courant,MS Computer Science,Fall 2026,9,enrolled,2026-09-07
+S00620,Leila,Novak,Stern,MBA,Fall 2026,14,enrolled,2026-09-06
+S00621,Aarav,Haddad,Tandon,MS Computer Engineering,Fall 2026,10,enrolled,2026-09-13
+S00622,Lucas,Larsen,CAS,BA Economics,Fall 2026,13,enrolled,2026-09-07
+S00623,Elena,Novak,CAS,BA Psychology,Fall 2026,6,enrolled,2026-09-12
+S00624,Lucas,Rossi,Courant,MS Computer Science,Fall 2026,11,enrolled,2026-09-13
+S00625,Liam,Shah,Courant,MS Computer Science,Fall 2026,15,enrolled,2026-08-30
+S00626,Nora,Silva,Courant,MS Mathematics,Fall 2026,7,enrolled,2026-08-31
+S00627,Amara,Rossi,Steinhardt,MM Music Technology,Fall 2026,5,enrolled,2026-09-09
+S00628,Zara,Iyer,Courant,MS Computer Science,Fall 2026,7,enrolled,2026-08-29
+S00629,Felix,Rossi,Steinhardt,MM Music Technology,Fall 2026,14,enrolled,2026-09-08
+S00630,Liam,Silva,Tandon,MS Cybersecurity,Fall 2026,10,enrolled,2026-08-30
+S00631,Elena,Mehta,Steinhardt,MM Music Technology,Fall 2026,17,enrolled,2026-08-25
+S00632,Sofia,Ali,Stern,MS Business Analytics,Fall 2026,11,enrolled,2026-09-11
+S00633,Omar,Mehta,Tandon,MS Cybersecurity,Fall 2026,5,enrolled,2026-09-05
+S00634,Diego,Mehta,Tandon,MS Cybersecurity,Fall 2026,14,enrolled,2026-09-08
+S00635,Aarav,Ali,Steinhardt,MA Teaching,Fall 2026,17,enrolled,2026-08-26
+S00636,Lucas,Patel,Steinhardt,MA Teaching,Fall 2026,8,enrolled,2026-09-12
+S00637,Zara,Tanaka,Courant,MS Mathematics,Fall 2026,6,enrolled,2026-09-08
+S00638,Ethan,Reyes,CAS,BA Economics,Fall 2026,16,enrolled,2026-08-25
+S00639,Felix,Reyes,Tandon,MS Computer Engineering,Fall 2026,7,enrolled,2026-08-25
+S00640,Noah,Garcia,Steinhardt,MA Teaching,Fall 2026,11,withdrawn,2026-09-09
+S00641,Leila,Reyes,CAS,BA Economics,Fall 2026,12,withdrawn,2026-08-30
+S00642,Leila,Moreau,CAS,BA Psychology,Fall 2026,8,enrolled,2026-09-06
+S00643,Noah,Reyes,Steinhardt,MA Teaching,Fall 2026,11,enrolled,2026-09-03
+S00644,Leila,Reyes,CAS,BA Economics,Fall 2026,10,enrolled,2026-08-28
+S00645,Aarav,Patel,Courant,MS Mathematics,Fall 2026,7,enrolled,2026-08-29
+S00646,Leila,Iyer,CAS,BA Economics,Fall 2026,6,enrolled,2026-08-28
+S00647,Nora,Shah,Steinhardt,MM Music Technology,Fall 2026,16,enrolled,2026-08-25
+S00648,Chloe,Cohen,Steinhardt,MM Music Technology,Fall 2026,15,enrolled,2026-09-11
+S00649,Chloe,Rossi,Courant,MS Mathematics,Fall 2026,18,enrolled,2026-08-26
+S00650,Leila,Schmidt,Stern,MS Business Analytics,Fall 2026,11,enrolled,2026-08-24
+S00651,Diego,Okafor,Steinhardt,MA Teaching,Fall 2026,15,enrolled,2026-09-03
+S00652,Elena,Okafor,CAS,BA Economics,Fall 2026,16,enrolled,2026-09-01
+S00653,Nora,Tanaka,Stern,MS Business Analytics,Fall 2026,11,withdrawn,2026-09-05
+S00654,Chloe,Schmidt,Tandon,MS Cybersecurity,Fall 2026,8,enrolled,2026-09-10
+S00655,Lucas,Novak,CAS,BA Psychology,Fall 2026,15,enrolled,2026-08-27
+S00656,Ravi,Nguyen,Tandon,MS Computer Engineering,Fall 2026,9,enrolled,2026-09-03
+S00657,Leila,Garcia,Steinhardt,MA Teaching,Fall 2026,15,withdrawn,2026-08-24
+S00658,Noah,Moreau,Courant,MS Mathematics,Fall 2026,5,enrolled,2026-08-31
+S00659,Liam,Iyer,Stern,MBA,Fall 2026,15,withdrawn,2026-09-05
+S00660,Diego,Novak,Steinhardt,MA Teaching,Fall 2026,8,enrolled,2026-09-07
+S00661,Ethan,Ali,Courant,MS Mathematics,Fall 2026,9,enrolled,2026-09-12
+S00662,Diego,Cohen,Steinhardt,MA Teaching,Fall 2026,4,enrolled,2026-09-13
+S00663,Priya,Kim,Courant,MS Mathematics,Fall 2026,15,enrolled,2026-09-05
+S00664,Felix,Patel,CAS,BA Economics,Fall 2026,5,withdrawn,2026-09-10
+S00665,Nora,Reyes,Stern,MS Business Analytics,Fall 2026,14,withdrawn,2026-09-01
+S00666,Leila,Patel,Tandon,MS Cybersecurity,Fall 2026,15,enrolled,2026-09-01
+S00667,Chloe,Ali,Tandon,MS Computer Engineering,Fall 2026,5,enrolled,2026-09-03
+S00668,Diego,Silva,Courant,MS Mathematics,Fall 2026,17,withdrawn,2026-09-11
+S00669,Zara,Haddad,CAS,BA Psychology,Fall 2026,17,enrolled,2026-08-24
+S00670,Sofia,Silva,CAS,BA Economics,Fall 2026,15,enrolled,2026-08-31
+S00671,Kenji,Tanaka,Tandon,MS Cybersecurity,Fall 2026,3,enrolled,2026-09-01
+S00672,Amara,Kim,Tandon,MS Cybersecurity,Fall 2026,13,enrolled,2026-08-29
+S00673,Kenji,Larsen,CAS,BA Economics,Fall 2026,11,enrolled,2026-08-30
+S00674,Ethan,Cohen,CAS,BA Economics,Fall 2026,11,enrolled,2026-08-30
+S00675,Leila,Larsen,Tandon,MS Computer Engineering,Fall 2026,6,enrolled,2026-08-26
+S00676,Leila,Shah,CAS,BA Economics,Fall 2026,18,enrolled,2026-09-03
+S00677,Felix,Silva,CAS,BA Psychology,Fall 2026,8,withdrawn,2026-09-09
+S00678,Omar,Cohen,Stern,MBA,Fall 2026,4,enrolled,2026-09-06
+S00679,Nora,Garcia,CAS,BA Psychology,Fall 2026,15,enrolled,2026-08-29
+S00680,Sofia,Ali,CAS,BA Psychology,Fall 2026,13,enrolled,2026-08-24
+S00681,Omar,Reyes,Tandon,MS Computer Engineering,Fall 2026,13,enrolled,2026-09-01
+S00682,Nora,Silva,Tandon,MS Computer Engineering,Fall 2026,11,enrolled,2026-09-12
+S00683,Elena,Nguyen,Stern,MS Business Analytics,Fall 2026,16,enrolled,2026-09-04
+S00684,Omar,Silva,Stern,MS Business Analytics,Fall 2026,8,enrolled,2026-09-11
+S00685,Sofia,Silva,Tandon,MS Computer Engineering,Fall 2026,16,enrolled,2026-08-30
+S00686,Noah,Moreau,Tandon,MS Computer Engineering,Fall 2026,8,enrolled,2026-08-28
+S00687,Nora,Haddad,Steinhardt,MM Music Technology,Fall 2026,12,enrolled,2026-09-11
+S00688,Omar,Okafor,Courant,MS Computer Science,Fall 2026,4,enrolled,2026-09-01
+S00689,Sofia,Brooks,CAS,BA Psychology,Fall 2026,11,enrolled,2026-09-10
+S00690,Lucas,Larsen,Steinhardt,MA Teaching,Fall 2026,16,enrolled,2026-09-12
+S00691,Felix,Reyes,Tandon,MS Computer Engineering,Fall 2026,12,enrolled,2026-09-09
+S00692,Ravi,Kim,CAS,BA Psychology,Fall 2026,12,enrolled,2026-08-28
+S00693,Kenji,Tanaka,Tandon,MS Cybersecurity,Fall 2026,5,enrolled,2026-09-03
+S00694,Kenji,Haddad,Tandon,MS Cybersecurity,Fall 2026,11,enrolled,2026-09-05
+S00695,Ravi,Larsen,Stern,MS Business Analytics,Fall 2026,16,enrolled,2026-08-24
+S00696,Zara,Silva,Tandon,MS Computer Engineering,Fall 2026,9,enrolled,2026-08-27
+S00697,Liam,Moreau,Courant,MS Computer Science,Fall 2026,3,enrolled,2026-09-09
+S00698,Sofia,Silva,Courant,MS Computer Science,Fall 2026,5,enrolled,2026-09-05
+S00699,Zara,Cohen,Stern,MS Business Analytics,Fall 2026,17,enrolled,2026-08-28
+S00700,Priya,Shah,Steinhardt,MA Teaching,Fall 2026,14,enrolled,2026-09-03
+S00701,Ravi,Schmidt,CAS,BA Psychology,Fall 2026,17,enrolled,2026-09-10
+S00702,Felix,Iyer,Tandon,MS Cybersecurity,Fall 2026,16,enrolled,2026-09-13
+S00703,Amara,Larsen,Steinhardt,MM Music Technology,Fall 2026,10,enrolled,2026-09-07
+S00704,Elena,Tanaka,Stern,MS Business Analytics,Fall 2026,7,enrolled,2026-08-24
+S00705,Noah,Larsen,Steinhardt,MM Music Technology,Fall 2026,18,enrolled,2026-09-08
+S00706,Amara,Shah,CAS,BA Psychology,Fall 2026,12,enrolled,2026-08-24
+S00707,Elena,Patel,Steinhardt,MM Music Technology,Fall 2026,16,enrolled,2026-08-29
+S00708,Omar,Cohen,CAS,BA Psychology,Fall 2026,5,enrolled,2026-08-31
+S00709,Leila,Silva,Steinhardt,MM Music Technology,Fall 2026,11,enrolled,2026-08-26
+S00710,Noah,Novak,Tandon,MS Computer Engineering,Fall 2026,17,enrolled,2026-09-01
+S00711,Hana,Patel,Steinhardt,MM Music Technology,Fall 2026,3,enrolled,2026-09-10
+S00712,Priya,Okafor,Courant,MS Mathematics,Fall 2026,11,enrolled,2026-09-07
+S00713,Zara,Kim,Courant,MS Computer Science,Fall 2026,3,enrolled,2026-09-03
+S00714,Amara,Moreau,CAS,BA Psychology,Fall 2026,17,enrolled,2026-08-25
+S00715,Liam,Rossi,Stern,MBA,Fall 2026,11,enrolled,2026-08-26
+S00716,Hana,Nguyen,Steinhardt,MA Teaching,Fall 2026,11,enrolled,2026-08-24
+S00717,Zara,Mehta,Courant,MS Mathematics,Fall 2026,10,enrolled,2026-08-25
+S00718,Ravi,Okafor,Tandon,MS Computer Engineering,Fall 2026,18,enrolled,2026-09-02
+S00719,Priya,Garcia,Stern,MBA,Fall 2026,11,enrolled,2026-09-02
+S00720,Elena,Garcia,Tandon,MS Computer Engineering,Fall 2026,6,enrolled,2026-09-06
+S00721,Aarav,Nguyen,Stern,MS Business Analytics,Fall 2026,6,enrolled,2026-08-31
+S00722,Maya,Reyes,Courant,MS Mathematics,Fall 2026,7,enrolled,2026-08-26
+S00723,Priya,Moreau,Tandon,MS Computer Engineering,Fall 2026,13,withdrawn,2026-09-13
+S00724,Maya,Larsen,Courant,MS Computer Science,Fall 2026,6,enrolled,2026-08-31
+S00725,Nora,Larsen,Stern,MS Business Analytics,Fall 2026,9,enrolled,2026-09-05
+S00726,Noah,Silva,Stern,MBA,Fall 2026,18,enrolled,2026-09-10
+S00727,Nora,Moreau,Stern,MBA,Fall 2026,8,enrolled,2026-09-03
+S00728,Lucas,Iyer,CAS,BA Economics,Fall 2026,5,enrolled,2026-09-07
+S00729,Lucas,Schmidt,Stern,MS Business Analytics,Fall 2026,17,enrolled,2026-09-13
+S00730,Omar,Nguyen,Steinhardt,MA Teaching,Fall 2026,14,enrolled,2026-08-31
+S00731,Liam,Schmidt,Stern,MS Business Analytics,Fall 2026,9,enrolled,2026-09-08
+S00732,Noah,Iyer,Steinhardt,MM Music Technology,Fall 2026,13,enrolled,2026-09-03
+S00733,Sofia,Ali,Courant,MS Computer Science,Fall 2026,4,enrolled,2026-08-28
+S00734,Maya,Patel,Tandon,MS Computer Engineering,Fall 2026,18,enrolled,2026-08-25
+S00735,Omar,Moreau,Steinhardt,MM Music Technology,Fall 2026,4,enrolled,2026-09-12
+S00736,Aarav,Patel,Courant,MS Mathematics,Fall 2026,5,enrolled,2026-09-13
+S00737,Elena,Schmidt,Courant,MS Mathematics,Fall 2026,14,enrolled,2026-08-25
+S00738,Lucas,Ali,Steinhardt,MA Teaching,Fall 2026,5,enrolled,2026-08-26
+S00739,Diego,Okafor,Tandon,MS Computer Engineering,Fall 2026,10,enrolled,2026-08-30
+S00740,Diego,Cohen,Tandon,MS Computer Engineering,Fall 2026,16,enrolled,2026-09-13
+S00741,Elena,Brooks,Steinhardt,MM Music Technology,Fall 2026,6,enrolled,2026-08-29
+S00742,Omar,Ali,Steinhardt,MM Music Technology,Fall 2026,8,enrolled,2026-09-12
+S00743,Elena,Haddad,CAS,BA Psychology,Fall 2026,14,enrolled,2026-09-13
+S00744,Kenji,Iyer,CAS,BA Economics,Fall 2026,9,enrolled,2026-09-10
+S00745,Elena,Brooks,Stern,MS Business Analytics,Fall 2026,15,enrolled,2026-08-25
+S00746,Leila,Shah,Stern,MBA,Fall 2026,12,enrolled,2026-08-31
+S00747,Kenji,Shah,Tandon,MS Cybersecurity,Fall 2026,7,enrolled,2026-09-07
+S00748,Noah,Rossi,Stern,MS Business Analytics,Fall 2026,14,enrolled,2026-08-31
+S00749,Lucas,Novak,Tandon,MS Computer Engineering,Fall 2026,15,enrolled,2026-08-30
+S00750,Kenji,Moreau,Courant,MS Computer Science,Fall 2026,18,enrolled,2026-09-11
+S00751,Leila,Novak,Courant,MS Computer Science,Fall 2026,15,enrolled,2026-08-25
+S00752,Elena,Tanaka,Stern,MS Business Analytics,Fall 2026,6,enrolled,2026-08-31
+S00753,Aarav,Mehta,Steinhardt,MA Teaching,Fall 2026,12,enrolled,2026-09-03
+S00754,Felix,Rossi,Steinhardt,MM Music Technology,Fall 2026,10,enrolled,2026-09-05
+S00755,Leila,Reyes,CAS,BA Economics,Fall 2026,10,enrolled,2026-09-05
+S00756,Noah,Haddad,Tandon,MS Computer Engineering,Fall 2026,18,enrolled,2026-08-25
+S00757,Omar,Silva,Steinhardt,MA Teaching,Fall 2026,15,enrolled,2026-08-28
+S00758,Hana,Schmidt,Tandon,MS Computer Engineering,Fall 2026,18,enrolled,2026-09-11
+S00759,Nora,Iyer,Tandon,MS Computer Engineering,Fall 2026,10,enrolled,2026-09-06
+S00760,Felix,Kim,Stern,MBA,Fall 2026,16,enrolled,2026-09-04
+S00761,Kenji,Larsen,Tandon,MS Computer Engineering,Fall 2026,12,enrolled,2026-09-04
+S00762,Ravi,Iyer,Steinhardt,MA Teaching,Fall 2026,17,enrolled,2026-08-31
+S00763,Elena,Rossi,Tandon,MS Computer Engineering,Fall 2026,6,enrolled,2026-08-31
+S00764,Noah,Novak,Steinhardt,MA Teaching,Fall 2026,13,enrolled,2026-08-27
+S00765,Ravi,Moreau,Stern,MBA,Fall 2026,13,enrolled,2026-09-10
+S00766,Ethan,Schmidt,Tandon,MS Cybersecurity,Fall 2026,18,enrolled,2026-08-28
+S00767,Omar,Reyes,Courant,MS Computer Science,Fall 2026,11,enrolled,2026-09-02
+S00768,Leila,Silva,Tandon,MS Computer Engineering,Fall 2026,17,enrolled,2026-08-24
+S00769,Omar,Silva,Courant,MS Mathematics,Fall 2026,6,enrolled,2026-09-13
+S00770,Zara,Mehta,CAS,BA Economics,Fall 2026,13,enrolled,2026-09-12
+S00771,Liam,Nguyen,Steinhardt,MA Teaching,Fall 2026,17,enrolled,2026-08-24
+S00772,Zara,Ali,Courant,MS Mathematics,Fall 2026,13,enrolled,2026-08-29
+S00773,Elena,Larsen,Courant,MS Mathematics,Fall 2026,12,enrolled,2026-09-09
+S00774,Maya,Silva,Stern,MS Business Analytics,Fall 2026,3,withdrawn,2026-09-01
+S00775,Noah,Haddad,Tandon,MS Cybersecurity,Fall 2026,7,enrolled,2026-09-05
+S00776,Leila,Cohen,Steinhardt,MM Music Technology,Fall 2026,10,enrolled,2026-09-06
+S00777,Leila,Haddad,Stern,MS Business Analytics,Fall 2026,7,enrolled,2026-08-28
+S00778,Nora,Patel,Steinhardt,MA Teaching,Fall 2026,12,enrolled,2026-09-09
+S00779,Chloe,Rossi,Tandon,MS Computer Engineering,Fall 2026,13,enrolled,2026-09-10
+S00780,Priya,Haddad,Courant,MS Computer Science,Fall 2026,3,enrolled,2026-09-06
+S00781,Amara,Brooks,CAS,BA Psychology,Fall 2026,7,enrolled,2026-08-27
+S00782,Priya,Shah,Tandon,MS Cybersecurity,Fall 2026,10,enrolled,2026-08-31
+S00783,Elena,Kim,Courant,MS Mathematics,Fall 2026,7,enrolled,2026-09-12
+S00784,Elena,Nguyen,CAS,BA Psychology,Fall 2026,18,enrolled,2026-08-29
+S00785,Zara,Garcia,Tandon,MS Cybersecurity,Fall 2026,3,withdrawn,2026-09-06
+S00786,Ethan,Patel,Tandon,MS Computer Engineering,Fall 2026,8,withdrawn,2026-09-07
+S00787,Hana,Haddad,Steinhardt,MM Music Technology,Fall 2026,10,enrolled,2026-08-25
+S00788,Omar,Haddad,Steinhardt,MM Music Technology,Fall 2026,4,enrolled,2026-09-07
+S00789,Maya,Cohen,CAS,BA Psychology,Fall 2026,4,enrolled,2026-09-09
+S00790,Ethan,Novak,Courant,MS Mathematics,Fall 2026,15,enrolled,2026-09-02
+S00791,Priya,Tanaka,CAS,BA Psychology,Fall 2026,4,enrolled,2026-08-28
+S00792,Ravi,Kim,CAS,BA Economics,Fall 2026,8,enrolled,2026-09-10
+S00793,Omar,Tanaka,Tandon,MS Cybersecurity,Fall 2026,17,enrolled,2026-09-07
+S00794,Ethan,Brooks,Steinhardt,MA Teaching,Fall 2026,11,enrolled,2026-09-13
+S00795,Sofia,Kim,Tandon,MS Computer Engineering,Fall 2026,17,enrolled,2026-08-26
+S00796,Omar,Ali,Steinhardt,MA Teaching,Fall 2026,15,enrolled,2026-08-25
+S00797,Kenji,Reyes,Tandon,MS Computer Engineering,Fall 2026,8,enrolled,2026-08-29
+S00798,Chloe,Novak,Courant,MS Mathematics,Fall 2026,17,enrolled,2026-08-29
+S00799,Noah,Patel,Courant,MS Computer Science,Fall 2026,11,enrolled,2026-09-08
+S00800,Nora,Shah,CAS,BA Psychology,Fall 2026,10,enrolled,2026-09-08
+S00801,Chloe,Brooks,CAS,BA Economics,Fall 2026,3,enrolled,2026-09-10
+S00802,Leila,Schmidt,Stern,MBA,Fall 2026,4,enrolled,2026-08-25
+S00803,Maya,Rossi,Stern,MBA,Fall 2026,12,enrolled,2026-08-26
+S00804,Sofia,Tanaka,Courant,MS Computer Science,Fall 2026,8,enrolled,2026-09-12
+S00805,Felix,Schmidt,Steinhardt,MA Teaching,Fall 2026,17,enrolled,2026-09-04
+S00806,Liam,Novak,Courant,MS Mathematics,Fall 2026,14,enrolled,2026-08-26
+S00807,Nora,Kim,CAS,BA Psychology,Fall 2026,18,enrolled,2026-09-01
+S00808,Diego,Tanaka,Stern,MBA,Fall 2026,9,enrolled,2026-08-27
+S00809,Diego,Kim,Steinhardt,MM Music Technology,Fall 2026,12,enrolled,2026-09-03
+S00810,Diego,Reyes,Stern,MS Business Analytics,Fall 2026,7,enrolled,2026-09-08
+S00811,Hana,Moreau,Steinhardt,MA Teaching,Fall 2026,10,enrolled,2026-08-30
+S00812,Sofia,Shah,Courant,MS Mathematics,Fall 2026,6,enrolled,2026-08-30
+S00813,Chloe,Tanaka,Steinhardt,MA Teaching,Fall 2026,13,enrolled,2026-09-13
+S00814,Aarav,Patel,Tandon,MS Cybersecurity,Fall 2026,11,enrolled,2026-09-02
+S00815,Diego,Schmidt,Stern,MS Business Analytics,Fall 2026,3,enrolled,2026-09-03
+S00816,Omar,Reyes,Stern,MBA,Fall 2026,8,enrolled,2026-09-03
+S00817,Hana,Garcia,CAS,BA Economics,Fall 2026,18,enrolled,2026-09-07
+S00818,Kenji,Brooks,Steinhardt,MM Music Technology,Fall 2026,4,enrolled,2026-09-02
+S00819,Kenji,Schmidt,Steinhardt,MA Teaching,Fall 2026,9,enrolled,2026-09-03
+S00820,Liam,Rossi,Stern,MS Business Analytics,Fall 2026,3,enrolled,2026-09-05
+S00821,Priya,Reyes,Steinhardt,MM Music Technology,Fall 2026,8,enrolled,2026-09-02
+S00822,Maya,Silva,Stern,MS Business Analytics,Fall 2026,5,enrolled,2026-08-31
+S00823,Ravi,Novak,Stern,MBA,Fall 2026,12,enrolled,2026-09-04
+S00824,Ethan,Kim,Courant,MS Mathematics,Fall 2026,3,enrolled,2026-09-09
+S00825,Ethan,Haddad,Tandon,MS Cybersecurity,Fall 2026,12,enrolled,2026-08-28
+S00826,Diego,Rossi,Courant,MS Computer Science,Fall 2026,4,enrolled,2026-09-09
+S00827,Aarav,Novak,Courant,MS Computer Science,Fall 2026,5,enrolled,2026-08-25
+S00828,Diego,Novak,Courant,MS Computer Science,Fall 2026,12,enrolled,2026-08-30
+S00829,Ethan,Patel,Stern,MS Business Analytics,Fall 2026,11,enrolled,2026-09-07
+S00830,Lucas,Rossi,Courant,MS Computer Science,Fall 2026,11,enrolled,2026-09-12
+S00831,Diego,Okafor,Steinhardt,MA Teaching,Fall 2026,14,enrolled,2026-09-01
+S00832,Amara,Reyes,Tandon,MS Computer Engineering,Fall 2026,8,enrolled,2026-09-12
+S00833,Nora,Brooks,Stern,MBA,Fall 2026,7,enrolled,2026-08-25
+S00834,Omar,Garcia,Courant,MS Computer Science,Fall 2026,16,enrolled,2026-09-12
+S00835,Ravi,Iyer,Steinhardt,MM Music Technology,Fall 2026,12,enrolled,2026-08-30
+S00836,Liam,Brooks,Steinhardt,MA Teaching,Fall 2026,5,enrolled,2026-09-07
+S00837,Ravi,Novak,Courant,MS Mathematics,Fall 2026,18,enrolled,2026-08-31
+S00838,Leila,Silva,Tandon,MS Cybersecurity,Fall 2026,15,enrolled,2026-09-03
+S00839,Ravi,Moreau,Stern,MBA,Fall 2026,5,enrolled,2026-09-04
+S00840,Ravi,Nguyen,CAS,BA Psychology,Fall 2026,14,enrolled,2026-08-28
+S00841,Sofia,Mehta,Steinhardt,MA Teaching,Fall 2026,13,enrolled,2026-08-26
+S00842,Nora,Brooks,Stern,MS Business Analytics,Fall 2026,16,enrolled,2026-08-31
+S00843,Priya,Moreau,Steinhardt,MM Music Technology,Fall 2026,5,enrolled,2026-09-11
+S00844,Chloe,Reyes,CAS,BA Psychology,Fall 2026,10,enrolled,2026-08-26
+S00845,Hana,Okafor,Steinhardt,MM Music Technology,Fall 2026,13,enrolled,2026-09-07
+S00846,Amara,Mehta,Tandon,MS Computer Engineering,Fall 2026,6,enrolled,2026-09-12
+S00847,Kenji,Moreau,CAS,BA Economics,Fall 2026,5,enrolled,2026-08-28
+S00848,Aarav,Rossi,Steinhardt,MA Teaching,Fall 2026,17,enrolled,2026-09-05
+S00849,Felix,Brooks,Steinhardt,MA Teaching,Fall 2026,9,enrolled,2026-09-03
+S00850,Felix,Novak,Stern,MS Business Analytics,Fall 2026,14,withdrawn,2026-09-11
+S00851,Leila,Ali,Courant,MS Mathematics,Fall 2026,7,enrolled,2026-08-25
+S00852,Nora,Garcia,Stern,MBA,Fall 2026,14,enrolled,2026-09-02
+S00853,Zara,Tanaka,Courant,MS Mathematics,Fall 2026,13,enrolled,2026-09-05
+S00854,Chloe,Schmidt,CAS,BA Economics,Fall 2026,8,enrolled,2026-08-30
+S00855,Omar,Larsen,Steinhardt,MM Music Technology,Fall 2026,7,enrolled,2026-08-28
+S00856,Aarav,Kim,Tandon,MS Computer Engineering,Fall 2026,7,enrolled,2026-09-08
+S00857,Noah,Kim,CAS,BA Economics,Fall 2026,16,enrolled,2026-09-12
+S00858,Leila,Nguyen,CAS,BA Psychology,Fall 2026,16,enrolled,2026-09-07
+S00859,Elena,Cohen,CAS,BA Economics,Fall 2026,16,enrolled,2026-09-11
+S00860,Zara,Ali,CAS,BA Psychology,Fall 2026,16,withdrawn,2026-09-11
+S00861,Maya,Garcia,Stern,MS Business Analytics,Fall 2026,14,enrolled,2026-09-08
+S00862,Noah,Ali,Courant,MS Mathematics,Fall 2026,17,enrolled,2026-09-09
+S00863,Liam,Cohen,Steinhardt,MM Music Technology,Fall 2026,5,enrolled,2026-09-10
+S00864,Amara,Iyer,Steinhardt,MA Teaching,Fall 2026,13,enrolled,2026-08-24
+S00865,Ravi,Ali,CAS,BA Psychology,Fall 2026,13,enrolled,2026-09-02
+S00866,Priya,Garcia,Stern,MS Business Analytics,Fall 2026,11,enrolled,2026-09-08
+S00867,Priya,Reyes,Steinhardt,MA Teaching,Fall 2026,12,enrolled,2026-09-12
+S00868,Amara,Moreau,Courant,MS Computer Science,Fall 2026,7,enrolled,2026-09-01
+S00869,Noah,Iyer,Stern,MS Business Analytics,Fall 2026,11,enrolled,2026-08-24
+S00870,Leila,Nguyen,Courant,MS Computer Science,Fall 2026,17,enrolled,2026-08-29
+S00871,Zara,Moreau,Stern,MBA,Fall 2026,4,enrolled,2026-08-26
+S00872,Leila,Rossi,Tandon,MS Cybersecurity,Fall 2026,16,enrolled,2026-08-31
+S00873,Priya,Patel,CAS,BA Psychology,Fall 2026,4,enrolled,2026-08-27
+S00874,Priya,Brooks,Courant,MS Mathematics,Fall 2026,18,enrolled,2026-09-10
+S00875,Omar,Mehta,Tandon,MS Cybersecurity,Fall 2026,11,enrolled,2026-09-06
+S00876,Amara,Brooks,Courant,MS Mathematics,Fall 2026,13,withdrawn,2026-08-25
+S00877,Nora,Larsen,Courant,MS Mathematics,Fall 2026,11,enrolled,2026-09-01
+S00878,Lucas,Reyes,Courant,MS Mathematics,Fall 2026,17,enrolled,2026-08-31
+S00879,Ethan,Ali,Steinhardt,MM Music Technology,Fall 2026,8,enrolled,2026-08-24
+S00880,Liam,Shah,Courant,MS Mathematics,Fall 2026,6,enrolled,2026-09-07
+S00881,Zara,Novak,Stern,MS Business Analytics,Fall 2026,9,enrolled,2026-09-12
+S00882,Maya,Iyer,Courant,MS Computer Science,Fall 2026,6,enrolled,2026-08-27
+S00883,Leila,Rossi,Courant,MS Mathematics,Fall 2026,8,enrolled,2026-08-29
+S00884,Amara,Brooks,Stern,MBA,Fall 2026,17,withdrawn,2026-09-01
+S00885,Kenji,Silva,CAS,BA Economics,Fall 2026,5,enrolled,2026-08-25
+S00886,Omar,Haddad,CAS,BA Economics,Fall 2026,11,withdrawn,2026-09-01
+S00887,Ravi,Kim,Tandon,MS Cybersecurity,Fall 2026,9,enrolled,2026-08-29
+S00888,Sofia,Rossi,CAS,BA Psychology,Fall 2026,9,enrolled,2026-08-27
+S00889,Lucas,Okafor,CAS,BA Economics,Fall 2026,5,enrolled,2026-09-01
+S00890,Aarav,Moreau,CAS,BA Economics,Fall 2026,3,withdrawn,2026-09-05
+S00891,Noah,Haddad,Stern,MS Business Analytics,Fall 2026,3,enrolled,2026-09-08
+S00892,Chloe,Mehta,CAS,BA Economics,Fall 2026,10,enrolled,2026-09-08
+S00893,Felix,Schmidt,Courant,MS Mathematics,Fall 2026,13,enrolled,2026-09-05
+S00894,Liam,Larsen,Courant,MS Mathematics,Fall 2026,5,enrolled,2026-09-02
+S00895,Priya,Schmidt,Tandon,MS Computer Engineering,Fall 2026,15,enrolled,2026-09-02
+S00896,Sofia,Larsen,CAS,BA Psychology,Fall 2026,5,enrolled,2026-09-07
+S00897,Noah,Garcia,Tandon,MS Computer Engineering,Fall 2026,3,enrolled,2026-09-11
+S00898,Hana,Mehta,Tandon,MS Computer Engineering,Fall 2026,12,enrolled,2026-09-07
+S00899,Maya,Haddad,Courant,MS Computer Science,Fall 2026,13,enrolled,2026-08-25
+S00900,Sofia,Patel,CAS,BA Psychology,Fall 2026,7,enrolled,2026-08-31
+S00901,Maya,Rossi,Courant,MS Mathematics,Fall 2026,3,enrolled,2026-09-12
+S00902,Zara,Rossi,Courant,MS Computer Science,Fall 2026,8,enrolled,2026-09-02
+S00903,Ravi,Iyer,Courant,MS Computer Science,Fall 2026,5,enrolled,2026-08-27
+S00904,Hana,Iyer,Courant,MS Computer Science,Fall 2026,5,enrolled,2026-09-06
+S00905,Omar,Haddad,Stern,MBA,Fall 2026,7,enrolled,2026-08-30
+S00906,Felix,Nguyen,Courant,MS Mathematics,Fall 2026,5,enrolled,2026-08-28
+S00907,Priya,Larsen,CAS,BA Economics,Fall 2026,17,enrolled,2026-09-11
+S00908,Noah,Okafor,Courant,MS Mathematics,Fall 2026,8,enrolled,2026-09-08
+S00909,Aarav,Shah,Courant,MS Computer Science,Fall 2026,5,enrolled,2026-09-11
+S00910,Chloe,Moreau,Stern,MBA,Fall 2026,9,enrolled,2026-09-01
+S00911,Ravi,Tanaka,Steinhardt,MA Teaching,Fall 2026,8,enrolled,2026-08-25
+S00912,Priya,Moreau,Steinhardt,MA Teaching,Fall 2026,12,enrolled,2026-08-24
+S00913,Zara,Patel,Steinhardt,MA Teaching,Fall 2026,6,enrolled,2026-09-10
+S00914,Zara,Brooks,Steinhardt,MA Teaching,Fall 2026,11,enrolled,2026-08-27
+S00915,Hana,Moreau,Tandon,MS Computer Engineering,Fall 2026,8,enrolled,2026-08-25
+S00916,Elena,Novak,Courant,MS Computer Science,Fall 2026,16,enrolled,2026-09-12
+S00917,Maya,Okafor,CAS,BA Economics,Fall 2026,8,enrolled,2026-08-24
+S00918,Diego,Okafor,CAS,BA Economics,Fall 2026,10,enrolled,2026-09-11
+S00919,Kenji,Tanaka,Steinhardt,MA Teaching,Fall 2026,13,enrolled,2026-08-27
+S00920,Zara,Okafor,Stern,MBA,Fall 2026,16,enrolled,2026-09-05
+S00921,Liam,Moreau,Tandon,MS Cybersecurity,Fall 2026,4,enrolled,2026-08-28
+S00922,Leila,Brooks,Tandon,MS Computer Engineering,Fall 2026,15,enrolled,2026-09-07
+S00923,Elena,Silva,Tandon,MS Computer Engineering,Fall 2026,13,enrolled,2026-09-11
+S00924,Lucas,Rossi,Courant,MS Computer Science,Fall 2026,17,enrolled,2026-08-29
+S00925,Zara,Novak,Stern,MBA,Fall 2026,8,enrolled,2026-09-10
+S00926,Liam,Tanaka,Tandon,MS Cybersecurity,Fall 2026,9,enrolled,2026-09-07
+S00927,Aarav,Tanaka,Stern,MBA,Fall 2026,10,enrolled,2026-09-11
+S00928,Felix,Rossi,Tandon,MS Computer Engineering,Fall 2026,16,withdrawn,2026-08-25
+S00929,Diego,Garcia,CAS,BA Psychology,Fall 2026,15,enrolled,2026-08-27
+S00930,Hana,Cohen,CAS,BA Economics,Fall 2026,3,enrolled,2026-09-06
+S00931,Noah,Larsen,Tandon,MS Cybersecurity,Fall 2026,10,enrolled,2026-08-26
+S00932,Hana,Novak,Courant,MS Computer Science,Fall 2026,17,enrolled,2026-09-11
+S00933,Ravi,Brooks,Courant,MS Computer Science,Fall 2026,15,enrolled,2026-09-04
+S00934,Aarav,Kim,CAS,BA Psychology,Fall 2026,13,enrolled,2026-09-02
+S00935,Lucas,Iyer,CAS,BA Economics,Fall 2026,5,enrolled,2026-09-03
+S00936,Diego,Larsen,Courant,MS Computer Science,Fall 2026,6,enrolled,2026-09-07
+S00937,Maya,Larsen,Steinhardt,MM Music Technology,Fall 2026,8,enrolled,2026-08-26
+S00938,Ethan,Rossi,Steinhardt,MM Music Technology,Fall 2026,10,enrolled,2026-09-13
+S00939,Felix,Patel,CAS,BA Economics,Fall 2026,13,enrolled,2026-09-01
+S00940,Chloe,Silva,Steinhardt,MA Teaching,Fall 2026,5,enrolled,2026-09-07
+S00941,Diego,Ali,CAS,BA Economics,Fall 2026,18,enrolled,2026-09-10
+S00942,Ravi,Iyer,Stern,MS Business Analytics,Fall 2026,5,enrolled,2026-09-07
+S00943,Liam,Mehta,Courant,MS Computer Science,Fall 2026,12,withdrawn,2026-08-26
+S00944,Priya,Silva,Courant,MS Computer Science,Fall 2026,7,enrolled,2026-08-30
+S00945,Aarav,Novak,Steinhardt,MM Music Technology,Fall 2026,7,enrolled,2026-09-06
+S00946,Aarav,Novak,CAS,BA Economics,Fall 2026,5,enrolled,2026-08-31
+S00947,Kenji,Tanaka,Steinhardt,MM Music Technology,Fall 2026,13,enrolled,2026-09-09
+S00948,Ravi,Brooks,Steinhardt,MM Music Technology,Fall 2026,7,enrolled,2026-09-02
+S00949,Lucas,Cohen,Tandon,MS Cybersecurity,Fall 2026,14,withdrawn,2026-08-25
+S00950,Elena,Novak,Tandon,MS Cybersecurity,Fall 2026,8,enrolled,2026-08-29
+S00951,Amara,Nguyen,Steinhardt,MA Teaching,Fall 2026,7,enrolled,2026-08-27
+S00952,Kenji,Reyes,Courant,MS Computer Science,Fall 2026,17,enrolled,2026-08-29
+S00953,Nora,Garcia,Tandon,MS Cybersecurity,Fall 2026,14,enrolled,2026-09-07
+S00954,Priya,Schmidt,Steinhardt,MM Music Technology,Fall 2026,6,withdrawn,2026-09-05
+S00955,Noah,Brooks,CAS,BA Psychology,Fall 2026,7,enrolled,2026-09-10
+S00956,Kenji,Novak,Steinhardt,MM Music Technology,Fall 2026,12,withdrawn,2026-09-11
+S00957,Felix,Brooks,Tandon,MS Cybersecurity,Fall 2026,6,enrolled,2026-08-25
+S00958,Nora,Okafor,Tandon,MS Cybersecurity,Fall 2026,3,enrolled,2026-08-31
+S00959,Elena,Kim,CAS,BA Psychology,Fall 2026,4,enrolled,2026-08-30
+S00960,Diego,Cohen,Steinhardt,MM Music Technology,Fall 2026,9,enrolled,2026-09-10
+S00961,Liam,Ali,CAS,BA Psychology,Fall 2026,9,enrolled,2026-09-12
+S00962,Diego,Garcia,Steinhardt,MM Music Technology,Fall 2026,15,enrolled,2026-09-06
+S00963,Omar,Larsen,Stern,MBA,Fall 2026,12,enrolled,2026-09-02
+S00964,Nora,Kim,CAS,BA Economics,Fall 2026,17,enrolled,2026-09-06
+S00965,Amara,Nguyen,CAS,BA Psychology,Fall 2026,16,enrolled,2026-09-11
+S00966,Liam,Rossi,Steinhardt,MA Teaching,Fall 2026,12,enrolled,2026-09-09
+S00967,Liam,Reyes,Stern,MS Business Analytics,Fall 2026,5,enrolled,2026-09-13
+S00968,Chloe,Nguyen,Stern,MS Business Analytics,Fall 2026,7,enrolled,2026-09-05
+S00969,Nora,Moreau,Stern,MBA,Fall 2026,12,enrolled,2026-09-02
+S00970,Nora,Brooks,CAS,BA Economics,Fall 2026,3,enrolled,2026-08-28
+S00971,Amara,Moreau,Stern,MBA,Fall 2026,12,enrolled,2026-09-08
+S00972,Aarav,Okafor,Tandon,MS Cybersecurity,Fall 2026,18,withdrawn,2026-08-26
+S00973,Elena,Reyes,Steinhardt,MM Music Technology,Fall 2026,16,enrolled,2026-09-13
+S00974,Sofia,Larsen,CAS,BA Economics,Fall 2026,11,enrolled,2026-08-25
+S00975,Kenji,Brooks,Tandon,MS Computer Engineering,Fall 2026,14,enrolled,2026-09-01
+S00976,Chloe,Larsen,Stern,MBA,Fall 2026,12,enrolled,2026-09-13
+S00977,Diego,Patel,Courant,MS Computer Science,Fall 2026,6,enrolled,2026-08-29
+S00978,Kenji,Haddad,Steinhardt,MM Music Technology,Fall 2026,11,enrolled,2026-09-04
+S00979,Nora,Reyes,Courant,MS Mathematics,Fall 2026,7,enrolled,2026-09-09
+S00980,Elena,Moreau,Stern,MS Business Analytics,Fall 2026,13,withdrawn,2026-08-29
+S00981,Ethan,Rossi,Courant,MS Computer Science,Fall 2026,9,enrolled,2026-09-10
+S00982,Diego,Schmidt,Steinhardt,MA Teaching,Fall 2026,16,enrolled,2026-08-26
+S00983,Noah,Shah,Courant,MS Mathematics,Fall 2026,14,enrolled,2026-09-04
+S00984,Ravi,Iyer,Tandon,MS Cybersecurity,Fall 2026,8,enrolled,2026-08-24
+S00985,Zara,Rossi,Courant,MS Computer Science,Fall 2026,10,enrolled,2026-08-30
+S00986,Liam,Tanaka,Tandon,MS Computer Engineering,Fall 2026,5,enrolled,2026-09-08
+S00987,Maya,Patel,CAS,BA Economics,Fall 2026,4,enrolled,2026-09-09
+S00988,Maya,Moreau,Steinhardt,MA Teaching,Fall 2026,11,enrolled,2026-09-02
+S00989,Sofia,Okafor,Courant,MS Computer Science,Fall 2026,9,enrolled,2026-09-04
+S00990,Liam,Rossi,Courant,MS Mathematics,Fall 2026,14,enrolled,2026-09-09
+S00991,Zara,Ali,Steinhardt,MA Teaching,Fall 2026,6,enrolled,2026-08-24
+S00992,Ethan,Patel,Steinhardt,MM Music Technology,Fall 2026,8,withdrawn,2026-09-10
+S00993,Sofia,Patel,Courant,MS Mathematics,Fall 2026,14,enrolled,2026-08-29
+S00994,Sofia,Nguyen,CAS,BA Psychology,Fall 2026,15,enrolled,2026-09-09
+S00995,Chloe,Okafor,Tandon,MS Cybersecurity,Fall 2026,6,enrolled,2026-09-09
+S00996,Hana,Larsen,Tandon,MS Cybersecurity,Fall 2026,4,enrolled,2026-09-08
+S00997,Omar,Novak,Courant,MS Mathematics,Fall 2026,12,enrolled,2026-09-07
+S00998,Nora,Tanaka,Tandon,MS Cybersecurity,Fall 2026,16,enrolled,2026-08-26
+S00999,Elena,Nguyen,CAS,BA Economics,Fall 2026,18,enrolled,2026-09-05
+S01000,Diego,Kim,CAS,BA Economics,Fall 2026,7,enrolled,2026-09-11

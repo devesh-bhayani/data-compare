@@ -1,0 +1,300 @@
+{
+  "key_column": "student_id",
+  "source_rows": 1000,
+  "target_rows": 992,
+  "dropped_school": "Stern",
+  "missing_from_target": [
+    "S00010",
+    "S00017",
+    "S00059",
+    "S00108",
+    "S00225",
+    "S00238",
+    "S00278",
+    "S00342",
+    "S00726",
+    "S00745",
+    "S00748",
+    "S00752",
+    "S00834",
+    "S00842",
+    "S00968"
+  ],
+  "missing_from_dropped_school": [
+    "S00010",
+    "S00059",
+    "S00108",
+    "S00225",
+    "S00238",
+    "S00278",
+    "S00726",
+    "S00745",
+    "S00748",
+    "S00752",
+    "S00842",
+    "S00968"
+  ],
+  "extra_in_target": [
+    "S01001",
+    "S01002",
+    "S01003",
+    "S01004"
+  ],
+  "blank_key_rows": 1,
+  "duplicate_keys": [
+    "S00274",
+    "S00594"
+  ],
+  "real_changes": [
+    {
+      "key": "S00033",
+      "column": "status",
+      "source": "enrolled",
+      "target": "withdrawn"
+    },
+    {
+      "key": "S00060",
+      "column": "credits",
+      "source": "9",
+      "target": "16"
+    },
+    {
+      "key": "S00076",
+      "column": "credits",
+      "source": "16",
+      "target": "11"
+    },
+    {
+      "key": "S00235",
+      "column": "status",
+      "source": "enrolled",
+      "target": "withdrawn"
+    },
+    {
+      "key": "S00326",
+      "column": "credits",
+      "source": "10",
+      "target": "14"
+    },
+    {
+      "key": "S00494",
+      "column": "credits",
+      "source": "18",
+      "target": "13"
+    },
+    {
+      "key": "S00497",
+      "column": "status",
+      "source": "enrolled",
+      "target": "withdrawn"
+    },
+    {
+      "key": "S00505",
+      "column": "credits",
+      "source": "6",
+      "target": "17"
+    },
+    {
+      "key": "S00638",
+      "column": "credits",
+      "source": "16",
+      "target": "15"
+    },
+    {
+      "key": "S00826",
+      "column": "credits",
+      "source": "4",
+      "target": "18"
+    },
+    {
+      "key": "S00884",
+      "column": "credits",
+      "source": "17",
+      "target": "16"
+    },
+    {
+      "key": "S00942",
+      "column": "status",
+      "source": "enrolled",
+      "target": "withdrawn"
+    }
+  ],
+  "format_only_changes": [
+    {
+      "key": "S00009",
+      "column": "last_name",
+      "kind": "upper case",
+      "source": "Cohen",
+      "target": "COHEN"
+    },
+    {
+      "key": "S00115",
+      "column": "enrolled_on",
+      "kind": "date format",
+      "source": "2026-09-11",
+      "target": "09/11/2026"
+    },
+    {
+      "key": "S00140",
+      "column": "school",
+      "kind": "trailing space",
+      "source": "Tandon",
+      "target": "Tandon "
+    },
+    {
+      "key": "S00151",
+      "column": "status",
+      "kind": "title case",
+      "source": "enrolled",
+      "target": "Enrolled"
+    },
+    {
+      "key": "S00232",
+      "column": "status",
+      "kind": "title case",
+      "source": "enrolled",
+      "target": "Enrolled"
+    },
+    {
+      "key": "S00239",
+      "column": "status",
+      "kind": "title case",
+      "source": "enrolled",
+      "target": "Enrolled"
+    },
+    {
+      "key": "S00313",
+      "column": "enrolled_on",
+      "kind": "date format",
+      "source": "2026-09-11",
+      "target": "09/11/2026"
+    },
+    {
+      "key": "S00346",
+      "column": "status",
+      "kind": "title case",
+      "source": "enrolled",
+      "target": "Enrolled"
+    },
+    {
+      "key": "S00384",
+      "column": "school",
+      "kind": "trailing space",
+      "source": "Stern",
+      "target": "Stern "
+    },
+    {
+      "key": "S00395",
+      "column": "credits",
+      "kind": "decimal",
+      "source": "17",
+      "target": "17.0"
+    },
+    {
+      "key": "S00444",
+      "column": "credits",
+      "kind": "decimal",
+      "source": "17",
+      "target": "17.0"
+    },
+    {
+      "key": "S00475",
+      "column": "enrolled_on",
+      "kind": "date format",
+      "source": "2026-09-12",
+      "target": "09/12/2026"
+    },
+    {
+      "key": "S00545",
+      "column": "last_name",
+      "kind": "upper case",
+      "source": "Okafor",
+      "target": "OKAFOR"
+    },
+    {
+      "key": "S00586",
+      "column": "credits",
+      "kind": "decimal",
+      "source": "15",
+      "target": "15.0"
+    },
+    {
+      "key": "S00646",
+      "column": "credits",
+      "kind": "decimal",
+      "source": "6",
+      "target": "6.0"
+    },
+    {
+      "key": "S00683",
+      "column": "school",
+      "kind": "trailing space",
+      "source": "Stern",
+      "target": "Stern "
+    },
+    {
+      "key": "S00693",
+      "column": "last_name",
+      "kind": "upper case",
+      "source": "Tanaka",
+      "target": "TANAKA"
+    },
+    {
+      "key": "S00712",
+      "column": "credits",
+      "kind": "decimal",
+      "source": "11",
+      "target": "11.0"
+    },
+    {
+      "key": "S00795",
+      "column": "enrolled_on",
+      "kind": "date format",
+      "source": "2026-08-26",
+      "target": "08/26/2026"
+    },
+    {
+      "key": "S00816",
+      "column": "school",
+      "kind": "trailing space",
+      "source": "Stern",
+      "target": "Stern "
+    },
+    {
+      "key": "S00833",
+      "column": "enrolled_on",
+      "kind": "date format",
+      "source": "2026-08-25",
+      "target": "08/25/2026"
+    },
+    {
+      "key": "S00839",
+      "column": "last_name",
+      "kind": "upper case",
+      "source": "Moreau",
+      "target": "MOREAU"
+    },
+    {
+      "key": "S00864",
+      "column": "last_name",
+      "kind": "upper case",
+      "source": "Iyer",
+      "target": "IYER"
+    },
+    {
+      "key": "S00920",
+      "column": "status",
+      "kind": "title case",
+      "source": "enrolled",
+      "target": "Enrolled"
+    },
+    {
+      "key": "S00943",
+      "column": "school",
+      "kind": "trailing space",
+      "source": "Courant",
+      "target": "Courant "
+    }
+  ],
+  "seed": 42
+}

@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Secrets (AWS keys in Phase 2 live here, never in code)
+.env
+
+# Generated reports (regenerate with compare.py)
+reports/
+
+# macOS
+.DS_Store
