@@ -1,0 +1,496 @@
+{
+  "key_column": "student_id",
+  "source": {
+    "path": "data/source.csv",
+    "rows": 1000,
+    "duplicate_keys": [],
+    "blank_keys": 0,
+    "malformed_rows": 0
+  },
+  "target": {
+    "path": "data/target.csv",
+    "rows": 992,
+    "duplicate_keys": [
+      "S00274",
+      "S00594"
+    ],
+    "blank_keys": 1,
+    "malformed_rows": 0
+  },
+  "only_in_source": [
+    "S00010",
+    "S00017",
+    "S00059",
+    "S00108",
+    "S00225",
+    "S00238",
+    "S00278",
+    "S00342",
+    "S00726",
+    "S00745",
+    "S00748",
+    "S00752",
+    "S00834",
+    "S00842",
+    "S00968"
+  ],
+  "only_in_target": [
+    "S01001",
+    "S01002",
+    "S01003",
+    "S01004"
+  ],
+  "matched_keys": 985,
+  "columns_only_in_source": [],
+  "columns_only_in_target": [],
+  "changes": [
+    {
+      "key": "S00009",
+      "column": "last_name",
+      "source": "Cohen",
+      "target": "COHEN",
+      "kind": "format only",
+      "reason": "letter case"
+    },
+    {
+      "key": "S00033",
+      "column": "status",
+      "source": "enrolled",
+      "target": "withdrawn",
+      "kind": "real change",
+      "reason": null
+    },
+    {
+      "key": "S00060",
+      "column": "credits",
+      "source": "9",
+      "target": "16",
+      "kind": "real change",
+      "reason": null
+    },
+    {
+      "key": "S00076",
+      "column": "credits",
+      "source": "16",
+      "target": "11",
+      "kind": "real change",
+      "reason": null
+    },
+    {
+      "key": "S00115",
+      "column": "enrolled_on",
+      "source": "2026-09-11",
+      "target": "09/11/2026",
+      "kind": "format only",
+      "reason": "date format"
+    },
+    {
+      "key": "S00140",
+      "column": "school",
+      "source": "Tandon",
+      "target": "Tandon ",
+      "kind": "format only",
+      "reason": "whitespace"
+    },
+    {
+      "key": "S00151",
+      "column": "status",
+      "source": "enrolled",
+      "target": "Enrolled",
+      "kind": "format only",
+      "reason": "letter case"
+    },
+    {
+      "key": "S00232",
+      "column": "status",
+      "source": "enrolled",
+      "target": "Enrolled",
+      "kind": "format only",
+      "reason": "letter case"
+    },
+    {
+      "key": "S00235",
+      "column": "status",
+      "source": "enrolled",
+      "target": "withdrawn",
+      "kind": "real change",
+      "reason": null
+    },
+    {
+      "key": "S00239",
+      "column": "status",
+      "source": "enrolled",
+      "target": "Enrolled",
+      "kind": "format only",
+      "reason": "letter case"
+    },
+    {
+      "key": "S00313",
+      "column": "enrolled_on",
+      "source": "2026-09-11",
+      "target": "09/11/2026",
+      "kind": "format only",
+      "reason": "date format"
+    },
+    {
+      "key": "S00326",
+      "column": "credits",
+      "source": "10",
+      "target": "14",
+      "kind": "real change",
+      "reason": null
+    },
+    {
+      "key": "S00346",
+      "column": "status",
+      "source": "enrolled",
+      "target": "Enrolled",
+      "kind": "format only",
+      "reason": "letter case"
+    },
+    {
+      "key": "S00384",
+      "column": "school",
+      "source": "Stern",
+      "target": "Stern ",
+      "kind": "format only",
+      "reason": "whitespace"
+    },
+    {
+      "key": "S00395",
+      "column": "credits",
+      "source": "17",
+      "target": "17.0",
+      "kind": "format only",
+      "reason": "number format"
+    },
+    {
+      "key": "S00444",
+      "column": "credits",
+      "source": "17",
+      "target": "17.0",
+      "kind": "format only",
+      "reason": "number format"
+    },
+    {
+      "key": "S00475",
+      "column": "enrolled_on",
+      "source": "2026-09-12",
+      "target": "09/12/2026",
+      "kind": "format only",
+      "reason": "date format"
+    },
+    {
+      "key": "S00494",
+      "column": "credits",
+      "source": "18",
+      "target": "13",
+      "kind": "real change",
+      "reason": null
+    },
+    {
+      "key": "S00497",
+      "column": "status",
+      "source": "enrolled",
+      "target": "withdrawn",
+      "kind": "real change",
+      "reason": null
+    },
+    {
+      "key": "S00505",
+      "column": "credits",
+      "source": "6",
+      "target": "17",
+      "kind": "real change",
+      "reason": null
+    },
+    {
+      "key": "S00545",
+      "column": "last_name",
+      "source": "Okafor",
+      "target": "OKAFOR",
+      "kind": "format only",
+      "reason": "letter case"
+    },
+    {
+      "key": "S00586",
+      "column": "credits",
+      "source": "15",
+      "target": "15.0",
+      "kind": "format only",
+      "reason": "number format"
+    },
+    {
+      "key": "S00638",
+      "column": "credits",
+      "source": "16",
+      "target": "15",
+      "kind": "real change",
+      "reason": null
+    },
+    {
+      "key": "S00646",
+      "column": "credits",
+      "source": "6",
+      "target": "6.0",
+      "kind": "format only",
+      "reason": "number format"
+    },
+    {
+      "key": "S00683",
+      "column": "school",
+      "source": "Stern",
+      "target": "Stern ",
+      "kind": "format only",
+      "reason": "whitespace"
+    },
+    {
+      "key": "S00693",
+      "column": "last_name",
+      "source": "Tanaka",
+      "target": "TANAKA",
+      "kind": "format only",
+      "reason": "letter case"
+    },
+    {
+      "key": "S00712",
+      "column": "credits",
+      "source": "11",
+      "target": "11.0",
+      "kind": "format only",
+      "reason": "number format"
+    },
+    {
+      "key": "S00795",
+      "column": "enrolled_on",
+      "source": "2026-08-26",
+      "target": "08/26/2026",
+      "kind": "format only",
+      "reason": "date format"
+    },
+    {
+      "key": "S00816",
+      "column": "school",
+      "source": "Stern",
+      "target": "Stern ",
+      "kind": "format only",
+      "reason": "whitespace"
+    },
+    {
+      "key": "S00826",
+      "column": "credits",
+      "source": "4",
+      "target": "18",
+      "kind": "real change",
+      "reason": null
+    },
+    {
+      "key": "S00833",
+      "column": "enrolled_on",
+      "source": "2026-08-25",
+      "target": "08/25/2026",
+      "kind": "format only",
+      "reason": "date format"
+    },
+    {
+      "key": "S00839",
+      "column": "last_name",
+      "source": "Moreau",
+      "target": "MOREAU",
+      "kind": "format only",
+      "reason": "letter case"
+    },
+    {
+      "key": "S00864",
+      "column": "last_name",
+      "source": "Iyer",
+      "target": "IYER",
+      "kind": "format only",
+      "reason": "letter case"
+    },
+    {
+      "key": "S00884",
+      "column": "credits",
+      "source": "17",
+      "target": "16",
+      "kind": "real change",
+      "reason": null
+    },
+    {
+      "key": "S00920",
+      "column": "status",
+      "source": "enrolled",
+      "target": "Enrolled",
+      "kind": "format only",
+      "reason": "letter case"
+    },
+    {
+      "key": "S00942",
+      "column": "status",
+      "source": "enrolled",
+      "target": "withdrawn",
+      "kind": "real change",
+      "reason": null
+    },
+    {
+      "key": "S00943",
+      "column": "school",
+      "source": "Courant",
+      "target": "Courant ",
+      "kind": "format only",
+      "reason": "whitespace"
+    }
+  ],
+  "by_column": {
+    "credits": {
+      "real": 8,
+      "format_only": 5,
+      "reasons": {
+        "number format": 5
+      }
+    },
+    "enrolled_on": {
+      "real": 0,
+      "format_only": 5,
+      "reasons": {
+        "date format": 5
+      }
+    },
+    "last_name": {
+      "real": 0,
+      "format_only": 5,
+      "reasons": {
+        "letter case": 5
+      }
+    },
+    "school": {
+      "real": 0,
+      "format_only": 5,
+      "reasons": {
+        "whitespace": 5
+      }
+    },
+    "status": {
+      "real": 4,
+      "format_only": 5,
+      "reasons": {
+        "letter case": 5
+      }
+    }
+  },
+  "hints": [
+    {
+      "type": "concentration",
+      "about": "records missing from the target",
+      "column": "school",
+      "value": "Stern",
+      "count": 12,
+      "of": 15,
+      "share_overall": 0.199,
+      "text": "**Likely cause:** 12 of the 15 records missing from the target have `school` = 'Stern', but only 20% of source rows do. Check the load's filter or join for `school`.",
+      "strength": 0.601
+    },
+    {
+      "type": "format_only_columns",
+      "columns": [
+        "enrolled_on",
+        "last_name",
+        "school"
+      ],
+      "text": "Every difference in `enrolled_on`, `last_name` and `school` is formatting only, which points at a cleaning or type-conversion step rather than wrong data."
+    }
+  ],
+  "summary": [
+    "Compared 1,000 source rows with 992 target rows on student_id. 15 records are missing from the target, and 4 are in the target only. 2 keys appear more than once in the target. 1 row in the target has no key.",
+    "37 matched records differ: 25 only in formatting (spaces, letter case, number format and date format) and 12 in real values (credits 8, status 4).",
+    "Likely cause: 12 of the 15 records missing from the target have school = 'Stern', but only 20% of source rows do. Check the load's filter or join for school.",
+    "Every difference in enrolled_on, last_name and school is formatting only, which points at a cleaning or type-conversion step rather than wrong data.",
+    "A SQL cross-check in SQLite agrees on all 14 checks."
+  ],
+  "sql_checks": [
+    {
+      "check": "only in source",
+      "sql": 15,
+      "python": 15,
+      "agree": true
+    },
+    {
+      "check": "only in target",
+      "sql": 4,
+      "python": 4,
+      "agree": true
+    },
+    {
+      "check": "duplicate keys in source",
+      "sql": 0,
+      "python": 0,
+      "agree": true
+    },
+    {
+      "check": "duplicate keys in target",
+      "sql": 2,
+      "python": 2,
+      "agree": true
+    },
+    {
+      "check": "blank keys in source",
+      "sql": 0,
+      "python": 0,
+      "agree": true
+    },
+    {
+      "check": "blank keys in target",
+      "sql": 1,
+      "python": 1,
+      "agree": true
+    },
+    {
+      "check": "changed cells in first_name",
+      "sql": 0,
+      "python": 0,
+      "agree": true
+    },
+    {
+      "check": "changed cells in last_name",
+      "sql": 5,
+      "python": 5,
+      "agree": true
+    },
+    {
+      "check": "changed cells in school",
+      "sql": 5,
+      "python": 5,
+      "agree": true
+    },
+    {
+      "check": "changed cells in program",
+      "sql": 0,
+      "python": 0,
+      "agree": true
+    },
+    {
+      "check": "changed cells in term",
+      "sql": 0,
+      "python": 0,
+      "agree": true
+    },
+    {
+      "check": "changed cells in credits",
+      "sql": 13,
+      "python": 13,
+      "agree": true
+    },
+    {
+      "check": "changed cells in status",
+      "sql": 9,
+      "python": 9,
+      "agree": true
+    },
+    {
+      "check": "changed cells in enrolled_on",
+      "sql": 5,
+      "python": 5,
+      "agree": true
+    }
+  ]
+}

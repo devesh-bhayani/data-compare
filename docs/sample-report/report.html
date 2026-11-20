@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>data-compare: source.csv vs target.csv</title>
+<style>
+/*
+  data-compare theme: one stylesheet for the HTML report (Phase 1) and the
+  React page (Phase 2).
+
+  Font and colors follow NYU's public brand guidelines (checked 2026-11-19):
+  - Typeface: NYU Perstare is NYU's primary typeface but is not public on the
+    web; Montserrat is the Google alternative NYU names, then Helvetica, then
+    Arial (NYU's own fallback order).
+  - Colors: NYU's published hex values. Body text in #404040, as the
+    guidelines ask for digital body copy. Violet for headings, bars and
+    backgrounds, never as small text on black or on Ultra Violet.
+  No NYU logo, seal or wordmark: this is a personal project, not an NYU tool.
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+:root {
+  /* Primary */
+  --nyu-violet: #57068c;
+  --ultra-violet: #8900e1;   /* sparingly: real changes only */
+  --black: #000000;
+  /* Secondary */
+  --deep-violet: #330662;
+  --medium-violet-1: #702b9d;
+  --medium-violet-2: #7b5aa6;
+  --light-violet-1: #ab82c5;
+  --light-violet-2: #eee6f3;
+  /* Neutrals */
+  --dark-gray: #404040;
+  --medium-gray-1: #6d6d6d;
+  --medium-gray-2: #b8b8b8;
+  --medium-gray-3: #d6d6d6;
+  --light-gray: #f2f2f2;
+  --white: #ffffff;
+
+  /* Roles (contrast checked, all 5:1 or better) */
+  --text: var(--dark-gray);            /* 10.4:1 on white */
+  --text-muted: var(--medium-gray-1);  /* 5.2:1 on white */
+  --heading: var(--nyu-violet);        /* 11.6:1 on white */
+  --surface: var(--white);
+  --surface-alt: var(--light-gray);
+  --rule: var(--medium-gray-3);
+
+  --font: "Montserrat", Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --radius: 6px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--surface-alt);
+}
+
+h1, h2, h3 { color: var(--heading); line-height: 1.2; margin: 0 0 0.5em; }
+h1 { font-size: 1.75rem; font-weight: 700; }
+h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2rem; }
+h3 { font-size: 1rem; font-weight: 600; }
+
+/* Top bar: white on NYU Violet, 11.6:1 */
+.app-bar {
+  background: var(--nyu-violet);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+}
+.app-bar h1 { color: var(--white); margin: 0; font-size: 1.25rem; }
+.app-bar p { margin: 0.25rem 0 0; color: var(--light-violet-2); font-size: 0.875rem; }  /* 9.5:1 */
+
+.page { max-width: 960px; margin: 0 auto; padding: 1.5rem; }
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+.card > h2:first-child { margin-top: 0; }
+
+/* Wide tables scroll inside their card on a phone instead of the whole page */
+.table-wrap { overflow-x: auto; }
+
+/* The plain-English summary: violet rule on light violet, 9.5:1 */
+.summary {
+  background: var(--light-violet-2);
+  border-left: 6px solid var(--nyu-violet);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.summary p { margin: 0 0 0.5rem; }
+.summary p:last-child { margin-bottom: 0; }
+.summary strong { color: var(--deep-violet); }
+
+/* Count tiles */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);   /* 8 tiles: two even rows */
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+@media (max-width: 600px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .page { padding: 1rem; }
+  .card { padding: 1rem; }
+}
+.stat {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border-top: 4px solid var(--light-violet-1);
+  padding: 0.75rem 1rem;
+}
+.stat .value {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--heading);
+  font-variant-numeric: tabular-nums;
+}
+.stat .label { font-size: 0.8125rem; color: var(--text-muted); }
+.stat.alert { border-top-color: var(--ultra-violet); }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--deep-violet);
+  background: var(--light-violet-2);
+  padding: 0.5rem 0.75rem;
+}
+td {
+  padding: 0.5rem 0.75rem;
+  border-top: 1px solid var(--rule);
+  vertical-align: top;
+  font-variant-numeric: tabular-nums;
+}
+
+/* A raw cell value. white-space: pre keeps trailing spaces, and the dashed
+   box shows where the value ends, so 'Tandon ' is visibly wider than 'Tandon'. */
+.val {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  white-space: pre;
+  padding: 0 2px;
+  outline: 1px dashed var(--medium-gray-2);
+  outline-offset: 1px;
+}
+.val + .val { margin-left: 0.4rem; }
+
+/* Change labels */
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+  white-space: nowrap;
+}
+.badge.real { background: var(--ultra-violet); color: var(--white); }        /* 6.7:1 */
+.badge.format { background: var(--light-violet-2); color: var(--deep-violet); } /* 12.8:1 */
+.badge.missing { background: var(--dark-gray); color: var(--white); }
+.badge.extra { background: var(--medium-violet-2); color: var(--white); }    /* 5.4:1 */
+.badge.key { background: var(--deep-violet); color: var(--white); }         /* 15.6:1 */
+
+.muted { color: var(--text-muted); font-size: 0.875rem; }
+footer { color: var(--text-muted); font-size: 0.8125rem; padding: 1rem 0 2rem; }
+
+</style>
+</head>
+<body>
+<header class="app-bar">
+<h1>data-compare</h1>
+<p>source.csv vs target.csv, key column <span class="val">student_id</span></p>
+</header>
+<main class="page">
+<section class="summary" aria-label="Summary"><p>Compared 1,000 source rows with 992 target rows on <code>student_id</code>. 15 records are missing from the target, and 4 are in the target only. 2 keys appear more than once in the target. 1 row in the target has no key.</p><p>37 matched records differ: 25 only in formatting (spaces, letter case, number format and date format) and 12 in real values (<code>credits</code> 8, <code>status</code> 4).</p><p><strong>Likely cause:</strong> 12 of the 15 records missing from the target have <code>school</code> = 'Stern', but only 20% of source rows do. Check the load's filter or join for <code>school</code>.</p><p>Every difference in <code>enrolled_on</code>, <code>last_name</code> and <code>school</code> is formatting only, which points at a cleaning or type-conversion step rather than wrong data.</p><p>A SQL cross-check in SQLite agrees on all 14 checks.</p></section><div class="stats"><div class="stat"><span class="value">1,000</span><span class="label">source rows</span></div><div class="stat"><span class="value">992</span><span class="label">target rows</span></div><div class="stat alert"><span class="value">15</span><span class="label">missing from target</span></div><div class="stat"><span class="value">4</span><span class="label">only in target</span></div><div class="stat"><span class="value">2</span><span class="label">duplicate keys</span></div><div class="stat"><span class="value">1</span><span class="label">blank keys</span></div><div class="stat alert"><span class="value">12</span><span class="label">real changes</span></div><div class="stat"><span class="value">25</span><span class="label">format only</span></div></div><section class="card"><h2>Changed values</h2><p class="muted">Showing 20 of 37, real changes first. Dashed boxes mark where each raw value starts and ends, so a trailing space shows.</p><div class="table-wrap"><table><thead><tr><th>student_id</th><th>column</th><th>source</th><th>target</th><th>type</th></tr></thead><tbody><tr><td><span class="val">S00033</span></td><td>status</td><td><span class="val">enrolled</span></td><td><span class="val">withdrawn</span></td><td><span class="badge real">real change</span></td></tr><tr><td><span class="val">S00060</span></td><td>credits</td><td><span class="val">9</span></td><td><span class="val">16</span></td><td><span class="badge real">real change</span></td></tr><tr><td><span class="val">S00076</span></td><td>credits</td><td><span class="val">16</span></td><td><span class="val">11</span></td><td><span class="badge real">real change</span></td></tr><tr><td><span class="val">S00235</span></td><td>status</td><td><span class="val">enrolled</span></td><td><span class="val">withdrawn</span></td><td><span class="badge real">real change</span></td></tr><tr><td><span class="val">S00326</span></td><td>credits</td><td><span class="val">10</span></td><td><span class="val">14</span></td><td><span class="badge real">real change</span></td></tr><tr><td><span class="val">S00494</span></td><td>credits</td><td><span class="val">18</span></td><td><span class="val">13</span></td><td><span class="badge real">real change</span></td></tr><tr><td><span class="val">S00497</span></td><td>status</td><td><span class="val">enrolled</span></td><td><span class="val">withdrawn</span></td><td><span class="badge real">real change</span></td></tr><tr><td><span class="val">S00505</span></td><td>credits</td><td><span class="val">6</span></td><td><span class="val">17</span></td><td><span class="badge real">real change</span></td></tr><tr><td><span class="val">S00638</span></td><td>credits</td><td><span class="val">16</span></td><td><span class="val">15</span></td><td><span class="badge real">real change</span></td></tr><tr><td><span class="val">S00826</span></td><td>credits</td><td><span class="val">4</span></td><td><span class="val">18</span></td><td><span class="badge real">real change</span></td></tr><tr><td><span class="val">S00009</span></td><td>last_name</td><td><span class="val">Cohen</span></td><td><span class="val">COHEN</span></td><td><span class="badge format">format only: letter case</span></td></tr><tr><td><span class="val">S00115</span></td><td>enrolled_on</td><td><span class="val">2026-09-11</span></td><td><span class="val">09/11/2026</span></td><td><span class="badge format">format only: date format</span></td></tr><tr><td><span class="val">S00140</span></td><td>school</td><td><span class="val">Tandon</span></td><td><span class="val">Tandon </span></td><td><span class="badge format">format only: whitespace</span></td></tr><tr><td><span class="val">S00151</span></td><td>status</td><td><span class="val">enrolled</span></td><td><span class="val">Enrolled</span></td><td><span class="badge format">format only: letter case</span></td></tr><tr><td><span class="val">S00232</span></td><td>status</td><td><span class="val">enrolled</span></td><td><span class="val">Enrolled</span></td><td><span class="badge format">format only: letter case</span></td></tr><tr><td><span class="val">S00239</span></td><td>status</td><td><span class="val">enrolled</span></td><td><span class="val">Enrolled</span></td><td><span class="badge format">format only: letter case</span></td></tr><tr><td><span class="val">S00313</span></td><td>enrolled_on</td><td><span class="val">2026-09-11</span></td><td><span class="val">09/11/2026</span></td><td><span class="badge format">format only: date format</span></td></tr><tr><td><span class="val">S00346</span></td><td>status</td><td><span class="val">enrolled</span></td><td><span class="val">Enrolled</span></td><td><span class="badge format">format only: letter case</span></td></tr><tr><td><span class="val">S00384</span></td><td>school</td><td><span class="val">Stern</span></td><td><span class="val">Stern </span></td><td><span class="badge format">format only: whitespace</span></td></tr><tr><td><span class="val">S00395</span></td><td>credits</td><td><span class="val">17</span></td><td><span class="val">17.0</span></td><td><span class="badge format">format only: number format</span></td></tr></tbody></table></div></section><section class="card"><h2>Changes by column</h2><div class="table-wrap"><table><thead><tr><th>column</th><th>real</th><th>format only</th><th>reasons</th></tr></thead><tbody><tr><td>credits</td><td>8</td><td>5</td><td>number format</td></tr><tr><td>enrolled_on</td><td>0</td><td>5</td><td>date format</td></tr><tr><td>last_name</td><td>0</td><td>5</td><td>letter case</td></tr><tr><td>school</td><td>0</td><td>5</td><td>whitespace</td></tr><tr><td>status</td><td>4</td><td>5</td><td>letter case</td></tr></tbody></table></div></section><section class="card"><h2>Missing from the target</h2><p class="muted">Showing 10 of 15. Values from the source.</p><div class="table-wrap"><table><thead><tr><th>student_id</th><th>school</th><th>first_name</th><th>last_name</th><th></th></tr></thead><tbody><tr><td><span class="val">S00010</span></td><td>Stern</td><td>Priya</td><td>Larsen</td><td><span class="badge missing">missing</span></td></tr><tr><td><span class="val">S00017</span></td><td>CAS</td><td>Leila</td><td>Kim</td><td><span class="badge missing">missing</span></td></tr><tr><td><span class="val">S00059</span></td><td>Stern</td><td>Chloe</td><td>Iyer</td><td><span class="badge missing">missing</span></td></tr><tr><td><span class="val">S00108</span></td><td>Stern</td><td>Liam</td><td>Cohen</td><td><span class="badge missing">missing</span></td></tr><tr><td><span class="val">S00225</span></td><td>Stern</td><td>Zara</td><td>Shah</td><td><span class="badge missing">missing</span></td></tr><tr><td><span class="val">S00238</span></td><td>Stern</td><td>Amara</td><td>Ali</td><td><span class="badge missing">missing</span></td></tr><tr><td><span class="val">S00278</span></td><td>Stern</td><td>Kenji</td><td>Schmidt</td><td><span class="badge missing">missing</span></td></tr><tr><td><span class="val">S00342</span></td><td>CAS</td><td>Ravi</td><td>Nguyen</td><td><span class="badge missing">missing</span></td></tr><tr><td><span class="val">S00726</span></td><td>Stern</td><td>Noah</td><td>Silva</td><td><span class="badge missing">missing</span></td></tr><tr><td><span class="val">S00745</span></td><td>Stern</td><td>Elena</td><td>Brooks</td><td><span class="badge missing">missing</span></td></tr></tbody></table></div></section><section class="card"><h2>Only in the target</h2><p class="muted">Showing 4 of 4. Values from the target.</p><div class="table-wrap"><table><thead><tr><th>student_id</th><th>school</th><th>first_name</th><th>last_name</th><th></th></tr></thead><tbody><tr><td><span class="val">S01001</span></td><td>Courant</td><td>Priya</td><td>Brooks</td><td><span class="badge extra">only in target</span></td></tr><tr><td><span class="val">S01002</span></td><td>Courant</td><td>Amara</td><td>Ali</td><td><span class="badge extra">only in target</span></td></tr><tr><td><span class="val">S01003</span></td><td>Courant</td><td>Liam</td><td>Larsen</td><td><span class="badge extra">only in target</span></td></tr><tr><td><span class="val">S01004</span></td><td>Stern</td><td>Amara</td><td>Silva</td><td><span class="badge extra">only in target</span></td></tr></tbody></table></div></section><section class="card"><h2>Key problems</h2><div class="table-wrap"><table><thead><tr><th>student_id</th><th>problem</th></tr></thead><tbody><tr><td><span class="val">S00274</span> <span class="val">S00594</span></td><td><span class="badge key">appears more than once</span> in the target</td></tr><tr><td><span class="val"></span></td><td><span class="badge key">blank key</span> 1 row in the target</td></tr></tbody></table></div></section><section class="card"><h2>SQL cross-check</h2><p class="muted">The same questions answered again in SQLite, independently of the Python code.</p><div class="table-wrap"><table><thead><tr><th>check</th><th>SQL</th><th>Python</th><th></th></tr></thead><tbody><tr><td>only in source</td><td>15</td><td>15</td><td><span class="badge format">agrees</span></td></tr><tr><td>only in target</td><td>4</td><td>4</td><td><span class="badge format">agrees</span></td></tr><tr><td>duplicate keys in source</td><td>0</td><td>0</td><td><span class="badge format">agrees</span></td></tr><tr><td>duplicate keys in target</td><td>2</td><td>2</td><td><span class="badge format">agrees</span></td></tr><tr><td>blank keys in source</td><td>0</td><td>0</td><td><span class="badge format">agrees</span></td></tr><tr><td>blank keys in target</td><td>1</td><td>1</td><td><span class="badge format">agrees</span></td></tr><tr><td>changed cells in first_name</td><td>0</td><td>0</td><td><span class="badge format">agrees</span></td></tr><tr><td>changed cells in last_name</td><td>5</td><td>5</td><td><span class="badge format">agrees</span></td></tr><tr><td>changed cells in school</td><td>5</td><td>5</td><td><span class="badge format">agrees</span></td></tr><tr><td>changed cells in program</td><td>0</td><td>0</td><td><span class="badge format">agrees</span></td></tr><tr><td>changed cells in term</td><td>0</td><td>0</td><td><span class="badge format">agrees</span></td></tr><tr><td>changed cells in credits</td><td>13</td><td>13</td><td><span class="badge format">agrees</span></td></tr><tr><td>changed cells in status</td><td>9</td><td>9</td><td><span class="badge format">agrees</span></td></tr><tr><td>changed cells in enrolled_on</td><td>5</td><td>5</td><td><span class="badge format">agrees</span></td></tr></tbody></table></div></section>
+<footer>Generated by data-compare on 2026-11-20. Not affiliated with or endorsed by NYU.</footer>
+</main>
+</body>
+</html>
