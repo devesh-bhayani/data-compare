@@ -1,7 +1,7 @@
 """Turn a compare.py result into a plain-English summary and three report files.
 
 report.md   readable on GitHub
-report.json the full result, for code (the Phase 2 API returns this)
+report.json the full result, for code (POST /compare in api.py returns the same JSON)
 report.html one self-contained page styled with styles/theme.css
 """
 
@@ -303,13 +303,29 @@ def to_html(result, source, target, sql_checks, limit):
 """
 
 
-# ---------- Writing the files ----------
+# ---------- JSON, and writing the files ----------
+
+def sample_rows(result, table, keys, limit):
+    """The first `limit` rows for these keys, with the columns the HTML report shows."""
+    columns = display_columns(result, table.columns, result["key_column"])
+    return {"columns": columns, "rows": [{c: table.rows[k][c] for c in columns} for k in keys[:limit]]}
+
+
+def build_payload(result, source, target, sql_checks=None, limit=10):
+    """The JSON both front doors return: report.json from the CLI, POST /compare from the API."""
+    paragraphs = summary_paragraphs(result, sql_checks)
+    return dict(result,
+                summary=[plain(p) for p in paragraphs],
+                summary_markdown=paragraphs,   # with the **bold** and `code` marks, for the web page
+                samples={"only_in_source": sample_rows(result, source, result["only_in_source"], limit),
+                         "only_in_target": sample_rows(result, target, result["only_in_target"], limit)},
+                sql_checks=sql_checks)
+
 
 def write_reports(result, source, target, out_dir, sql_checks=None, limit=10):
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
-    payload = dict(result, summary=[plain(p) for p in summary_paragraphs(result, sql_checks)],
-                   sql_checks=sql_checks)
+    payload = build_payload(result, source, target, sql_checks, limit)
     paths = {
         "json": out / "report.json",
         "md": out / "report.md",

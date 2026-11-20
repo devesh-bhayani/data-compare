@@ -13,7 +13,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from compare import compare, concentration_hints, format_reason, load
+from compare import InputError, compare, concentration_hints, format_reason, load
 from report import summary_paragraphs, to_html, write_reports
 from sqlcheck import cross_check
 
@@ -157,14 +157,36 @@ class EdgeCaseTests(unittest.TestCase):
 
     def test_missing_key_column(self):
         p = self.csv("a.csv", "id,school\n1,Stern\n")
-        with self.assertRaises(SystemExit) as e:
+        with self.assertRaises(InputError) as e:
             load(str(p), KEY)
         self.assertIn("is not in", str(e.exception))
 
     def test_missing_file(self):
-        with self.assertRaises(SystemExit) as e:
+        with self.assertRaises(InputError) as e:
             load(str(self.path / "nope.csv"), KEY)
         self.assertIn("File not found", str(e.exception))
+
+    def test_repeated_column_names(self):
+        p = self.csv("a.csv", "student_id,school,school\nS1,Stern,CAS\n")
+        with self.assertRaises(InputError) as e:
+            load(str(p), KEY)
+        self.assertIn("repeat", str(e.exception))
+
+    def test_not_utf8(self):
+        p = self.path / "a.csv"
+        p.write_bytes("student_id,school\nS1,Tandón\n".encode("latin-1"))
+        with self.assertRaises(InputError) as e:
+            load(str(p), KEY)
+        self.assertIn("not UTF-8", str(e.exception))
+
+    def test_command_line_prints_the_problem(self):
+        """The CLI turns an InputError into a one-line message and exit code 1, no traceback."""
+        p = self.csv("a.csv", "id,school\n1,Stern\n")
+        run_cli = subprocess.run([sys.executable, str(HERE / "compare.py"), str(p), str(p), "--key", KEY],
+                                 capture_output=True, text=True)
+        self.assertEqual(run_cli.returncode, 1)
+        self.assertIn("is not in", run_cli.stderr)
+        self.assertNotIn("Traceback", run_cli.stderr)
 
     def test_excel_byte_order_mark(self):
         a = self.csv("a.csv", "student_id,school\nS1,Stern\n", bom=True)

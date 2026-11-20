@@ -407,6 +407,119 @@
     "Every difference in enrolled_on, last_name and school is formatting only, which points at a cleaning or type-conversion step rather than wrong data.",
     "A SQL cross-check in SQLite agrees on all 14 checks."
   ],
+  "summary_markdown": [
+    "Compared 1,000 source rows with 992 target rows on `student_id`. 15 records are missing from the target, and 4 are in the target only. 2 keys appear more than once in the target. 1 row in the target has no key.",
+    "37 matched records differ: 25 only in formatting (spaces, letter case, number format and date format) and 12 in real values (`credits` 8, `status` 4).",
+    "**Likely cause:** 12 of the 15 records missing from the target have `school` = 'Stern', but only 20% of source rows do. Check the load's filter or join for `school`.",
+    "Every difference in `enrolled_on`, `last_name` and `school` is formatting only, which points at a cleaning or type-conversion step rather than wrong data.",
+    "A SQL cross-check in SQLite agrees on all 14 checks."
+  ],
+  "samples": {
+    "only_in_source": {
+      "columns": [
+        "student_id",
+        "school",
+        "first_name",
+        "last_name"
+      ],
+      "rows": [
+        {
+          "student_id": "S00010",
+          "school": "Stern",
+          "first_name": "Priya",
+          "last_name": "Larsen"
+        },
+        {
+          "student_id": "S00017",
+          "school": "CAS",
+          "first_name": "Leila",
+          "last_name": "Kim"
+        },
+        {
+          "student_id": "S00059",
+          "school": "Stern",
+          "first_name": "Chloe",
+          "last_name": "Iyer"
+        },
+        {
+          "student_id": "S00108",
+          "school": "Stern",
+          "first_name": "Liam",
+          "last_name": "Cohen"
+        },
+        {
+          "student_id": "S00225",
+          "school": "Stern",
+          "first_name": "Zara",
+          "last_name": "Shah"
+        },
+        {
+          "student_id": "S00238",
+          "school": "Stern",
+          "first_name": "Amara",
+          "last_name": "Ali"
+        },
+        {
+          "student_id": "S00278",
+          "school": "Stern",
+          "first_name": "Kenji",
+          "last_name": "Schmidt"
+        },
+        {
+          "student_id": "S00342",
+          "school": "CAS",
+          "first_name": "Ravi",
+          "last_name": "Nguyen"
+        },
+        {
+          "student_id": "S00726",
+          "school": "Stern",
+          "first_name": "Noah",
+          "last_name": "Silva"
+        },
+        {
+          "student_id": "S00745",
+          "school": "Stern",
+          "first_name": "Elena",
+          "last_name": "Brooks"
+        }
+      ]
+    },
+    "only_in_target": {
+      "columns": [
+        "student_id",
+        "school",
+        "first_name",
+        "last_name"
+      ],
+      "rows": [
+        {
+          "student_id": "S01001",
+          "school": "Courant",
+          "first_name": "Priya",
+          "last_name": "Brooks"
+        },
+        {
+          "student_id": "S01002",
+          "school": "Courant",
+          "first_name": "Amara",
+          "last_name": "Ali"
+        },
+        {
+          "student_id": "S01003",
+          "school": "Courant",
+          "first_name": "Liam",
+          "last_name": "Larsen"
+        },
+        {
+          "student_id": "S01004",
+          "school": "Stern",
+          "first_name": "Amara",
+          "last_name": "Silva"
+        }
+      ]
+    }
+  },
   "sql_checks": [
     {
       "check": "only in source",

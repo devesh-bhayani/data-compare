@@ -2,8 +2,9 @@
 
 Rows only in one file, duplicate and blank keys, and every cell whose raw
 text differs between matched rows, labelled as a real change or a
-format-only change (same value, written differently). Later steps add a SQL
-cross-check and a plain-English report.
+format-only change (same value, written differently). sqlcheck.py checks the
+counts again in SQL, report.py writes the plain-English report, and api.py
+puts the same comparison behind an HTTP API.
 
 Usage:
     python3 compare.py data/source.csv data/target.csv --key student_id
@@ -18,6 +19,15 @@ from typing import Dict, List, NamedTuple, Set
 # Date formats treated as the same date written differently. MM/DD/YYYY is
 # assumed for slashes (US convention), so 09/11/2026 means September 11.
 DATE_FORMATS = ("%Y-%m-%d", "%m/%d/%Y")
+
+
+class InputError(ValueError):
+    """A file that cannot be compared: missing, not UTF-8 text, or without the key column.
+
+    load() raises this instead of exiting the program, so each front door
+    decides what happens next: the command line prints the message and stops,
+    and the API turns it into an HTTP 400 answer.
+    """
 
 
 class Table(NamedTuple):
@@ -40,8 +50,12 @@ def load(path, key):
         with open(path, newline="", encoding="utf-8-sig") as f:
             reader = csv.DictReader(f)
             columns = reader.fieldnames or []
+            repeated = sorted(c for c, n in Counter(columns).items() if n > 1)
+            if repeated:
+                # DictReader would silently keep only the last column of each name.
+                raise InputError(f"Column names repeat in {path}: {', '.join(map(repr, repeated))}")
             if key not in columns:
-                raise SystemExit(f"Key column {key!r} is not in {path}. "
+                raise InputError(f"Key column {key!r} is not in {path}. "
                                  f"Columns: {', '.join(columns) or '(none)'}")
             for row in reader:
                 count += 1
@@ -59,7 +73,11 @@ def load(path, key):
                     duplicates.add(k)
                 rows[k] = row             # last copy wins, so duplicates are reported first
     except FileNotFoundError:
-        raise SystemExit(f"File not found: {path}")
+        raise InputError(f"File not found: {path}") from None
+    except UnicodeDecodeError:
+        raise InputError(f"{path} is not UTF-8 text. Save it as CSV (UTF-8) and try again.") from None
+    except csv.Error as e:
+        raise InputError(f"{path} could not be read as CSV: {e}") from None
     return Table(path, columns, rows, count, duplicates, blank, malformed)
 
 
@@ -302,8 +320,11 @@ def main():
                         help="write report.md, report.json and report.html to DIR (runs the SQL check too)")
     args = parser.parse_args()
 
-    source = load(args.source, args.key)
-    target = load(args.target, args.key)
+    try:
+        source = load(args.source, args.key)
+        target = load(args.target, args.key)
+    except InputError as e:
+        raise SystemExit(str(e)) from None
     result = compare(source, target, args.key)
     print_result(result, show=args.show)
 
