@@ -2,7 +2,7 @@
 
 Compare two data sets on a key column and explain the differences in plain English: rows missing on either side, duplicate and blank keys, changed values, which changes are only formatting, and a likely cause. Every count is cross-checked in SQL.
 
-A personal project with synthetic data, built in November 2026. The comparison is Python 3.9 or later with the standard library only. A small FastAPI server and a React page put it in the browser.
+A personal project with synthetic data, built in November 2026. The comparison is Python 3.9 or later with the standard library only. A small FastAPI server and a React page put it in the browser, and the server can save each report to a private S3 bucket.
 
 ![The React page showing the report for the sample data](docs/web-page.jpg)
 
@@ -37,7 +37,11 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5173 and click **Try the sample data**, or pick two CSV files and a key column. FastAPI's own test page for the API is at http://127.0.0.1:8000/docs. With the virtual environment in place, `.venv/bin/python -m unittest -v` runs all 39 tests.
+Open http://localhost:5173 and click **Try the sample data**, or pick two CSV files and a key column. FastAPI's own test page for the API is at http://127.0.0.1:8000/docs. With the virtual environment in place, `.venv/bin/python -m unittest -v` runs all 52 tests.
+
+### Saving reports to S3
+
+To try it without an AWS account, start the API with `.venv/bin/python run_fake_s3.py` instead of `uvicorn`. It runs the same API against a fake S3 in memory ([moto](https://github.com/getmoto/moto)), so each comparison is "saved" and can be read back, and nothing is sent to AWS. Connecting a real bucket, with a least-privilege policy and the cleanup steps, is in [docs/s3-setup.md](docs/s3-setup.md).
 
 ## What it tells you
 
@@ -66,14 +70,19 @@ Every number in it matches the answer key the test data was generated with.
 | `api.py` | The HTTP API (FastAPI): the same comparison behind three endpoints, below |
 | `web/` | The React page (Vite): upload two files, read the report ([web/README.md](web/README.md)) |
 | `test_compare.py` | 30 tests against the answer key and edge cases |
+| `storage.py` | Optional: saves each report to S3 and reads it back by ID, when `REPORTS_BUCKET` is set |
+| `run_fake_s3.py` | Starts the API with a fake S3 in memory, for trying the save without AWS |
 | `test_api.py` | 9 tests for the API |
-| `requirements.txt` | The four packages the API and its tests need |
+| `test_storage.py` | 13 tests for saving to S3, against the fake S3, plus a check on the policy |
+| `docs/s3-policy.json`, `docs/s3-setup.md` | The app's least-privilege IAM policy, and how to connect a real bucket |
+| `requirements.txt` | The packages the API, the S3 saving and their tests need |
 | `styles/theme.css` | The look of both the HTML report and the web page; `styles/preview.html` is the original mockup |
 
 | Endpoint | What it does |
 |---|---|
 | `GET /health` | Returns `{"ok": true}` |
-| `POST /compare` | Form fields `source` and `target` (CSV files) and `key`. Returns the same JSON as `report.json`. Answers 400 with the reason for a file that cannot be compared, and 413 for a file over 10 MB |
+| `POST /compare` | Form fields `source` and `target` (CSV files) and `key`. Returns the same JSON as `report.json`. Answers 400 with the reason for a file that cannot be compared, and 413 for a file over 10 MB. When saving is on, it also saves the report to S3 and adds a `saved` field with the report's ID |
+| `GET /reports/{id}` | A saved report, read back from S3 (404 when saving is off or the ID is unknown) |
 | `GET /sample/{name}` | `source.csv` or `target.csv`, for the page's sample button. The answer key is not served |
 
 ### Design notes
@@ -91,6 +100,8 @@ Every number in it matches the answer key the test data was generated with.
 - **CORS.** The page (port 5173) and the API (port 8000) are different origins, so the browser will not let the page read the API's answers unless the API says that origin may. `api.py` allows exactly the two dev-server addresses, and a test checks that any other origin gets no permission. Vite is pinned to port 5173 because a quiet move to 5174 would be blocked.
 - **Blocking work off the event loop.** FastAPI runs `async` endpoints on one event loop. Reading the uploads is awaited; the comparison is ordinary blocking Python, so it runs in a worker thread (`run_in_threadpool`) and the server can still answer other requests meanwhile.
 - **Promises in the page.** `fetch` returns a promise: a placeholder for an answer that arrives later. The browser runs the page's JavaScript on one thread, so `await` pauses only the function that is waiting, and the page keeps repainting and handling clicks. The code waits in three places: for the server's response (`await fetch`), for its body (`await res.json()`), and, behind the sample button, for both files at once (`await Promise.all([...])` starts both downloads together and resumes when the slower one arrives). `fetch` rejects only when no answer arrives at all (server down, CORS block). A 400 still resolves, so the code checks `res.ok` itself.
+- **Saving to S3, with least privilege.** The app's policy (`docs/s3-policy.json`) allows two actions, `s3:PutObject` and `s3:GetObject`, on one prefix of one bucket, and a test fails if it is widened. Keys come from the environment, never from the code. Each report is stored as `reports/<time>-<random>.json`, encrypted at rest, and IDs are checked against that pattern before any request, so an ID like `../secret` never reaches S3. A failed save does not throw away a finished comparison: the report still comes back, with the reason it was not saved. Because the app may not list the bucket, real S3 answers a missing report with 403 rather than 404, and the error message says so.
+- **Testing cloud code without the cloud.** The S3 tests run against moto, a fake S3 inside the test process, with fake keys, so they need no account, no network and cost nothing. What moto does not check is IAM: the policy is tested by reading the file, and the 403 case with a stand-in client.
 - **Uploads.** Only `.csv` files, at most 10 MB each, written to a temporary folder that is deleted when the request ends. The limit protects the comparison's memory. The server has already received the upload when the check runs, so a real deployment would also cap the request size in front of the app.
 
 ### At scale
@@ -101,11 +112,11 @@ This version loads both files into memory, which is fine while they fit comforta
 
 `python3 -m unittest -v` runs 30 core tests: every finding against `planted.json`, the format rules (13 cases), the hint thresholds (exactly 80% counts, 75% does not), edge cases (missing key column, missing file, byte-order mark, identical files, header-only file, malformed rows, an extra column, conflicting duplicates, blank keys on one side, repeated column names, a file that is not UTF-8, and the command line's one-line error message), HTML escaping, the three report files, a deliberately wrong answer that the SQL check must catch, and that `make_data.py` reproduces the committed data exactly.
 
-With FastAPI installed, 9 more test the API: its answer equals `report.json`, error messages name the uploaded file, blank keys, non-CSV and non-UTF-8 uploads are refused, the 10 MB limit holds, CORS allows only the page's origin, and the answer key is not served.
+With the packages in `requirements.txt` installed, 9 more test the API: its answer equals `report.json`, error messages name the uploaded file, blank keys, non-CSV and non-UTF-8 uploads are refused, the 10 MB limit holds, CORS allows only the page's origin, and the answer key is not served. And 13 test saving to S3 against the fake S3: a report reads back exactly, is stored encrypted as JSON under `reports/`, bad IDs never reach S3, a missing bucket or a failed save is reported without losing the comparison, and the policy allows only the two actions on `reports/*`.
 
-To check that the tests can actually fail, twelve bugs were introduced on purpose in throwaway copies (for example the first copy of a duplicate winning instead of the last, the hint threshold using `>` instead of `>=`, dates read as DD/MM, HTML left unescaped, CORS open to every origin, the size limit removed). The suite failed on all twelve.
+To check that the tests can actually fail, sixteen bugs were introduced on purpose in throwaway copies (for example the first copy of a duplicate winning instead of the last, the hint threshold using `>` instead of `>=`, dates read as DD/MM, HTML left unescaped, CORS open to every origin, the size limit removed, encryption dropped, the policy widened to `s3:*`). The suite failed on all sixteen.
 
-The React page has no automated tests. It was checked by hand in a browser: the sample data, a wrong key column, the API stopped, and a 375-pixel-wide phone screen.
+The React page has no automated tests. It was checked by hand in a browser: the sample data, a wrong key column, the API stopped, a 375-pixel-wide phone screen, and a save to the fake S3 read back by its ID.
 
 ## Test data
 
@@ -130,7 +141,7 @@ The HTML report and the web page share `styles/theme.css`: Montserrat (falling b
 
 ## What's next
 
-- Optionally, saving reports to a private S3 bucket, with an IAM policy that allows only writing and reading that bucket's reports
+- Connect a real S3 bucket ([docs/s3-setup.md](docs/s3-setup.md)); so far saving has run only against the fake S3
 - A `validate` mode that checks one table on its own: required columns, value ranges, freshness
 - A GitHub Actions workflow that runs the tests on every push
 

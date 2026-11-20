@@ -1,5 +1,8 @@
-# For api.py and its tests (test_api.py). compare.py itself needs nothing.
+# For api.py, storage.py and their tests. compare.py itself needs nothing.
 fastapi==0.128.8
 uvicorn==0.39.0
 python-multipart==0.0.20
+boto3==1.42.97
+# Tests only: httpx for the API test client, moto for a fake S3
 httpx==0.28.1
+moto[s3]==5.1.22

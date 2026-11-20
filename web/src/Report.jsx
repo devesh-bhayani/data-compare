@@ -136,6 +136,19 @@ export default function Report({ report }) {
         </button>
       </div>
 
+      {report.saved?.id && (
+        <div className="notice">
+          <p>
+            Saved to S3 as <code>{report.saved.key}</code>. Read it back at <code>/reports/{report.saved.id}</code>.
+          </p>
+        </div>
+      )}
+      {report.saved?.error && (
+        <div className="alert-box" role="alert">
+          <p>{report.saved.error} The comparison itself is complete.</p>
+        </div>
+      )}
+
       <section className="summary" aria-label="Summary">
         {report.summary_markdown.map((p, i) => (
           <p key={i}>

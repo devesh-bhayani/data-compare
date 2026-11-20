@@ -3,6 +3,7 @@
 Run from the project folder, inside the virtual environment:
     uvicorn api:app --reload
 Then open http://127.0.0.1:8000/docs to try every endpoint in the browser.
+To also save each report to S3, set REPORTS_BUCKET first (see storage.py).
 
 The comparison itself lives in compare.py, sqlcheck.py and report.py and is
 not changed here. The command line and this API are two front doors to the
@@ -21,6 +22,7 @@ from fastapi.responses import FileResponse
 from compare import InputError, compare, load
 from report import build_payload
 from sqlcheck import cross_check
+from storage import StorageError, object_key, store_from_env
 
 HERE = Path(__file__).resolve().parent
 
@@ -42,6 +44,9 @@ app = FastAPI(
     description="Compare two CSV files on a key column and explain the differences in plain English.",
 )
 app.add_middleware(CORSMiddleware, allow_origins=WEB_ORIGINS, allow_methods=["GET", "POST"])
+
+# Saving to S3 is optional: None unless REPORTS_BUCKET is set when the server starts.
+STORE = store_from_env()
 
 
 @app.get("/health")
@@ -119,5 +124,27 @@ async def compare_files(
         # The comparison is ordinary blocking Python. Running it in a worker
         # thread keeps the server's event loop free to answer other requests
         # (such as /health) while a big comparison runs.
-        return await run_in_threadpool(run_comparison, source_path, target_path, key,
-                                       (source_name, target_name))
+        payload = await run_in_threadpool(run_comparison, source_path, target_path, key,
+                                          (source_name, target_name))
+    if STORE is not None:
+        # A failed save should not throw away a finished comparison, so the
+        # report still comes back, with the reason it was not saved.
+        try:
+            report_id = await run_in_threadpool(STORE.save, payload)
+            payload["saved"] = {"id": report_id, "key": object_key(report_id)}
+        except StorageError as e:
+            payload["saved"] = {"error": f"The report was not saved to S3 ({e})."}
+    return payload
+
+
+@app.get("/reports/{report_id}")
+async def saved_report(report_id: str):
+    """A report saved earlier by POST /compare, read back from S3."""
+    if STORE is None:
+        raise HTTPException(404, "Saving to S3 is not set up on this server (REPORTS_BUCKET is not set).")
+    try:
+        return await run_in_threadpool(STORE.load, report_id)
+    except KeyError:
+        raise HTTPException(404, f"No saved report with ID {report_id!r}.") from None
+    except StorageError as e:
+        raise HTTPException(502, f"S3 could not be read ({e}).") from None
