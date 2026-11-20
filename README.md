@@ -10,7 +10,7 @@ A personal project with synthetic data, built in November 2026. **Work in progre
 - [x] Report theme and a static mockup of the report (`styles/`)
 - [x] Core compare (`compare.py`): rows only on one side, duplicate and blank keys, changed cells
 - [x] Format-only vs real changes, with the reason and a per-column breakdown
-- [ ] The same comparison in SQL, as a cross-check
+- [x] The same comparison in SQL, as a cross-check (`sqlcheck.py`, `--sql`)
 - [ ] Plain-English report with a root-cause hint
 - [ ] Tests against the answer key
 

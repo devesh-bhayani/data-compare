@@ -159,7 +159,7 @@ def plural(n, word):
 
 
 def print_changes(title, changes, show):
-    if not changes:
+    if not changes or show <= 0:
         return
     print(f"  {title} ({len(changes)}):")
     for c in changes[:show]:
@@ -213,17 +213,33 @@ def print_result(result, show=5):
     print_changes("Format-only changes", fmt, show)
 
 
+def print_sql_checks(checks):
+    failed = [c for c in checks if not c["agree"]]
+    if not failed:
+        print(f"  SQL cross-check:  SQLite agrees on all {len(checks)} checks")
+        return
+    print(f"  SQL cross-check:  {len(failed)} of {len(checks)} checks DISAGREE")
+    for c in failed:
+        print(f"    {c['check']}: SQL {c['sql']}, Python {c['python']}")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("source", help="the system of record (CSV)")
     parser.add_argument("target", help="the copy to check (CSV)")
     parser.add_argument("--key", required=True, help="column that identifies a row")
     parser.add_argument("--show", type=int, default=5, help="changes of each kind to print (default 5)")
+    parser.add_argument("--sql", action="store_true",
+                        help="also answer the same questions in SQL (SQLite) and check both agree")
     args = parser.parse_args()
 
     source = load(args.source, args.key)
     target = load(args.target, args.key)
-    print_result(compare(source, target, args.key), show=args.show)
+    result = compare(source, target, args.key)
+    print_result(result, show=args.show)
+    if args.sql:
+        from sqlcheck import cross_check
+        print_sql_checks(cross_check(args.source, args.target, args.key, result))
 
 
 if __name__ == "__main__":
