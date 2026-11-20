@@ -22,7 +22,7 @@ from fastapi.responses import FileResponse
 from compare import InputError, compare, load
 from report import build_payload
 from sqlcheck import cross_check
-from storage import StorageError, object_key, store_from_env
+from storage import StorageError, store_from_env
 
 HERE = Path(__file__).resolve().parent
 
@@ -130,8 +130,7 @@ async def compare_files(
         # A failed save should not throw away a finished comparison, so the
         # report still comes back, with the reason it was not saved.
         try:
-            report_id = await run_in_threadpool(STORE.save, payload)
-            payload["saved"] = {"id": report_id, "key": object_key(report_id)}
+            payload["saved"] = await run_in_threadpool(STORE.save, payload)
         except StorageError as e:
             payload["saved"] = {"error": f"The report was not saved to S3 ({e})."}
     return payload

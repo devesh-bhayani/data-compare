@@ -3,6 +3,11 @@
 They run against moto, a fake S3 inside the test process: no AWS account,
 no network, nothing to pay for. They need the packages in requirements.txt
 and are skipped without them. The policy test needs nothing.
+
+LiveServerTests run only when asked, against whatever server the environment
+names (Garage from garage.sh, or a real bucket):
+    . ~/.data-compare-garage/env && DATA_COMPARE_LIVE_S3=1 .venv/bin/python -m unittest test_storage
+They leave a few small reports in the bucket, since the app has no delete permission.
 """
 
 import json
@@ -56,6 +61,9 @@ class FakeS3Case(unittest.TestCase):
         env = mock.patch.dict(os.environ, FAKE_AWS)   # never real keys, even if some are set
         env.start()
         self.addCleanup(env.stop)
+        # Nor a real server: moto only answers requests addressed to AWS.
+        for name in ("AWS_ENDPOINT_URL", "AWS_ENDPOINT_URL_S3", "REPORTS_SSE"):
+            os.environ.pop(name, None)
         aws = mock_aws()
         aws.start()
         self.addCleanup(aws.stop)
@@ -65,14 +73,37 @@ class FakeS3Case(unittest.TestCase):
 
 class StorageTests(FakeS3Case):
     def test_round_trip(self):
-        report_id = self.store.save({"summary": ["hello"]})
-        self.assertEqual(self.store.load(report_id), {"summary": ["hello"]})
+        saved = self.store.save({"summary": ["hello"]})
+        self.assertEqual(self.store.load(saved["id"]), {"summary": ["hello"]})
 
     def test_saved_under_reports_as_encrypted_json(self):
-        report_id = self.store.save({"a": 1})
-        head = self.store.client.head_object(Bucket=BUCKET, Key=f"reports/{report_id}.json")
+        saved = self.store.save({"a": 1})
+        self.assertEqual(saved["key"], f"reports/{saved['id']}.json")
+        head = self.store.client.head_object(Bucket=BUCKET, Key=saved["key"])
         self.assertEqual(head["ContentType"], "application/json")
         self.assertEqual(head["ServerSideEncryption"], "AES256")
+        self.assertTrue(saved["encrypted"])
+
+    def test_encryption_is_believed_only_when_the_server_confirms_it(self):
+        """Garage accepts the encryption header and stores the report in plain text."""
+        real_put = self.store.client.put_object
+        def ignores_header(**kwargs):
+            reply = real_put(**kwargs)
+            reply.pop("ServerSideEncryption", None)
+            return reply
+        with mock.patch.object(self.store.client, "put_object", side_effect=ignores_header):
+            saved = self.store.save({"a": 1})
+        self.assertFalse(saved["encrypted"])
+
+    def test_encryption_can_be_switched_off_for_servers_without_it(self):
+        saved = ReportStore(BUCKET, encrypt=False).save({"a": 1})
+        head = self.store.client.head_object(Bucket=BUCKET, Key=saved["key"])
+        self.assertNotIn("ServerSideEncryption", head)
+        self.assertFalse(saved["encrypted"])
+        for value, expected in (("none", False), ("NONE", False), ("", True), ("AES256", True), ("off", True)):
+            with self.subTest(REPORTS_SSE=value), \
+                    mock.patch.dict(os.environ, {"REPORTS_BUCKET": BUCKET, "REPORTS_SSE": value}):
+                self.assertIs(store_from_env().encrypt, expected)
 
     def test_ids_sort_by_time_and_do_not_collide(self):
         when = datetime(2026, 11, 20, 16, 5, 9, tzinfo=timezone.utc)
@@ -128,6 +159,7 @@ class ApiStorageTests(FakeS3Case):
             saved = r.json()["saved"]
             back = self.client.get(f"/reports/{saved['id']}")
         self.assertEqual(saved["key"], f"reports/{saved['id']}.json")
+        self.assertTrue(saved["encrypted"])
         self.assertEqual(back.status_code, 200)
         expected = {k: v for k, v in r.json().items() if k != "saved"}
         self.assertEqual(back.json(), expected)
@@ -151,6 +183,37 @@ class ApiStorageTests(FakeS3Case):
         self.assertNotIn("saved", r.json())
         self.assertEqual(back.status_code, 404)
         self.assertIn("not set up", back.json()["detail"])
+
+
+@unittest.skipUnless(os.environ.get("DATA_COMPARE_LIVE_S3") and mock_aws is not None,
+                     "set DATA_COMPARE_LIVE_S3=1 to test against a running S3 server")
+class LiveServerTests(unittest.TestCase):
+    """The same checks against a real server, configured only by the environment."""
+
+    def setUp(self):
+        self.store = store_from_env()
+        self.assertIsNotNone(self.store, "REPORTS_BUCKET is not set")
+
+    def test_round_trip(self):
+        saved = self.store.save({"summary": ["live"]})
+        self.assertEqual(self.store.load(saved["id"]), {"summary": ["live"]})
+
+    def test_encryption_flag_matches_what_the_server_stored(self):
+        saved = self.store.save({"a": 1})
+        head = self.store.client.head_object(Bucket=self.store.bucket, Key=saved["key"])
+        self.assertEqual(saved["encrypted"], head.get("ServerSideEncryption") == "AES256")
+
+    def test_unknown_id(self):
+        # 404 on a server that lets the app list the bucket; on AWS with the
+        # least-privilege policy, the 403 explained in storage.py.
+        try:
+            self.store.load(new_report_id())
+        except KeyError:
+            pass
+        except StorageError as e:
+            self.assertIn("may not exist", str(e))
+        else:
+            self.fail("an unknown ID was found")
 
 
 if __name__ == "__main__":

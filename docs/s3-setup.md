@@ -36,6 +36,8 @@ aws iam create-access-key --user-name data-compare-app
 
 The last command prints the secret access key once, and only then. Keep both keys out of the repository: put them in the terminal that runs the API.
 
+Use a new terminal, not one where `~/.data-compare-garage/env` was loaded: that file points boto3 at the local Garage server and switches encryption off.
+
 ```bash
 export AWS_ACCESS_KEY_ID=...        # from create-access-key
 export AWS_SECRET_ACCESS_KEY=...

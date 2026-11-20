@@ -6,6 +6,11 @@ come from the usual places boto3 looks (environment variables, or the files
 
 The app needs only two permissions, on one prefix of one bucket:
 s3:PutObject and s3:GetObject on <bucket>/reports/*. See docs/s3-policy.json.
+
+Any S3-compatible server works too: boto3 sends requests to the address in
+$AWS_ENDPOINT_URL_S3 when it is set (garage.sh runs one locally). Some such
+servers accept the request to encrypt a report but do not encrypt it, so the
+app trusts only the server's reply, and says when encryption was not confirmed.
 """
 
 import json
@@ -36,28 +41,34 @@ def object_key(report_id):
 
 
 class ReportStore:
-    def __init__(self, bucket, client=None):
+    def __init__(self, bucket, client=None, encrypt=True):
         if client is None:
             import boto3   # imported here so the rest of the project never needs it
             client = boto3.client("s3")
         self.bucket = bucket
         self.client = client
+        self.encrypt = encrypt
 
     def save(self, payload):
-        """Write one report as JSON, encrypted at rest. Returns its ID."""
+        """Write one report as JSON. Returns its ID, its key, and whether the
+        server confirmed that it encrypted the report at rest."""
         from botocore.exceptions import BotoCoreError, ClientError
         report_id = new_report_id()
+        extra = {"ServerSideEncryption": "AES256"} if self.encrypt else {}
         try:
-            self.client.put_object(
+            reply = self.client.put_object(
                 Bucket=self.bucket,
                 Key=object_key(report_id),
                 Body=json.dumps(payload, indent=2).encode("utf-8"),
                 ContentType="application/json",
-                ServerSideEncryption="AES256",
+                **extra,
             )
         except (BotoCoreError, ClientError) as e:
             raise StorageError(describe(e)) from None
-        return report_id
+        # Believe the reply, not the request: a server that ignores the
+        # encryption header still answers 200, just without this field.
+        encrypted = reply.get("ServerSideEncryption") == "AES256"
+        return {"id": report_id, "key": object_key(report_id), "encrypted": encrypted}
 
     def load(self, report_id):
         """Read a saved report back. KeyError if the ID is malformed or not there."""
@@ -88,6 +99,13 @@ def describe(error):
 
 
 def store_from_env():
-    """A ReportStore for $REPORTS_BUCKET, or None when saving is not set up."""
+    """A ReportStore for $REPORTS_BUCKET, or None when saving is not set up.
+
+    Encryption is asked for unless $REPORTS_SSE is "none", for servers such as
+    Garage that do not offer it. Any other value keeps it on.
+    """
     bucket = os.environ.get("REPORTS_BUCKET", "").strip()
-    return ReportStore(bucket) if bucket else None
+    if not bucket:
+        return None
+    encrypt = os.environ.get("REPORTS_SSE", "").strip().lower() != "none"
+    return ReportStore(bucket, encrypt=encrypt)

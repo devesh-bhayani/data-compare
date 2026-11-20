@@ -141,6 +141,12 @@ export default function Report({ report }) {
           <p>
             Saved to S3 as <code>{report.saved.key}</code>. Read it back at <code>/reports/{report.saved.id}</code>.
           </p>
+          {!report.saved.encrypted && (
+            <p>
+              The storage server did not confirm that it encrypted this report, so treat the saved copy as
+              unencrypted.
+            </p>
+          )}
         </div>
       )}
       {report.saved?.error && (

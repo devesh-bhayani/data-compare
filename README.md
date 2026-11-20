@@ -37,11 +37,23 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5173 and click **Try the sample data**, or pick two CSV files and a key column. FastAPI's own test page for the API is at http://127.0.0.1:8000/docs. With the virtual environment in place, `.venv/bin/python -m unittest -v` runs all 52 tests.
+Open http://localhost:5173 and click **Try the sample data**, or pick two CSV files and a key column. FastAPI's own test page for the API is at http://127.0.0.1:8000/docs. With the virtual environment in place, `.venv/bin/python -m unittest -v` runs all 57 tests (3 of them, for a live S3 server, are skipped unless asked for).
 
 ### Saving reports to S3
 
-To try it without an AWS account, start the API with `.venv/bin/python run_fake_s3.py` instead of `uvicorn`. It runs the same API against a fake S3 in memory ([moto](https://github.com/getmoto/moto)), so each comparison is "saved" and can be read back, and nothing is sent to AWS. Connecting a real bucket, with a least-privilege policy and the cleanup steps, is in [docs/s3-setup.md](docs/s3-setup.md).
+To try it without an AWS account, start the API with `.venv/bin/python run_fake_s3.py` instead of `uvicorn`. It runs the same API against a fake S3 in memory ([moto](https://github.com/getmoto/moto)), so each comparison is "saved" and can be read back, and nothing is sent to AWS.
+
+For a real S3 server on your own computer, still free and with no AWS account, `garage.sh` runs [Garage](https://garagehq.deuxfleurs.fr/), an open-source S3-compatible server, in Docker. Reports go over the network to it, keys are checked, and saved reports survive a restart:
+
+```sh
+./garage.sh start                       # first run makes keys and a bucket in ~/.data-compare-garage
+. ~/.data-compare-garage/env            # points boto3 at http://localhost:3900
+.venv/bin/uvicorn api:app
+DATA_COMPARE_LIVE_S3=1 .venv/bin/python -m unittest test_storage   # optional: the live-server tests
+./garage.sh stop
+```
+
+Keys and stored reports stay in `~/.data-compare-garage`, outside the repository, and the server listens on 127.0.0.1 only. The code is the same for Garage and AWS: boto3 sends requests to `$AWS_ENDPOINT_URL_S3` when it is set. Connecting a real AWS bucket, with a least-privilege policy and the cleanup steps, is in [docs/s3-setup.md](docs/s3-setup.md).
 
 ## What it tells you
 
@@ -72,8 +84,9 @@ Every number in it matches the answer key the test data was generated with.
 | `test_compare.py` | 30 tests against the answer key and edge cases |
 | `storage.py` | Optional: saves each report to S3 and reads it back by ID, when `REPORTS_BUCKET` is set |
 | `run_fake_s3.py` | Starts the API with a fake S3 in memory, for trying the save without AWS |
+| `garage.sh` | Runs Garage, a free S3-compatible server, in Docker on this computer |
 | `test_api.py` | 9 tests for the API |
-| `test_storage.py` | 13 tests for saving to S3, against the fake S3, plus a check on the policy |
+| `test_storage.py` | 15 tests for saving to S3, against the fake S3, plus a check on the policy; 3 more run against a live server on request |
 | `docs/s3-policy.json`, `docs/s3-setup.md` | The app's least-privilege IAM policy, and how to connect a real bucket |
 | `requirements.txt` | The packages the API, the S3 saving and their tests need |
 | `styles/theme.css` | The look of both the HTML report and the web page; `styles/preview.html` is the original mockup |
@@ -100,8 +113,9 @@ Every number in it matches the answer key the test data was generated with.
 - **CORS.** The page (port 5173) and the API (port 8000) are different origins, so the browser will not let the page read the API's answers unless the API says that origin may. `api.py` allows exactly the two dev-server addresses, and a test checks that any other origin gets no permission. Vite is pinned to port 5173 because a quiet move to 5174 would be blocked.
 - **Blocking work off the event loop.** FastAPI runs `async` endpoints on one event loop. Reading the uploads is awaited; the comparison is ordinary blocking Python, so it runs in a worker thread (`run_in_threadpool`) and the server can still answer other requests meanwhile.
 - **Promises in the page.** `fetch` returns a promise: a placeholder for an answer that arrives later. The browser runs the page's JavaScript on one thread, so `await` pauses only the function that is waiting, and the page keeps repainting and handling clicks. The code waits in three places: for the server's response (`await fetch`), for its body (`await res.json()`), and, behind the sample button, for both files at once (`await Promise.all([...])` starts both downloads together and resumes when the slower one arrives). `fetch` rejects only when no answer arrives at all (server down, CORS block). A 400 still resolves, so the code checks `res.ok` itself.
-- **Saving to S3, with least privilege.** The app's policy (`docs/s3-policy.json`) allows two actions, `s3:PutObject` and `s3:GetObject`, on one prefix of one bucket, and a test fails if it is widened. Keys come from the environment, never from the code. Each report is stored as `reports/<time>-<random>.json`, encrypted at rest, and IDs are checked against that pattern before any request, so an ID like `../secret` never reaches S3. A failed save does not throw away a finished comparison: the report still comes back, with the reason it was not saved. Because the app may not list the bucket, real S3 answers a missing report with 403 rather than 404, and the error message says so.
-- **Testing cloud code without the cloud.** The S3 tests run against moto, a fake S3 inside the test process, with fake keys, so they need no account, no network and cost nothing. What moto does not check is IAM: the policy is tested by reading the file, and the 403 case with a stand-in client.
+- **Saving to S3, with least privilege.** The app's policy (`docs/s3-policy.json`) allows two actions, `s3:PutObject` and `s3:GetObject`, on one prefix of one bucket, and a test fails if it is widened. Keys come from the environment, never from the code. Each report is stored as `reports/<time>-<random>.json`, encrypted at rest when the server confirms it (next point), and IDs are checked against that pattern before any request, so an ID like `../secret` never reaches S3. A failed save does not throw away a finished comparison: the report still comes back, with the reason it was not saved. Because the app may not list the bucket, real S3 answers a missing report with 403 rather than 404, and the error message says so.
+- **Believe the server's reply, not the request.** The app asks for encryption on every upload, but Garage accepts that request, answers 200 and stores the report in plain text (Garage's documentation says it does not offer server-side encryption; tried against v2.5.0). So the app reads the reply: only when the server says `AES256` is the report marked as encrypted, and otherwise the page says the saved copy should be treated as unencrypted. For servers without encryption, `REPORTS_SSE=none` stops asking. On AWS, every new object has been encrypted by default since January 2023, so the request is a belt-and-braces measure there.
+- **Testing cloud code without the cloud.** The S3 tests run against moto, a fake S3 inside the test process, with fake keys, so they need no account, no network and cost nothing. What moto does not check is IAM: the policy is tested by reading the file, and the 403 case with a stand-in client. Garage does not check it either, since it has no bucket policies; its keys are simply allowed to read and write their bucket.
 - **Uploads.** Only `.csv` files, at most 10 MB each, written to a temporary folder that is deleted when the request ends. The limit protects the comparison's memory. The server has already received the upload when the check runs, so a real deployment would also cap the request size in front of the app.
 
 ### At scale
@@ -112,11 +126,11 @@ This version loads both files into memory, which is fine while they fit comforta
 
 `python3 -m unittest -v` runs 30 core tests: every finding against `planted.json`, the format rules (13 cases), the hint thresholds (exactly 80% counts, 75% does not), edge cases (missing key column, missing file, byte-order mark, identical files, header-only file, malformed rows, an extra column, conflicting duplicates, blank keys on one side, repeated column names, a file that is not UTF-8, and the command line's one-line error message), HTML escaping, the three report files, a deliberately wrong answer that the SQL check must catch, and that `make_data.py` reproduces the committed data exactly.
 
-With the packages in `requirements.txt` installed, 9 more test the API: its answer equals `report.json`, error messages name the uploaded file, blank keys, non-CSV and non-UTF-8 uploads are refused, the 10 MB limit holds, CORS allows only the page's origin, and the answer key is not served. And 13 test saving to S3 against the fake S3: a report reads back exactly, is stored encrypted as JSON under `reports/`, bad IDs never reach S3, a missing bucket or a failed save is reported without losing the comparison, and the policy allows only the two actions on `reports/*`.
+With the packages in `requirements.txt` installed, 9 more test the API: its answer equals `report.json`, error messages name the uploaded file, blank keys, non-CSV and non-UTF-8 uploads are refused, the 10 MB limit holds, CORS allows only the page's origin, and the answer key is not served. And 15 test saving to S3 against the fake S3: a report reads back exactly, is stored encrypted as JSON under `reports/`, encryption is reported only when the server confirms it, `REPORTS_SSE=none` switches it off, bad IDs never reach S3, a missing bucket or a failed save is reported without losing the comparison, and the policy allows only the two actions on `reports/*`. Three live-server tests repeat the round trip, the unknown ID and the encryption check against whatever server the environment names; they pass against Garage.
 
-To check that the tests can actually fail, sixteen bugs were introduced on purpose in throwaway copies (for example the first copy of a duplicate winning instead of the last, the hint threshold using `>` instead of `>=`, dates read as DD/MM, HTML left unescaped, CORS open to every origin, the size limit removed, encryption dropped, the policy widened to `s3:*`). The suite failed on all sixteen.
+To check that the tests can actually fail, seventeen bugs were introduced on purpose in throwaway copies (for example the first copy of a duplicate winning instead of the last, the hint threshold using `>` instead of `>=`, dates read as DD/MM, HTML left unescaped, CORS open to every origin, the size limit removed, encryption dropped, the encryption request trusted instead of the server's reply, the policy widened to `s3:*`). The suite failed on all seventeen.
 
-The React page has no automated tests. It was checked by hand in a browser: the sample data, a wrong key column, the API stopped, a 375-pixel-wide phone screen, and a save to the fake S3 read back by its ID.
+The React page has no automated tests. It was checked by hand in a browser: the sample data, a wrong key column, the API stopped, a 375-pixel-wide phone screen, and a save to the fake S3 and to Garage, each read back by its ID (Garage's also after a restart).
 
 ## Test data
 
@@ -141,7 +155,7 @@ The HTML report and the web page share `styles/theme.css`: Montserrat (falling b
 
 ## What's next
 
-- Connect a real S3 bucket ([docs/s3-setup.md](docs/s3-setup.md)); so far saving has run only against the fake S3
+- Connect a real AWS bucket ([docs/s3-setup.md](docs/s3-setup.md)); so far saving has run against the fake S3 and a local Garage server, not AWS
 - A `validate` mode that checks one table on its own: required columns, value ranges, freshness
 - A GitHub Actions workflow that runs the tests on every push
 
