@@ -8,11 +8,31 @@ A personal project with synthetic data, built in November 2026. **Work in progre
 
 - [x] Synthetic test data with planted problems (`make_data.py`)
 - [x] Report theme and a static mockup of the report (`styles/`)
-- [ ] Core compare (`compare.py`)
+- [x] Core compare (`compare.py`): rows only on one side, duplicate and blank keys, changed cells
 - [ ] Format-only vs real changes
 - [ ] The same comparison in SQL, as a cross-check
 - [ ] Plain-English report with a root-cause hint
 - [ ] Tests against the answer key
+
+## Compare
+
+```bash
+python3 compare.py data/source.csv data/target.csv --key student_id
+```
+
+On the default test data it prints:
+
+```
+Compared data/source.csv (1,000 rows) with data/target.csv (992 rows) on student_id
+  Only in source:   15
+  Only in target:   4
+  Duplicate keys:   source 0, target 2
+  Blank keys:       source 0, target 1
+  Matched keys:     985
+  Changed rows:     37 (37 cells)
+```
+
+Every count matches `data/planted.json`. Rows are matched by key, never by position, and the key comparison uses sets: a dict maps each key to its row, and set differences give the keys found on only one side. Duplicate keys are reported before anything else, because a comparison on a key that is not unique cannot be trusted. Files saved by Excel with a byte-order mark are read correctly.
 
 ## Test data
 
