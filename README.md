@@ -9,7 +9,7 @@ A personal project with synthetic data, built in November 2026. **Work in progre
 - [x] Synthetic test data with planted problems (`make_data.py`)
 - [x] Report theme and a static mockup of the report (`styles/`)
 - [x] Core compare (`compare.py`): rows only on one side, duplicate and blank keys, changed cells
-- [ ] Format-only vs real changes
+- [x] Format-only vs real changes, with the reason and a per-column breakdown
 - [ ] The same comparison in SQL, as a cross-check
 - [ ] Plain-English report with a root-cause hint
 - [ ] Tests against the answer key
@@ -20,7 +20,7 @@ A personal project with synthetic data, built in November 2026. **Work in progre
 python3 compare.py data/source.csv data/target.csv --key student_id
 ```
 
-On the default test data it prints:
+On the default test data it prints (first lines):
 
 ```
 Compared data/source.csv (1,000 rows) with data/target.csv (992 rows) on student_id
@@ -29,10 +29,24 @@ Compared data/source.csv (1,000 rows) with data/target.csv (992 rows) on student
   Duplicate keys:   source 0, target 2
   Blank keys:       source 0, target 1
   Matched keys:     985
-  Changed rows:     37 (37 cells)
+  Changed rows:     37 (37 cells: 12 real, 25 format only)
+  By column:
+    credits        8 real,   5 format only (number format)
+    enrolled_on    0 real,   5 format only (date format)
+    last_name      0 real,   5 format only (letter case)
+    school         0 real,   5 format only (whitespace)
+    status         4 real,   5 format only (letter case)
 ```
 
-Every count matches `data/planted.json`. Rows are matched by key, never by position, and the key comparison uses sets: a dict maps each key to its row, and set differences give the keys found on only one side. Duplicate keys are reported before anything else, because a comparison on a key that is not unique cannot be trusted. Files saved by Excel with a byte-order mark are read correctly.
+Every count, and the label on each of the 37 changed cells, matches `data/planted.json`.
+
+### Design notes
+
+- **Match by key, never by position.** A dict maps each key to its row, and set differences give the keys found on only one side.
+- **Duplicate keys come first.** In a dict the last copy of a repeated key wins silently, so a comparison on a key that is not unique cannot be trusted until the duplicates are known.
+- **Format-only vs real changes.** Two different strings can hold the same value: `'Tandon'` and `'Tandon '`, `'Cohen'` and `'COHEN'`, `'12'` and `'12.0'`, `'2026-09-11'` and `'09/11/2026'`. Each changed cell is tested against these rules in order (whitespace, letter case, date format, number format), and the first rule that makes the two equal is the reason. A column whose differences are all formatting points at a cleaning or type-conversion step rather than wrong data.
+- **Dates with slashes are read as MM/DD/YYYY**, so `11/09/2026` against `2026-09-11` counts as a real change.
+- **Messy files.** Files saved by Excel with a byte-order mark are read correctly. Rows with too few or too many fields are counted as malformed instead of crashing the run.
 
 ## Test data
 
