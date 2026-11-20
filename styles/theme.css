@@ -169,4 +169,103 @@ td {
 .badge.key { background: var(--deep-violet); color: var(--white); }         /* 15.6:1 */
 
 .muted { color: var(--text-muted); font-size: 0.875rem; }
-footer { color: var(--text-muted); font-size: 0.8125rem; padding: 1rem 0 2rem; }
+footer { color: var(--text); font-size: 0.8125rem; padding: 1rem 0 2rem; }   /* 9.2:1 on the page's gray; muted gray would be 4.6:1 */
+
+/* ---------- The React page (Phase 2): form, buttons, messages ---------- */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1rem 0 1.25rem;
+}
+@media (max-width: 700px) {
+  .form-grid { grid-template-columns: 1fr; }
+}
+.field { display: flex; flex-direction: column; gap: 0.4rem; min-width: 0; }
+.field-label { font-size: 0.875rem; font-weight: 600; color: var(--deep-violet); }   /* 15.6:1 */
+
+input[type="text"] {
+  font: inherit;
+  font-size: 0.9375rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--medium-gray-1);   /* 5.2:1, a visible edge */
+  border-radius: var(--radius);
+  padding: 0.45rem 0.75rem;
+  min-width: 0;
+}
+
+/* The real file input is hidden but still focusable; the label shows a button and the file name. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+.file-pick { display: flex; align-items: center; gap: 0.75rem; min-width: 0; cursor: pointer; }
+.file-name {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.button {
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--nyu-violet);          /* 11.6:1 */
+  border: 2px solid var(--nyu-violet);
+  border-radius: var(--radius);
+  padding: 0.45rem 1.1rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.button:hover { background: var(--deep-violet); border-color: var(--deep-violet); }   /* 15.6:1 */
+.button.secondary { color: var(--nyu-violet); background: var(--surface); }
+.button.secondary:hover { background: var(--light-violet-2); }                       /* 9.5:1 */
+.button:disabled,
+.button:disabled:hover {
+  color: var(--text-muted);
+  background: var(--surface);
+  border-color: var(--medium-gray-3);
+  cursor: not-allowed;
+}
+input[type="text"]:focus-visible,
+.button:focus-visible,
+.file-pick:focus-within .button {
+  outline: 3px solid var(--ultra-violet);
+  outline-offset: 2px;
+}
+
+/* Status messages between the form and the report */
+.notice,
+.alert-box {
+  background: var(--surface);
+  border-left: 6px solid var(--light-violet-1);
+  border-radius: var(--radius);
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.alert-box { border-left-color: var(--ultra-violet); }
+.notice p, .alert-box p { margin: 0; }
+
+.report-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 2rem 0 1rem;
+}
+.report-head h2 { margin: 0; font-size: 1.125rem; overflow-wrap: anywhere; }
