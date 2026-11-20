@@ -119,7 +119,7 @@ def compare(source, target, key):
                                 "kind": "format only" if reason else "real change",
                                 "reason": reason})
 
-    return {
+    result = {
         "key_column": key,
         "source": summary(source),
         "target": summary(target),
@@ -131,6 +131,73 @@ def compare(source, target, key):
         "changes": changes,
         "by_column": by_column(changes),
     }
+    result["hints"] = find_hints(source, target, key, result)
+    return result
+
+
+def natural_join(words):
+    """['a'] -> 'a'; ['a', 'b'] -> 'a and b'; ['a', 'b', 'c'] -> 'a, b and c'"""
+    words = list(words)
+    return words[0] if len(words) == 1 else ", ".join(words[:-1]) + " and " + words[-1]
+
+
+# A hint needs at least this many rows to say anything, and one value must
+# cover HINT_SHARE of them while covering at most HINT_BASELINE of all rows.
+HINT_MIN_ROWS = 3
+HINT_SHARE = 0.8
+HINT_BASELINE = 0.5
+
+
+def concentration_hints(subset, population, columns, what, population_name, advice):
+    """Find a column value that most rows in `subset` share but few rows overall do.
+
+    For rows missing from the target, a value like school = 'Stern' covering
+    most of them points at a filter or join in the load that drops that value.
+    """
+    hints = []
+    if len(subset) < HINT_MIN_ROWS or not population:
+        return hints
+    for col in columns:
+        value, n = Counter(row[col] for row in subset).most_common(1)[0]
+        share_subset = n / len(subset)
+        share_all = sum(1 for row in population if row[col] == value) / len(population)
+        if share_subset >= HINT_SHARE and share_all <= HINT_BASELINE:
+            hints.append({
+                "type": "concentration", "about": what, "column": col, "value": value,
+                "count": n, "of": len(subset), "share_overall": round(share_all, 4),
+                "text": (f"**Likely cause:** {n} of the {len(subset)} {what} have "
+                         f"`{col}` = {value!r}, but only {share_all:.0%} of {population_name} do. "
+                         f"{advice.format(col=col)}"),
+                "strength": share_subset - share_all,
+            })
+    hints.sort(key=lambda h: -h["strength"])
+    return hints
+
+
+def format_only_hint(by_col):
+    """Columns whose differences are all formatting point at a conversion step."""
+    columns = [c for c, v in by_col.items() if v["real"] == 0 and v["format_only"] > 0]
+    if not columns:
+        return []
+    names = natural_join(f"`{c}`" for c in columns)
+    return [{"type": "format_only_columns", "columns": columns,
+             "text": (f"Every difference in {names} is formatting only, which points at a "
+                      f"cleaning or type-conversion step rather than wrong data.")}]
+
+
+def find_hints(source, target, key, result):
+    data_columns = [c for c in source.columns if c != key]
+    missing = [source.rows[k] for k in result["only_in_source"]]
+    extra = [target.rows[k] for k in result["only_in_target"]]
+    hints = concentration_hints(
+        missing, list(source.rows.values()), data_columns,
+        "records missing from the target", "source rows",
+        "Check the load's filter or join for `{col}`.")
+    hints += concentration_hints(
+        extra, list(target.rows.values()), [c for c in target.columns if c != key],
+        "records found only in the target", "target rows",
+        "Check where these rows enter the target, for example a second source or a test load, for `{col}`.")
+    return hints + format_only_hint(result["by_column"])
 
 
 def by_column(changes):
@@ -231,15 +298,28 @@ def main():
     parser.add_argument("--show", type=int, default=5, help="changes of each kind to print (default 5)")
     parser.add_argument("--sql", action="store_true",
                         help="also answer the same questions in SQL (SQLite) and check both agree")
+    parser.add_argument("--report", metavar="DIR",
+                        help="write report.md, report.json and report.html to DIR (runs the SQL check too)")
     args = parser.parse_args()
 
     source = load(args.source, args.key)
     target = load(args.target, args.key)
     result = compare(source, target, args.key)
     print_result(result, show=args.show)
-    if args.sql:
+
+    for hint in result["hints"]:
+        print("  " + hint["text"].replace("**", "").replace("`", ""))
+
+    sql_checks = None
+    if args.sql or args.report:
         from sqlcheck import cross_check
-        print_sql_checks(cross_check(args.source, args.target, args.key, result))
+        sql_checks = cross_check(args.source, args.target, args.key, result)
+        print_sql_checks(sql_checks)
+
+    if args.report:
+        from report import write_reports
+        paths = write_reports(result, source, target, args.report, sql_checks)
+        print(f"  Reports written:  {', '.join(str(p) for p in paths.values())}")
 
 
 if __name__ == "__main__":

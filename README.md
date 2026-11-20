@@ -11,7 +11,7 @@ A personal project with synthetic data, built in November 2026. **Work in progre
 - [x] Core compare (`compare.py`): rows only on one side, duplicate and blank keys, changed cells
 - [x] Format-only vs real changes, with the reason and a per-column breakdown
 - [x] The same comparison in SQL, as a cross-check (`sqlcheck.py`, `--sql`)
-- [ ] Plain-English report with a root-cause hint
+- [x] Plain-English report with a root-cause hint (`report.py`, `--report DIR`: Markdown, JSON and HTML)
 - [ ] Tests against the answer key
 
 ## Compare
