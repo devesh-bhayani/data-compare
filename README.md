@@ -12,7 +12,7 @@ A personal project with synthetic data, built in November 2026. **Work in progre
 - [x] Format-only vs real changes, with the reason and a per-column breakdown
 - [x] The same comparison in SQL, as a cross-check (`sqlcheck.py`, `--sql`)
 - [x] Plain-English report with a root-cause hint (`report.py`, `--report DIR`: Markdown, JSON and HTML)
-- [ ] Tests against the answer key
+- [x] Tests against the answer key (`test_compare.py`, 27 tests, `python3 -m unittest`)
 
 ## Compare
 
